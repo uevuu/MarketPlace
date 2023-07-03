@@ -12,8 +12,8 @@ import SnapKit
 final class RegisterButton: UIButton {
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.font = R.font.robotoBold(size: 17)
-        label.textColor = R.color.background()
+        label.font = R.font.robotoRegular(size: 14)
+        label.textColor = R.color.blue()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -29,7 +29,7 @@ final class RegisterButton: UIButton {
     }
     
     private func setup() {
-        backgroundColor = R.color.blue()
+        backgroundColor = R.color.registerButton()
         addSubview(label)
         clipsToBounds = true
         layer.cornerRadius = 10

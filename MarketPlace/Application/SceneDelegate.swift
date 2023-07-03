@@ -9,6 +9,8 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    private var rootCoordinator: RootCoordinator?
+    private var serviceLocator: ServiceLocator?
 
     func scene(
         _ scene: UIScene,
@@ -17,24 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ViewController()
-        window.makeKeyAndVisible()
+        let serviceLocator = ServiceLocator()
+        
         self.window = window
-    }
-
-    func sceneDidDisconnect(_ scene: UIScene) {
-    }
-
-    func sceneDidBecomeActive(_ scene: UIScene) {
-    }
-
-    func sceneWillResignActive(_ scene: UIScene) {
-    }
-
-    func sceneWillEnterForeground(_ scene: UIScene) {
-    }
-
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        self.serviceLocator = serviceLocator
+        self.rootCoordinator = RootCoordinator(window: window, resolver: serviceLocator.getResolver())
+        rootCoordinator?.start()
     }
 }

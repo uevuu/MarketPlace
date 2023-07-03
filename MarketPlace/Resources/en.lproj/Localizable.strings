@@ -7,7 +7,7 @@
 */
 
 "logIn" = "Log in";
-"signIn" = "Sign in";
+"signUp" = "Sign up";
 "registration" = "Registration";
 "welcomeText" = "Log in to your account to continue. If you don't have a personal account yet, you can register one using the button below";
 "LogInAndRegistration" = "Log in and registration";
