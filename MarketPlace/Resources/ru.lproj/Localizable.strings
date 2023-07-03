@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  MarketPlace
+
+  Created by Nikita Marin on 03.07.2023.
+  
+*/
+
+"logIn" = "Войти";
+"signIn" = "Зарегестрироваться";
+"registration" = "Регистрация";
+"welcomeText" = "Чтобы продолжить войдите в свой аккаунт. Если у вас еще нет личного кабинета, то вы можете зарегистрировать его по кнопке ниже";
+"LogInAndRegistration" = "Вход и регистрация";
+
+"email" = "Почта";
+"password" = "Пароль";
+"firstName" = "Имя";
+"lastName" = "Фамилия";
+"phoneNumber" = "Мобильный телефон";
+"iAmSeller" = "Я продавец";
+
+"error.password.validation" = "Пароль должен содержать не менее 10 символов, минимум 1 цифра, минимум 1 буква";
+"error.password.incorrect" = "Неверный пароль";
+"error.email.validation" = "Неверный формат";
+"error.email.notExist" = "Пользователь не найден";

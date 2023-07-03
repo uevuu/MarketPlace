@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  MarketPlace
+
+  Created by Nikita Marin on 03.07.2023.
+  
+*/
+
+"logIn" = "Log in";
+"signIn" = "Sign in";
+"registration" = "Registration";
+"welcomeText" = "Log in to your account to continue. If you don't have a personal account yet, you can register one using the button below";
+"LogInAndRegistration" = "Log in and registration";
+
+"email" = "Email";
+"password" = "Password";
+"firstName" = "First name";
+"lastName" = "Last name";
+"phoneNumber" = "Phone number";
+"iAmSeller" = "I'm seller";
+
+"error.password.validation" = "Password must contain at least 10 characters, minimum 1 number, minimum 1 letter";
+"error.password.incorrect" = "Incorrect password";
+"error.email.validation" = "Incorrect format";
+"error.email.notExist" = "User not found";
