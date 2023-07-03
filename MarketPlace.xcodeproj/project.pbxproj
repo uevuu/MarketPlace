@@ -15,6 +15,10 @@
 		8BAB8B002A52391D005167BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB8AFF2A52391D005167BA /* Assets.xcassets */; };
 		8BAB8B122A52453F005167BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB8B142A52453F005167BA /* Localizable.strings */; };
 		8BAB8B162A5245E6005167BA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8B152A5245E6005167BA /* R.generated.swift */; };
+		8BAB8B272A525381005167BA /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8B262A525381005167BA /* SimpleButton.swift */; };
+		8BAB8B292A5259CE005167BA /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8B282A5259CE005167BA /* RegisterButton.swift */; };
+		8BAB8B2E2A526058005167BA /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB8B2D2A526058005167BA /* Roboto-Bold.ttf */; };
+		8BAB8B302A526069005167BA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB8B2F2A526069005167BA /* Roboto-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		8BAB8B132A52453F005167BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8BAB8B152A5245E6005167BA /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		8BAB8B252A525217005167BA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8BAB8B262A525381005167BA /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
+		8BAB8B282A5259CE005167BA /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
+		8BAB8B2D2A526058005167BA /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Bold.ttf"; path = "../../../../Downloads/Roboto/Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		8BAB8B2F2A526069005167BA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../../../Downloads/Roboto/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		8D070571E3963A5776D4FAF5 /* Pods-MarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketPlace.debug.xcconfig"; path = "Target Support Files/Pods-MarketPlace/Pods-MarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4CDFD529BBBCBA03D6DE93 /* Pods_MarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +83,7 @@
 		8BAB8AF22A523918005167BA /* MarketPlace */ = {
 			isa = PBXGroup;
 			children = (
+				8BAB8B2C2A525FD4005167BA /* Fonts */,
 				8BAB8B0F2A5244F1005167BA /* Resources */,
 				8BAB8B0E2A524487005167BA /* Generated */,
 				8BAB8B0D2A523FD1005167BA /* Components */,
@@ -90,6 +99,8 @@
 		8BAB8B0D2A523FD1005167BA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8BAB8B262A525381005167BA /* SimpleButton.swift */,
+				8BAB8B282A5259CE005167BA /* RegisterButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -109,6 +120,15 @@
 				8BAB8B142A52453F005167BA /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		8BAB8B2C2A525FD4005167BA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8BAB8B2D2A526058005167BA /* Roboto-Bold.ttf */,
+				8BAB8B2F2A526069005167BA /* Roboto-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		B181952DFFC6349F7F39DDDE /* Frameworks */ = {
@@ -184,6 +204,8 @@
 			files = (
 				8BAB8B122A52453F005167BA /* Localizable.strings in Resources */,
 				8BAB8B002A52391D005167BA /* Assets.xcassets in Resources */,
+				8BAB8B302A526069005167BA /* Roboto-Regular.ttf in Resources */,
+				8BAB8B2E2A526058005167BA /* Roboto-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,8 +299,10 @@
 				8BAB8AF82A523918005167BA /* ViewController.swift in Sources */,
 				8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */,
 				8BAB8AF42A523918005167BA /* AppDelegate.swift in Sources */,
+				8BAB8B292A5259CE005167BA /* RegisterButton.swift in Sources */,
 				8BAB8AF62A523918005167BA /* SceneDelegate.swift in Sources */,
 				8BAB8B162A5245E6005167BA /* R.generated.swift in Sources */,
+				8BAB8B272A525381005167BA /* SimpleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
