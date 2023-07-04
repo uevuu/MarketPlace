@@ -9,9 +9,14 @@
 final class LogInPresenter {
     weak var view: LogInViewInput?
     private var output: LogInPresenterOutput?
+    private let logInService: LogInService
     
-    init(output: LogInPresenterOutput?) {
+    init(
+        output: LogInPresenterOutput?,
+        logInService: LogInService
+    ) {
         self.output = output
+        self.logInService = logInService
     }
 }
 
@@ -27,16 +32,23 @@ extension LogInPresenter: LogInViewOutput {
     ) {
         if !emailOrPhone.isEmpty && !password.isEmpty {
             if emailOrPhone.isValidEmailOrPhoneNumber() {
-                if ["Adm@ma.ru", "Nikita@qq.q"].contains(where: { $0 == emailOrPhone }) {
-                    view?.hideUserExistError()
-                    if password == "123" {
-                        view?.hidePasswordError()
-                    } else {
+                logInService.login(
+                    emailOrPhoneNumber: emailOrPhone,
+                    password: password
+                ) { [weak view] result in
+                    switch result {
+                    case .userExist:
+                        view?.showUserExistError()
                         view?.showPasswordError()
+                    case .incorrectPassword:
+                        view?.hideUserExistError()
+                        view?.showPasswordError()
+                    case .success:
+                        view?.hideUserExistError()
+                        view?.hidePasswordError()
+                    case .serviceError:
+                        print("service error")
                     }
-                } else {
-                    view?.showUserExistError()
-                    view?.showPasswordError()
                 }
             } else {
                 view?.showPhoneNumberOrEmailValidationError()

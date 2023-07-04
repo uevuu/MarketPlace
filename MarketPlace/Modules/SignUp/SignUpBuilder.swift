@@ -19,7 +19,10 @@ final class SignUpBuilder {
     }
     
     func build() -> UIViewController {
-        let presenter = SignUpPresenter(output: moduleOutput)
+        let presenter = SignUpPresenter(
+            output: moduleOutput,
+            signUpService: resolver.resolve()
+        )
         let view = SignUpViewController(output: presenter)
         presenter.view = view
         return view

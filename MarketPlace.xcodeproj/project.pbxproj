@@ -51,6 +51,11 @@
 		8BAB8B352A5263A0005167BA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB8B332A5263A0005167BA /* Roboto-Regular.ttf */; };
 		8BBFEA1B2A547C4A00810D47 /* UINavigationController+ Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */; };
 		8BBFEA1D2A548F9400810D47 /* SellerSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA1C2A548F9400810D47 /* SellerSwitchView.swift */; };
+		8BBFEA202A54C04D00810D47 /* LogInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA1F2A54C04D00810D47 /* LogInService.swift */; };
+		8BBFEA222A54C3D900810D47 /* NetworkApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA212A54C3D900810D47 /* NetworkApiService.swift */; };
+		8BBFEA242A54C8EA00810D47 /* LogInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA232A54C8EA00810D47 /* LogInResult.swift */; };
+		8BBFEA262A54C8F700810D47 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA252A54C8F700810D47 /* SignUpResult.swift */; };
+		8BBFEA292A54CA1A00810D47 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA282A54CA1A00810D47 /* SignUpService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +106,11 @@
 		8BAB8B332A5263A0005167BA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+ Extensions.swift"; sourceTree = "<group>"; };
 		8BBFEA1C2A548F9400810D47 /* SellerSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerSwitchView.swift; sourceTree = "<group>"; };
+		8BBFEA1F2A54C04D00810D47 /* LogInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInService.swift; sourceTree = "<group>"; };
+		8BBFEA212A54C3D900810D47 /* NetworkApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiService.swift; sourceTree = "<group>"; };
+		8BBFEA232A54C8EA00810D47 /* LogInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResult.swift; sourceTree = "<group>"; };
+		8BBFEA252A54C8F700810D47 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
+		8BBFEA282A54CA1A00810D47 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		8D070571E3963A5776D4FAF5 /* Pods-MarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketPlace.debug.xcconfig"; path = "Target Support Files/Pods-MarketPlace/Pods-MarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4CDFD529BBBCBA03D6DE93 /* Pods_MarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -267,6 +277,8 @@
 		8B2C81592A53AC04004C82B6 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				8BBFEA232A54C8EA00810D47 /* LogInResult.swift */,
+				8BBFEA252A54C8F700810D47 /* SignUpResult.swift */,
 				8B2C815B2A53AC15004C82B6 /* TextFieldType.swift */,
 			);
 			path = Enums;
@@ -302,6 +314,7 @@
 				8B2C81092A52C86B004C82B6 /* Modules */,
 				8B2C812A2A52D5C0004C82B6 /* Protocols */,
 				8BAB8B0F2A5244F1005167BA /* Resources */,
+				8BBFEA1E2A54BFF700810D47 /* Services */,
 				8BAB8B042A52391D005167BA /* Info.plist */,
 				8BAB8AFC2A523918005167BA /* MarketPlace.xcdatamodeld */,
 			);
@@ -345,6 +358,16 @@
 				8BAB8B332A5263A0005167BA /* Roboto-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8BBFEA1E2A54BFF700810D47 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8BBFEA1F2A54C04D00810D47 /* LogInService.swift */,
+				8BBFEA212A54C3D900810D47 /* NetworkApiService.swift */,
+				8BBFEA282A54CA1A00810D47 /* SignUpService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B181952DFFC6349F7F39DDDE /* Frameworks */ = {
@@ -512,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BBFEA262A54C8F700810D47 /* SignUpResult.swift in Sources */,
 				8B2C813A2A52F3F6004C82B6 /* LogInPresenterOutput.swift in Sources */,
 				8B2C81112A52C8C0004C82B6 /* WelcomeViewIO.swift in Sources */,
 				8B2C81402A52F796004C82B6 /* LogInCoordinator.swift in Sources */,
@@ -532,6 +556,7 @@
 				8B2C81442A530896004C82B6 /* BackBarButton.swift in Sources */,
 				8B2C813C2A52F401004C82B6 /* LogInPresenter.swift in Sources */,
 				8BAB8AF42A523918005167BA /* AppDelegate.swift in Sources */,
+				8BBFEA292A54CA1A00810D47 /* SignUpService.swift in Sources */,
 				8B2C81342A52F29E004C82B6 /* LogInViewController.swift in Sources */,
 				8B2C814C2A5310CC004C82B6 /* SignUpViewController.swift in Sources */,
 				8BAB8B292A5259CE005167BA /* RegisterButton.swift in Sources */,
@@ -543,14 +568,17 @@
 				8B2C815C2A53AC15004C82B6 /* TextFieldType.swift in Sources */,
 				8BAB8B162A5245E6005167BA /* R.generated.swift in Sources */,
 				8B2C81162A52CB4D004C82B6 /* WelcomeBuilder.swift in Sources */,
+				8BBFEA202A54C04D00810D47 /* LogInService.swift in Sources */,
 				8B2C81462A53100C004C82B6 /* SignUpPresenterOutput .swift in Sources */,
 				8B2C811F2A52D184004C82B6 /* LocalDataSourceAssembly.swift in Sources */,
 				8B2C81382A52F2DB004C82B6 /* WelcomePresenterOutput.swift in Sources */,
 				8B2C81262A52D318004C82B6 /* UITabBarController+Extensions.swift in Sources */,
 				8B2C81502A53119F004C82B6 /* SignUpCoordinator.swift in Sources */,
 				8B2C81242A52D302004C82B6 /* Resolver+Extensions.swift in Sources */,
+				8BBFEA242A54C8EA00810D47 /* LogInResult.swift in Sources */,
 				8B2C81482A531052004C82B6 /* SignUpPresenter.swift in Sources */,
 				8BAB8B272A525381005167BA /* SimpleButton.swift in Sources */,
+				8BBFEA222A54C3D900810D47 /* NetworkApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

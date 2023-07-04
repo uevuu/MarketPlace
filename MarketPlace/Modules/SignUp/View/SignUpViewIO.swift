@@ -33,4 +33,12 @@ struct SignUpData {
     let phoneNumber: String
     let password: String
     let isSeller: Bool
+    
+    func isValid() -> Bool {
+        return email.isValidEmail()
+        && phoneNumber.isValidPhoneNumber()
+        && password.isValidPassword()
+        && !firstName.isEmpty
+        && !lastName.isEmpty
+    }
 }

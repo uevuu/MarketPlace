@@ -19,7 +19,10 @@ final class LogInBuilder {
     }
     
     func build() -> UIViewController {
-        let presenter = LogInPresenter(output: moduleOutput)
+        let presenter = LogInPresenter(
+            output: moduleOutput,
+            logInService: resolver.resolve()
+        )
         let view = LogInViewController(output: presenter)
         presenter.view = view
         return view

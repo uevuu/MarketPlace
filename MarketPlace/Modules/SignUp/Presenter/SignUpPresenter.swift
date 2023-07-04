@@ -10,9 +10,14 @@ import Foundation
 final class SignUpPresenter {
     weak var view: SignUpViewInput?
     private var output: SignUpPresenterOutput?
+    private let signUpService: SignUpService
     
-    init(output: SignUpPresenterOutput?) {
+    init(
+        output: SignUpPresenterOutput?,
+        signUpService: SignUpService
+    ) {
         self.output = output
+        self.signUpService = signUpService
     }
 }
 
@@ -29,23 +34,51 @@ extension SignUpPresenter: SignUpViewOutput {
         if signUpData.lastName.isEmpty {
             view?.showEmptyLastNameError()
         }
-        if signUpData.email.isEmpty {
+        checkEmailFormat(signUpData.email)
+        checkPhoneNumberFormat(signUpData.phoneNumber)
+        checkPasswordFormat(signUpData.password)
+        if signUpData.isValid() {
+            signUpService.signUp(with: signUpData) { result in
+                switch result {
+                case .sameEmail:
+                    print("same email")
+                case .samePhoneNumber:
+                    print("same phone")
+                case .sameEmailAndPhoneNumber:
+                    print("same email and phone")
+                case .success:
+                    print("nice")
+                case .serviceError:
+                    print("service error")
+                }
+            }
+        }
+    }
+    
+    private func checkEmailFormat(_ email: String) {
+        if email.isEmpty {
             view?.showEmptyEmailError()
-        } else if !signUpData.email.isValidEmail() {
+        } else if !email.isValidEmail() {
             view?.showEmailValidationError()
         } else {
             view?.hideEmailValidationError()
         }
-        if signUpData.phoneNumber.isEmpty {
+    }
+    
+    private func checkPhoneNumberFormat(_ phoneNumber: String) {
+        if phoneNumber.isEmpty {
             view?.showEmptyPhoneNumberError()
-        } else if !signUpData.phoneNumber.isValidPhoneNumber() {
+        } else if !phoneNumber.isValidPhoneNumber() {
             view?.showPhoneNumberValidationError()
         } else {
             view?.hidePhoneNumberValidationError()
         }
-        if signUpData.password.isEmpty {
+    }
+    
+    private func checkPasswordFormat(_ password: String) {
+        if password.isEmpty {
             view?.showEmptyPasswordError()
-        } else if !signUpData.password.isValidPassword() {
+        } else if !password.isValidPassword() {
             view?.showPasswordValidationError()
         } else {
             view?.hidePasswordValidationError()
