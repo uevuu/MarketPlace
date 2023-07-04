@@ -12,6 +12,20 @@ class LogInViewController: UIViewController {
     private let output: LogInViewOutput
     
     // MARK: - UI
+    
+    private lazy var emailOrPhoneView = CustomTextFieldView(.emailOrPhone)
+    private lazy var passwordView = CustomTextFieldView(.passwordInLogIn)
+    private lazy var textFiledsStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            emailOrPhoneView,
+            passwordView
+        ])
+        stackView.axis = .vertical
+        stackView.spacing = 15
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    private lazy var logInButton = SimpleButton(title: R.string.localizable.logIn())
 
     // MARK: - Init
     
@@ -35,6 +49,9 @@ class LogInViewController: UIViewController {
     // MARK: - Setup
     
     private func setup() {
+        logInButton.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
+        view.addSubview(textFiledsStackView)
+        view.addSubview(logInButton)
         view.backgroundColor = R.color.background()
         setConstraints()
     }
@@ -50,6 +67,16 @@ class LogInViewController: UIViewController {
     }
     
     private func setConstraints() {
+        textFiledsStackView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(27)
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.equalToSuperview().inset(12)
+        }
+        logInButton.snp.makeConstraints { make in
+            make.top.equalTo(textFiledsStackView.snp.bottom).offset(30)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
     }
     
     // MARK: - Private
@@ -57,8 +84,37 @@ class LogInViewController: UIViewController {
     @objc private func backButtonTapped() {
         output.backTapped()
     }
+    
+    @objc private func logInButtonTapped() {
+        output.logInTapped(
+            emailOrPhone: emailOrPhoneView.getInputText(),
+            password: passwordView.getInputText()
+        )
+    }
 }
 
 // MARK: - LogInViewInput
 extension LogInViewController: LogInViewInput {
+    func showUserExistError() {
+        emailOrPhoneView.fieldError()
+    }
+    
+    func hideUserExistError() {
+        emailOrPhoneView.isCorrect()
+    }
+    func showEmptyEmailOrPhoneError() {
+        emailOrPhoneView.existError()
+    }
+    
+    func showPasswordError() {
+        passwordView.fieldError()
+    }
+    
+    func showEmptyPasswordError() {
+        passwordView.existError()
+    }
+    
+    func hidePasswordError() {
+        passwordView.isCorrect()
+    }
 }

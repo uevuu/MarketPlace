@@ -18,8 +18,9 @@
 "lastName" = "Last name";
 "phoneNumber" = "Phone number";
 "iAmSeller" = "I'm seller";
+"emailOrPhoneNumber" = "Email/Phone number";
 
-"error.password.validation" = "Password must contain at least 10 characters, minimum 1 number, minimum 1 letter";
-"error.password.incorrect" = "Incorrect password";
-"error.email.validation" = "Incorrect format";
-"error.email.notExist" = "User not found";
+"passwordValidation" = "Password must contain at least 10 characters, minimum 1 number, minimum 1 letter";
+"incorrectPassword" = "Incorrect password";
+"incorrectFormat" = "Incorrect format";
+"emailOrPhoneNumberNotExist" = "User not found";

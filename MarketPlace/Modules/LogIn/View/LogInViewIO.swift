@@ -9,9 +9,19 @@ import Foundation
 
 // MARK: - LogInViewInput
 protocol LogInViewInput: AnyObject {
+    func showUserExistError()
+    func showEmptyEmailOrPhoneError()
+    func hideUserExistError()
+    func showPasswordError()
+    func showEmptyPasswordError()
+    func hidePasswordError()
 }
 
 // MARK: - LogInViewOutput
 protocol LogInViewOutput: AnyObject {
     func backTapped()
+    func logInTapped(
+        emailOrPhone: String,
+        password: String
+    )
 }

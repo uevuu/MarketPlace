@@ -18,8 +18,9 @@
 "lastName" = "Фамилия";
 "phoneNumber" = "Мобильный телефон";
 "iAmSeller" = "Я продавец";
+"emailOrPhoneNumber" = "Почта/Телефон";
 
-"error.password.validation" = "Пароль должен содержать не менее 10 символов, минимум 1 цифра, минимум 1 буква";
-"error.password.incorrect" = "Неверный пароль";
-"error.email.validation" = "Неверный формат";
-"error.email.notExist" = "Пользователь не найден";
+"passwordValidation" = "Пароль должен содержать не менее 10 символов, минимум 1 цифра, минимум 1 буква";
+"incorrectPassword" = "Неверный пароль";
+"incorrectFormat" = "Неверный формат";
+"emailOrPhoneNumberNotExist" = "Пользователь не найден";
