@@ -95,23 +95,28 @@ class LogInViewController: UIViewController {
 
 // MARK: - LogInViewInput
 extension LogInViewController: LogInViewInput {
-    func showUserExistError() {
-        emailOrPhoneView.fieldError()
+    func showPhoneNumberOrEmailValidationError() {
+        emailOrPhoneView.fieldError(name: R.string.localizable.incorrectFormat())
     }
     
-    func hideUserExistError() {
-        emailOrPhoneView.isCorrect()
+    func showUserExistError() {
+        emailOrPhoneView.fieldError(name: R.string.localizable.emailOrPhoneNumberNotExist())
     }
+    
+    func showPasswordError() {
+        passwordView.fieldError(name: R.string.localizable.incorrectPassword())
+    }
+    
     func showEmptyEmailOrPhoneError() {
         emailOrPhoneView.existError()
     }
     
-    func showPasswordError() {
-        passwordView.fieldError()
-    }
-    
     func showEmptyPasswordError() {
         passwordView.existError()
+    }
+    
+    func hideUserExistError() {
+        emailOrPhoneView.isCorrect()
     }
     
     func hidePasswordError() {

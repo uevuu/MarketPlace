@@ -138,15 +138,15 @@ class SignUpViewController: UIViewController {
 // MARK: - SignUpViewInput
 extension SignUpViewController: SignUpViewInput {
     func showEmailValidationError() {
-        emailView.fieldError()
+        emailView.fieldError(name: R.string.localizable.incorrectFormat())
     }
     
     func showPhoneNumberValidationError() {
-        phoneNumberView.fieldError()
+        phoneNumberView.fieldError(name: R.string.localizable.incorrectFormat())
     }
     
     func showPasswordValidationError() {
-        passwordView.fieldError()
+        passwordView.fieldError(name: R.string.localizable.passwordValidation())
     }
     
     func showEmptyFirstNameError() {

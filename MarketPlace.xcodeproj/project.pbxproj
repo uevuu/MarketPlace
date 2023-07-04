@@ -36,8 +36,8 @@
 		8B2C814E2A531122004C82B6 /* SignUpBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C814D2A531122004C82B6 /* SignUpBuilder.swift */; };
 		8B2C81502A53119F004C82B6 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C814F2A53119F004C82B6 /* SignUpCoordinator.swift */; };
 		8B2C81542A537EEE004C82B6 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81532A537EEE004C82B6 /* CustomTextFieldView.swift */; };
-		8B2C81562A53AB83004C82B6 /* String+Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81552A53AB83004C82B6 /* String+Extension .swift */; };
-		8B2C81582A53ABD3004C82B6 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81572A53ABD3004C82B6 /* UITextField+Extension.swift */; };
+		8B2C81562A53AB83004C82B6 /* String+Extensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81552A53AB83004C82B6 /* String+Extensions .swift */; };
+		8B2C81582A53ABD3004C82B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81572A53ABD3004C82B6 /* UITextField+Extensions.swift */; };
 		8B2C815C2A53AC15004C82B6 /* TextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C815B2A53AC15004C82B6 /* TextFieldType.swift */; };
 		8BAB8AF42A523918005167BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AF32A523918005167BA /* AppDelegate.swift */; };
 		8BAB8AF62A523918005167BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AF52A523918005167BA /* SceneDelegate.swift */; };
@@ -49,6 +49,7 @@
 		8BAB8B292A5259CE005167BA /* RegisterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8B282A5259CE005167BA /* RegisterButton.swift */; };
 		8BAB8B342A5263A0005167BA /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB8B322A5263A0005167BA /* Roboto-Bold.ttf */; };
 		8BAB8B352A5263A0005167BA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB8B332A5263A0005167BA /* Roboto-Regular.ttf */; };
+		8BBFEA1B2A547C4A00810D47 /* UINavigationController+ Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,8 +82,8 @@
 		8B2C814D2A531122004C82B6 /* SignUpBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBuilder.swift; sourceTree = "<group>"; };
 		8B2C814F2A53119F004C82B6 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		8B2C81532A537EEE004C82B6 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
-		8B2C81552A53AB83004C82B6 /* String+Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension .swift"; sourceTree = "<group>"; };
-		8B2C81572A53ABD3004C82B6 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		8B2C81552A53AB83004C82B6 /* String+Extensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions .swift"; sourceTree = "<group>"; };
+		8B2C81572A53ABD3004C82B6 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		8B2C815B2A53AC15004C82B6 /* TextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldType.swift; sourceTree = "<group>"; };
 		8BAB8AF02A523918005167BA /* MarketPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAB8AF32A523918005167BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		8BAB8B282A5259CE005167BA /* RegisterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterButton.swift; sourceTree = "<group>"; };
 		8BAB8B322A5263A0005167BA /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		8BAB8B332A5263A0005167BA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+ Extensions.swift"; sourceTree = "<group>"; };
 		8D070571E3963A5776D4FAF5 /* Pods-MarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketPlace.debug.xcconfig"; path = "Target Support Files/Pods-MarketPlace/Pods-MarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4CDFD529BBBCBA03D6DE93 /* Pods_MarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,9 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				8B2C81232A52D302004C82B6 /* Resolver+Extensions.swift */,
-				8B2C81552A53AB83004C82B6 /* String+Extension .swift */,
+				8B2C81552A53AB83004C82B6 /* String+Extensions .swift */,
+				8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */,
 				8B2C81252A52D318004C82B6 /* UITabBarController+Extensions.swift */,
-				8B2C81572A53ABD3004C82B6 /* UITextField+Extension.swift */,
+				8B2C81572A53ABD3004C82B6 /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -513,12 +516,13 @@
 				8B2C810F2A52C8B1004C82B6 /* WelcomeViewController.swift in Sources */,
 				8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */,
 				8B2C811A2A52D133004C82B6 /* ServiceLocator.swift in Sources */,
-				8B2C81562A53AB83004C82B6 /* String+Extension .swift in Sources */,
+				8B2C81562A53AB83004C82B6 /* String+Extensions .swift in Sources */,
 				8B2C81182A52CF8A004C82B6 /* RootCoordinator.swift in Sources */,
-				8B2C81582A53ABD3004C82B6 /* UITextField+Extension.swift in Sources */,
+				8B2C81582A53ABD3004C82B6 /* UITextField+Extensions.swift in Sources */,
 				8B2C813E2A52F781004C82B6 /* LogInBuilder.swift in Sources */,
 				8B2C814A2A5310A1004C82B6 /* SignUpViewIO.swift in Sources */,
 				8B2C81292A52D57C004C82B6 /* WelcomePresenter.swift in Sources */,
+				8BBFEA1B2A547C4A00810D47 /* UINavigationController+ Extensions.swift in Sources */,
 				8B2C811D2A52D16B004C82B6 /* CoreDataAssembly.swift in Sources */,
 				8B2C814E2A531122004C82B6 /* SignUpBuilder.swift in Sources */,
 				8B2C81442A530896004C82B6 /* BackBarButton.swift in Sources */,

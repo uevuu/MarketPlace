@@ -26,6 +26,7 @@ final class WelcomeCoordinator: FlowCoordinatorProtocol {
         let builder = WelcomeBuilder(moduleOutput: self)
         let viewController = builder.build()
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.addBottomLine(with: R.color.placeholderBottomLine())
         self.navigationController = navigationController
         window.rootViewController = navigationController
     }

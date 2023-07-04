@@ -9,11 +9,12 @@ import Foundation
 
 // MARK: - LogInViewInput
 protocol LogInViewInput: AnyObject {
-    func showUserExistError()
+    func showPhoneNumberOrEmailValidationError()
     func showEmptyEmailOrPhoneError()
+    func showEmptyPasswordError()
+    func showUserExistError()
     func hideUserExistError()
     func showPasswordError()
-    func showEmptyPasswordError()
     func hidePasswordError()
 }
 

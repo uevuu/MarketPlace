@@ -26,22 +26,35 @@ extension LogInPresenter: LogInViewOutput {
         password: String
     ) {
         if !emailOrPhone.isEmpty && !password.isEmpty {
-            if emailOrPhone != "admin" {
-                view?.showUserExistError()
+            if emailOrPhone.isValidEmailOrPhoneNumber() {
+                if ["Adm@ma.ru", "Nikita@qq.q"].contains(where: { $0 == emailOrPhone }) {
+                    view?.hideUserExistError()
+                    if password == "123" {
+                        view?.hidePasswordError()
+                    } else {
+                        view?.showPasswordError()
+                    }
+                } else {
+                    view?.showUserExistError()
+                    view?.showPasswordError()
+                }
             } else {
-                view?.hideUserExistError()
-            }
-            if password != "123" {
+                view?.showPhoneNumberOrEmailValidationError()
                 view?.showPasswordError()
-            } else {
-                view?.hidePasswordError()
             }
-        }
-        if emailOrPhone.isEmpty {
-            view?.showEmptyEmailOrPhoneError()
-        }
-        if password.isEmpty {
-            view?.showEmptyPasswordError()
+        } else {
+            if emailOrPhone.isEmpty {
+                view?.showEmptyEmailOrPhoneError()
+            } else {
+                if emailOrPhone.isValidEmailOrPhoneNumber() {
+                    view?.hideUserExistError()
+                } else {
+                    view?.showPhoneNumberOrEmailValidationError()
+                }
+            }
+            if password.isEmpty {
+                view?.showEmptyPasswordError()
+            }
         }
     }
 }

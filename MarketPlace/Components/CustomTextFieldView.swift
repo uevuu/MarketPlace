@@ -38,7 +38,6 @@ final class CustomTextFieldView: UIView {
         label.font = R.font.robotoRegular(size: 12)
         label.textColor = R.color.error()
         label.numberOfLines = 0
-        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -55,25 +54,20 @@ final class CustomTextFieldView: UIView {
         case .email:
             titleLabel.text = R.string.localizable.email()
             textField.setPlaceHolderWithSecondaryColor(R.string.localizable.email())
-            errorLabel.text = R.string.localizable.incorrectFormat()
         case .phone:
             titleLabel.text = R.string.localizable.phoneNumber()
             textField.setPlaceHolderWithSecondaryColor(R.string.localizable.phoneNumber())
-            errorLabel.text = R.string.localizable.incorrectFormat()
         case .passwordInLogIn:
             titleLabel.text = R.string.localizable.password()
             textField.setPlaceHolderWithSecondaryColor(R.string.localizable.password())
             textField.isSecureTextEntry = true
-            errorLabel.text = R.string.localizable.incorrectPassword()
         case .passwordInSignUp:
             titleLabel.text = R.string.localizable.password()
             textField.setPlaceHolderWithSecondaryColor(R.string.localizable.password())
             textField.isSecureTextEntry = true
-            errorLabel.text = R.string.localizable.passwordValidation()
         case .emailOrPhone:
             titleLabel.text = R.string.localizable.emailOrPhoneNumber()
             textField.setPlaceHolderWithSecondaryColor(R.string.localizable.emailOrPhoneNumber())
-            errorLabel.text = R.string.localizable.emailOrPhoneNumberNotExist()
         }
         setup()
     }
@@ -120,8 +114,8 @@ final class CustomTextFieldView: UIView {
         textField.textColor = R.color.mainFont()
     }
     
-    func fieldError() {
-        errorLabel.isHidden = false
+    func fieldError(name: String) {
+        errorLabel.text = name
         textField.textColor = R.color.error()
         bottomLine.backgroundColor = R.color.error()
     }
@@ -135,6 +129,6 @@ final class CustomTextFieldView: UIView {
     }
     
     func isCorrect() {
-        errorLabel.isHidden = true
+        errorLabel.text = nil
     }
 }
