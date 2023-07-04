@@ -13,15 +13,15 @@ class LogInViewController: UIViewController {
     
     // MARK: - UI
     
-    private lazy var emailOrPhoneView = CustomTextFieldView(.emailOrPhone)
-    private lazy var passwordView = CustomTextFieldView(.passwordInLogIn)
+    private lazy var emailOrPhoneView = CustomTextFieldView(title: R.string.localizable.emailOrPhoneNumber())
+    private lazy var passwordView = CustomTextFieldView(title: R.string.localizable.password(), type: .password)
     private lazy var textFiledsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             emailOrPhoneView,
             passwordView
         ])
         stackView.axis = .vertical
-        stackView.spacing = 15
+        stackView.spacing = 20
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()

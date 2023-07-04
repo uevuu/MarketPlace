@@ -13,42 +13,24 @@ class SignUpViewController: UIViewController {
     
     // MARK: - UI
     
-    private lazy var firstNameView = CustomTextFieldView(.firstName)
-    private lazy var lastNameView = CustomTextFieldView(.lastName)
-    private lazy var emailView = CustomTextFieldView(.email)
-    private lazy var phoneNumberView = CustomTextFieldView(.phone)
-    private lazy var passwordView = CustomTextFieldView(.passwordInSignUp)
+    private lazy var firstNameView = CustomTextFieldView(title: R.string.localizable.firstName())
+    private lazy var lastNameView = CustomTextFieldView(title: R.string.localizable.lastName())
+    private lazy var emailView = CustomTextFieldView(title: R.string.localizable.email())
+    private lazy var phoneNumberView = CustomTextFieldView(title: R.string.localizable.phoneNumber())
+    private lazy var passwordView = CustomTextFieldView(title: R.string.localizable.password(), type: .password)
+    private lazy var sellerSwitchView = SellerSwitchView(title: R.string.localizable.iAmSeller())
     
-    private lazy var sellerStatuSwitch: UISwitch = {
-        let statusSwitch = UISwitch()
-        statusSwitch.isOn = false
-        statusSwitch.onTintColor = R.color.blue()
-        statusSwitch.layer.cornerRadius = statusSwitch.frame.height / 2
-        statusSwitch.backgroundColor = R.color.backButton()
-        statusSwitch.clipsToBounds = true
-        statusSwitch.translatesAutoresizingMaskIntoConstraints = false
-        return statusSwitch
-    }()
-    
-    private lazy var sellerLabel: UILabel = {
-        let label = UILabel()
-        label.text = R.string.localizable.iAmSeller()
-        label.font = R.font.robotoRegular(size: 14)
-        label.textColor = R.color.secondaryFont()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var textFiledsStackView: UIStackView = {
+    private lazy var userInfoStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             firstNameView,
             lastNameView,
             emailView,
             phoneNumberView,
-            passwordView
+            passwordView,
+            sellerSwitchView
         ])
         stackView.axis = .vertical
-        stackView.spacing = 15
+        stackView.spacing = 20
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -78,10 +60,8 @@ class SignUpViewController: UIViewController {
     
     private func setup() {
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
-        view.addSubview(textFiledsStackView)
+        view.addSubview(userInfoStackView)
         view.addSubview(signUpButton)
-        view.addSubview(sellerStatuSwitch)
-        view.addSubview(sellerLabel)
         view.backgroundColor = R.color.background()
         setConstraints()
     }
@@ -97,21 +77,13 @@ class SignUpViewController: UIViewController {
     }
     
     private func setConstraints() {
-        textFiledsStackView.snp.makeConstraints { make in
+        userInfoStackView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(27)
             make.leading.equalToSuperview().offset(12)
             make.trailing.equalToSuperview().inset(12)
         }
-        sellerStatuSwitch.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(12)
-            make.top.equalTo(textFiledsStackView.snp.bottom).offset(15)
-        }
-        sellerLabel.snp.makeConstraints { make in
-            make.leading.equalTo(sellerStatuSwitch.snp.trailing).offset(15)
-            make.centerY.equalTo(sellerStatuSwitch.snp.centerY)
-        }
         signUpButton.snp.makeConstraints { make in
-            make.top.equalTo(sellerStatuSwitch.snp.bottom).offset(30)
+            make.top.equalTo(userInfoStackView.snp.bottom).offset(30)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().inset(16)
         }
@@ -130,7 +102,7 @@ class SignUpViewController: UIViewController {
             email: emailView.getInputText(),
             phoneNumber: phoneNumberView.getInputText(),
             password: passwordView.getInputText(),
-            isSeller: sellerStatuSwitch.isOn
+            isSeller: sellerSwitchView.isOn()
         ))
     }
 }

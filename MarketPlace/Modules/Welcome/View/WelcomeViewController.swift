@@ -25,6 +25,17 @@ class WelcomeViewController: UIViewController {
     private lazy var loginButton = SimpleButton(title: R.string.localizable.logIn())
     private lazy var registerButton = RegisterButton(title: R.string.localizable.signUp())
     
+    private lazy var buttonStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            loginButton,
+            registerButton
+        ])
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
     // MARK: - Init
     
     init(output: WelcomeViewOutput) {
@@ -49,8 +60,7 @@ class WelcomeViewController: UIViewController {
     private func setup() {
         view.backgroundColor = R.color.background()
         view.addSubview(welcomeLabel)
-        view.addSubview(loginButton)
-        view.addSubview(registerButton)
+        view.addSubview(buttonStackView)
         loginButton.addTarget(
             self,
             action: #selector(loginButtonTapped),
@@ -78,14 +88,8 @@ class WelcomeViewController: UIViewController {
             make.trailing.equalToSuperview().inset(16)
         }
         
-        loginButton.snp.makeConstraints { make in
+        buttonStackView.snp.makeConstraints { make in
             make.top.equalTo(welcomeLabel.snp.bottom).offset(40)
-            make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().inset(16)
-        }
-        
-        registerButton.snp.makeConstraints { make in
-            make.top.equalTo(loginButton.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().inset(16)
         }

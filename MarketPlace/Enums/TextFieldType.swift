@@ -6,11 +6,6 @@
 //
 
 enum TextFieldType {
-    case firstName
-    case lastName
-    case email
-    case phone
-    case passwordInLogIn
-    case passwordInSignUp
-    case emailOrPhone
+    case password
+    case text
 }

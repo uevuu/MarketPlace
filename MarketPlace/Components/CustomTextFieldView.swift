@@ -42,32 +42,12 @@ final class CustomTextFieldView: UIView {
         return label
     }()
     
-    init(_ type: TextFieldType) {
+    init(title: String, type: TextFieldType = .text) {
         super.init(frame: .zero)
-        switch type {
-        case .firstName:
-            titleLabel.text = R.string.localizable.firstName()
-            textField.setPlaceHolderWithSecondaryColor(R.string.localizable.firstName())
-        case .lastName:
-            titleLabel.text = R.string.localizable.lastName()
-            textField.setPlaceHolderWithSecondaryColor(R.string.localizable.lastName())
-        case .email:
-            titleLabel.text = R.string.localizable.email()
-            textField.setPlaceHolderWithSecondaryColor(R.string.localizable.email())
-        case .phone:
-            titleLabel.text = R.string.localizable.phoneNumber()
-            textField.setPlaceHolderWithSecondaryColor(R.string.localizable.phoneNumber())
-        case .passwordInLogIn:
-            titleLabel.text = R.string.localizable.password()
-            textField.setPlaceHolderWithSecondaryColor(R.string.localizable.password())
+        titleLabel.text = title
+        textField.setPlaceHolderWithSecondaryColor(title)
+        if type == .password {
             textField.isSecureTextEntry = true
-        case .passwordInSignUp:
-            titleLabel.text = R.string.localizable.password()
-            textField.setPlaceHolderWithSecondaryColor(R.string.localizable.password())
-            textField.isSecureTextEntry = true
-        case .emailOrPhone:
-            titleLabel.text = R.string.localizable.emailOrPhoneNumber()
-            textField.setPlaceHolderWithSecondaryColor(R.string.localizable.emailOrPhoneNumber())
         }
         setup()
     }

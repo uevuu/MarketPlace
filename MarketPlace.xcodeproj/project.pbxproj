@@ -50,6 +50,7 @@
 		8BAB8B342A5263A0005167BA /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB8B322A5263A0005167BA /* Roboto-Bold.ttf */; };
 		8BAB8B352A5263A0005167BA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BAB8B332A5263A0005167BA /* Roboto-Regular.ttf */; };
 		8BBFEA1B2A547C4A00810D47 /* UINavigationController+ Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */; };
+		8BBFEA1D2A548F9400810D47 /* SellerSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA1C2A548F9400810D47 /* SellerSwitchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		8BAB8B322A5263A0005167BA /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		8BAB8B332A5263A0005167BA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+ Extensions.swift"; sourceTree = "<group>"; };
+		8BBFEA1C2A548F9400810D47 /* SellerSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerSwitchView.swift; sourceTree = "<group>"; };
 		8D070571E3963A5776D4FAF5 /* Pods-MarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketPlace.debug.xcconfig"; path = "Target Support Files/Pods-MarketPlace/Pods-MarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4CDFD529BBBCBA03D6DE93 /* Pods_MarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -313,6 +315,7 @@
 				8BAB8B262A525381005167BA /* SimpleButton.swift */,
 				8BAB8B282A5259CE005167BA /* RegisterButton.swift */,
 				8B2C81532A537EEE004C82B6 /* CustomTextFieldView.swift */,
+				8BBFEA1C2A548F9400810D47 /* SellerSwitchView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				8B2C81292A52D57C004C82B6 /* WelcomePresenter.swift in Sources */,
 				8BBFEA1B2A547C4A00810D47 /* UINavigationController+ Extensions.swift in Sources */,
 				8B2C811D2A52D16B004C82B6 /* CoreDataAssembly.swift in Sources */,
+				8BBFEA1D2A548F9400810D47 /* SellerSwitchView.swift in Sources */,
 				8B2C814E2A531122004C82B6 /* SignUpBuilder.swift in Sources */,
 				8B2C81442A530896004C82B6 /* BackBarButton.swift in Sources */,
 				8B2C813C2A52F401004C82B6 /* LogInPresenter.swift in Sources */,
