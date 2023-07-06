@@ -14,7 +14,7 @@ final class LogInService {
         password: String,
         completion: @escaping (LogInResult) -> Void
     ) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if ["Adm@ma.ru", "Nikita@qq.q", "1234567"].contains(where: { $0 == emailOrPhoneNumber }) {
                 if password == "123" {
                     return completion(.success)

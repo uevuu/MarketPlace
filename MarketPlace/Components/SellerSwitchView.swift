@@ -15,7 +15,7 @@ final class SellerSwitchView: UISwitch {
         statusSwitch.isOn = false
         statusSwitch.onTintColor = R.color.blue()
         statusSwitch.layer.cornerRadius = statusSwitch.frame.height / 2
-        statusSwitch.backgroundColor = R.color.backButton()
+        statusSwitch.backgroundColor = R.color.secondary()
         statusSwitch.clipsToBounds = true
         statusSwitch.translatesAutoresizingMaskIntoConstraints = false
         return statusSwitch
@@ -24,7 +24,7 @@ final class SellerSwitchView: UISwitch {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.robotoRegular(size: 14)
-        label.textColor = R.color.secondaryFont()
+        label.textColor = R.color.textFieldFont()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

@@ -24,3 +24,11 @@
 "incorrectPassword" = "Неверный пароль";
 "incorrectFormat" = "Неверный формат";
 "emailOrPhoneNumberNotExist" = "Пользователь не найден";
+"sameDataError" = "Пользователь с такими данными уже существует";
+
+"onAccount" = "На счету";
+"points" = "бонусов";
+"cashIn" = "Пополнить";
+"myOrder" = "Мои заказы";
+"City" = "Город";
+"applicationTheme" = "Тема приложения";

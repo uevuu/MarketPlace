@@ -11,7 +11,7 @@ extension UITextField {
     func setPlaceHolderWithSecondaryColor(_ placeholder: String) {
         attributedPlaceholder = NSAttributedString(
             string: placeholder,
-            attributes: [NSAttributedString.Key.foregroundColor: R.color.secondaryFont() ?? .gray]
+            attributes: [NSAttributedString.Key.foregroundColor: R.color.textFieldFont() ?? .gray]
         )
     }
 }

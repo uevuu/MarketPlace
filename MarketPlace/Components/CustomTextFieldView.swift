@@ -20,7 +20,7 @@ final class CustomTextFieldView: UIView {
         let label = UILabel()
         label.text = "Email"
         label.font = R.font.robotoRegular(size: 12)
-        label.textColor = R.color.secondaryFont()
+        label.textColor = R.color.textFieldFont()
         label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -109,6 +109,8 @@ final class CustomTextFieldView: UIView {
     }
     
     func isCorrect() {
+        bottomLine.backgroundColor = R.color.placeholderBottomLine()
+        textField.textColor = R.color.mainFont()
         errorLabel.text = nil
     }
 }

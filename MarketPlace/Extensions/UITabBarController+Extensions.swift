@@ -8,7 +8,11 @@
 import UIKit
 
 extension UITabBarController {
-    func addViewController(viewController: UIViewController, title: String, image: UIImage?) {
+    func addViewController(
+        viewController: UIViewController,
+        title: String? = nil,
+        image: UIImage?
+    ) {
         viewController.title = title
         viewController.tabBarItem.image = image
         var viewControllers = self.viewControllers ?? []

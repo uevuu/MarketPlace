@@ -24,3 +24,11 @@
 "incorrectPassword" = "Incorrect password";
 "incorrectFormat" = "Incorrect format";
 "emailOrPhoneNumberNotExist" = "User not found";
+"sameDataError" = "A user with such data already exists";
+
+"onAccount" = "On account";
+"points" = "points";
+"cashIn" = "Cash in";
+"myOrder" = "My orders";
+"City" = "City";
+"applicationTheme" = "Application theme";

@@ -21,6 +21,6 @@ final class BackBarButton: UIBarButtonItem {
     private func setup() {
         image = UIImage(systemName: "arrow.backward")
         style = .plain
-        tintColor = R.color.backButton()
+        tintColor = R.color.secondary()
     }
 }

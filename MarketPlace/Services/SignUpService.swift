@@ -13,7 +13,7 @@ final class SignUpService {
         with data: SignUpData,
         completion: @escaping (SignUpResult) -> Void
     ) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if data.phoneNumber == "1234567" && data.email == "Admin@mail.ru" {
                 return completion(.sameEmailAndPhoneNumber)
             } else if data.phoneNumber == "1234567" {

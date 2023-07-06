@@ -12,14 +12,20 @@ import Swinject
 final class RootCoordinator {
     private let window: UIWindow
     private let resolver: Resolver
+    private var childCoordinators: [FlowCoordinatorProtocol] = []
     
     init(window: UIWindow, resolver: Resolver) {
         self.window = window
         self.resolver = resolver
     }
     
+    deinit {
+        print("deinit")
+    }
+    
     func start() {
-        showLoginFlow()
+//        showLoginFlow()
+        showUserFlow()
         window.makeKeyAndVisible()
     }
     
@@ -27,10 +33,22 @@ final class RootCoordinator {
         let welcomeCoordinator = WelcomeCoordinator(
             resolver: resolver,
             window: window
-        )
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: WelcomeCoordinator.self)
+            self?.showUserFlow()
+        }
         welcomeCoordinator.start(animated: false)
+        childCoordinators.append(welcomeCoordinator)
     }
     
-    private func showMainFlow() {
+    private func showUserFlow() {
+        let userTabBarCoordinator = UserTabBarCoordinator(
+            window: window,
+            resolver: resolver
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: UserTabBarCoordinator.self)
+        }
+        userTabBarCoordinator.start(animated: false)
+        childCoordinators.append(userTabBarCoordinator)
     }
 }
