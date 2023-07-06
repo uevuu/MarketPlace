@@ -39,6 +39,7 @@
 		8B2C81562A53AB83004C82B6 /* String+Extensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81552A53AB83004C82B6 /* String+Extensions .swift */; };
 		8B2C81582A53ABD3004C82B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81572A53ABD3004C82B6 /* UITextField+Extensions.swift */; };
 		8B2C815C2A53AC15004C82B6 /* TextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C815B2A53AC15004C82B6 /* TextFieldType.swift */; };
+		8B3690E22A56E3540012D8D4 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690E12A56E3540012D8D4 /* SettingTableViewCell.swift */; };
 		8BAB8AF42A523918005167BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AF32A523918005167BA /* AppDelegate.swift */; };
 		8BAB8AF62A523918005167BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AF52A523918005167BA /* SceneDelegate.swift */; };
 		8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AFC2A523918005167BA /* MarketPlace.xcdatamodeld */; };
@@ -75,7 +76,7 @@
 		8BF9D6C82A55F35E008A2526 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6C72A55F35E008A2526 /* HomeViewController.swift */; };
 		8BF9D6CA2A55F369008A2526 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6C92A55F369008A2526 /* HomeBuilder.swift */; };
 		8BF9D6CC2A55F377008A2526 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6CB2A55F377008A2526 /* HomeCoordinator.swift */; };
-		8BF9D6D02A5615AC008A2526 /* MainAccountInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6CF2A5615AC008A2526 /* MainAccountInfoView.swift */; };
+		8BF9D6D02A5615AC008A2526 /* MainAccountInfoViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6CF2A5615AC008A2526 /* MainAccountInfoViewButton.swift */; };
 		8BF9D6D22A561F1C008A2526 /* CashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6D12A561F1C008A2526 /* CashButton.swift */; };
 		8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6D52A562C5F008A2526 /* UserMoneyStatusView.swift */; };
 		8BF9D6D82A56319C008A2526 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6D72A56319C008A2526 /* ProductCell.swift */; };
@@ -114,6 +115,7 @@
 		8B2C81552A53AB83004C82B6 /* String+Extensions .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions .swift"; sourceTree = "<group>"; };
 		8B2C81572A53ABD3004C82B6 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		8B2C815B2A53AC15004C82B6 /* TextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldType.swift; sourceTree = "<group>"; };
+		8B3690E12A56E3540012D8D4 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		8BAB8AF02A523918005167BA /* MarketPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAB8AF32A523918005167BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BAB8AF52A523918005167BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,7 +155,7 @@
 		8BF9D6C72A55F35E008A2526 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8BF9D6C92A55F369008A2526 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		8BF9D6CB2A55F377008A2526 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		8BF9D6CF2A5615AC008A2526 /* MainAccountInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAccountInfoView.swift; sourceTree = "<group>"; };
+		8BF9D6CF2A5615AC008A2526 /* MainAccountInfoViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAccountInfoViewButton.swift; sourceTree = "<group>"; };
 		8BF9D6D12A561F1C008A2526 /* CashButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashButton.swift; sourceTree = "<group>"; };
 		8BF9D6D52A562C5F008A2526 /* UserMoneyStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMoneyStatusView.swift; sourceTree = "<group>"; };
 		8BF9D6D72A56319C008A2526 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
@@ -370,7 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				8B2C81432A530896004C82B6 /* BackBarButton.swift */,
-				8BF9D6CF2A5615AC008A2526 /* MainAccountInfoView.swift */,
+				8BF9D6CF2A5615AC008A2526 /* MainAccountInfoViewButton.swift */,
 				8BAB8B262A525381005167BA /* SimpleButton.swift */,
 				8BAB8B282A5259CE005167BA /* RegisterButton.swift */,
 				8B2C81532A537EEE004C82B6 /* CustomTextFieldView.swift */,
@@ -514,6 +516,7 @@
 			children = (
 				8BF9D6B92A55F2F1008A2526 /* ProfileViewIO.swift */,
 				8BF9D6BB2A55F301008A2526 /* ProfileViewController.swift */,
+				8B3690E12A56E3540012D8D4 /* SettingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				8BF9D6C42A55F343008A2526 /* HomePresenter.swift in Sources */,
 				8BF9D6D22A561F1C008A2526 /* CashButton.swift in Sources */,
 				8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */,
+				8B3690E22A56E3540012D8D4 /* SettingTableViewCell.swift in Sources */,
 				8B2C811A2A52D133004C82B6 /* ServiceLocator.swift in Sources */,
 				8BF9D6AC2A55F20F008A2526 /* CartViewIO.swift in Sources */,
 				8BF9D6C02A55F328008A2526 /* ProfileCoordinator.swift in Sources */,
@@ -757,7 +761,7 @@
 				8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */,
 				8BAB8B272A525381005167BA /* SimpleButton.swift in Sources */,
 				8BBFEA222A54C3D900810D47 /* NetworkApiService.swift in Sources */,
-				8BF9D6D02A5615AC008A2526 /* MainAccountInfoView.swift in Sources */,
+				8BF9D6D02A5615AC008A2526 /* MainAccountInfoViewButton.swift in Sources */,
 				8BF9D6BE2A55F319008A2526 /* ProfileBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

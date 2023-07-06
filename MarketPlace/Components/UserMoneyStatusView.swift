@@ -23,7 +23,7 @@ final class UserMoneyStatusView: UIView {
         return label
     }()
     
-    private lazy var cashButton = CashButton()
+    lazy var cashButton = CashButton()
         
     private lazy var bonusCountStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [

@@ -1,5 +1,5 @@
 //
-//  MainAccountInfoView.swift
+//  MainAccountInfoViewButton.swift
 //  MarketPlace
 //
 //  Created by Nikita Marin on 06.07.2023.
@@ -7,8 +7,8 @@
 
 import UIKit
 
-// MARK: - MainAccountInfoView
-final class MainAccountInfoView: UIView {
+// MARK: - MainAccountInfoViewButton
+final class MainAccountInfoViewButton: UIButton {
     private lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -39,6 +39,7 @@ final class MainAccountInfoView: UIView {
             nameLabel,
             emailLabel
         ])
+        stackView.isUserInteractionEnabled = false
         stackView.spacing = 2
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false

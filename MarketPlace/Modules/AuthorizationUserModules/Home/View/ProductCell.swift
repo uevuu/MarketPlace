@@ -67,7 +67,8 @@ final class ProductCell: UICollectionViewCell {
     
     private func setConstraints() {
         productInfoStackView.snp.makeConstraints { make in
-            make.bottom.leading.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview().offset(5)
             make.trailing.equalToSuperview().inset(15)
         }
         
