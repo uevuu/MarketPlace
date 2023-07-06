@@ -79,7 +79,6 @@
 		8BF9D6D22A561F1C008A2526 /* CashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6D12A561F1C008A2526 /* CashButton.swift */; };
 		8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6D52A562C5F008A2526 /* UserMoneyStatusView.swift */; };
 		8BF9D6D82A56319C008A2526 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6D72A56319C008A2526 /* ProductCell.swift */; };
-		8BF9D6DA2A56337E008A2526 /* ProductSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6D92A56337E008A2526 /* ProductSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,7 +157,6 @@
 		8BF9D6D12A561F1C008A2526 /* CashButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashButton.swift; sourceTree = "<group>"; };
 		8BF9D6D52A562C5F008A2526 /* UserMoneyStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMoneyStatusView.swift; sourceTree = "<group>"; };
 		8BF9D6D72A56319C008A2526 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		8BF9D6D92A56337E008A2526 /* ProductSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSection.swift; sourceTree = "<group>"; };
 		8D070571E3963A5776D4FAF5 /* Pods-MarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketPlace.debug.xcconfig"; path = "Target Support Files/Pods-MarketPlace/Pods-MarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4CDFD529BBBCBA03D6DE93 /* Pods_MarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -498,7 +496,6 @@
 				8BF9D6C52A55F354008A2526 /* HomeViewIO.swift */,
 				8BF9D6C72A55F35E008A2526 /* HomeViewController.swift */,
 				8BF9D6D72A56319C008A2526 /* ProductCell.swift */,
-				8BF9D6D92A56337E008A2526 /* ProductSection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -760,7 +757,6 @@
 				8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */,
 				8BAB8B272A525381005167BA /* SimpleButton.swift in Sources */,
 				8BBFEA222A54C3D900810D47 /* NetworkApiService.swift in Sources */,
-				8BF9D6DA2A56337E008A2526 /* ProductSection.swift in Sources */,
 				8BF9D6D02A5615AC008A2526 /* MainAccountInfoView.swift in Sources */,
 				8BF9D6BE2A55F319008A2526 /* ProfileBuilder.swift in Sources */,
 			);

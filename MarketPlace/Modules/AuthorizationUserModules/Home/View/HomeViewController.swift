@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
             ProductCell.self,
             forCellWithReuseIdentifier: ProductCell.reuseIdentifier
         )
-        collectionView.backgroundColor = .gray
+        collectionView.backgroundColor = R.color.background()
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -31,16 +31,29 @@ class HomeViewController: UIViewController {
     
     private lazy var collectionViewLayout: UICollectionViewLayout = {
         let layout = UICollectionViewFlowLayout()
-           layout.scrollDirection = .vertical
-           layout.minimumInteritemSpacing = 8
-           layout.minimumLineSpacing = 8
-
-           // Рассчитываем ширину каждой ячейки на основе размера экрана или доступного пространства
-           let screenWidth = UIScreen.main.bounds.width
-           let itemWidth = (screenWidth - 8 * 3) / 2
-           layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
-
-           return layout
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 8
+        let screenWidth = UIScreen.main.bounds.width
+        let itemWidth = (screenWidth - 8) / 2
+        let itemHeight = 293 * itemWidth / 175
+        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
+        return layout
+    }()
+    
+    private lazy var searchBar: UISearchBar = {
+        let searhBar = UISearchBar()
+        searhBar.searchTextField.font = R.font.robotoRegular(size: 14)
+        searhBar.searchTextField.clearButtonMode = .never
+        searhBar.searchTextField.attributedPlaceholder = NSAttributedString(
+            string: "Название товара",
+            attributes: [
+                .foregroundColor: R.color.secondary() ?? UIColor.gray,
+                .font: R.font.robotoRegular(size: 14) ?? UIFont.systemFont(ofSize: 14)
+            ]
+        )
+        searhBar.delegate = self
+        return searhBar
     }()
     
     // MARK: - Init
@@ -75,46 +88,78 @@ class HomeViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        title = "ТУТ ПОИСК"
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "line.3.horizontal.decrease.circle"),
+            style: .plain,
+            target: self,
+            action: #selector(filterButtonTapped)
+        )
+        navigationItem.rightBarButtonItem?.tintColor = R.color.secondary()
+        navigationItem.titleView = searchBar
     }
     
     private func setConstraints() {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
     
     // MARK: - Private
     
+    @objc private func filterButtonTapped() {
+        output.filterTapped()
+    }
 }
 
 // MARK: - HomeViewInput
 extension HomeViewController: HomeViewInput {
+    func reloadView() {
+        DispatchQueue.main.async { [weak collectionView] in
+            collectionView?.reloadData()
+        }
+    }
 }
 
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return output.getProductsCount()
     }
     
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        print("config cell")
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: ProductCell.reuseIdentifier,
+        let cellReuseIdentifier = output.getReuseIdentifierForItemAt(indexPath: indexPath)
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: cellReuseIdentifier,
             for: indexPath
-        ) as? ProductCell else {
-            fatalError("Error with gettin Product Cell")
-        }
+        )
+        output.configureCell(cell, at: indexPath)
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        output.selectProduct(at: indexPath)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension HomeViewController: UISearchBarDelegate {
+    func searchBar(
+        _ searchBar: UISearchBar,
+        textDidChange searchText: String
+    ) {
+        output.handleTextInput(searchText)
+    }
 }

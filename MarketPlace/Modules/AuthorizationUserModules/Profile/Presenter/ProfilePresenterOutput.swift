@@ -8,4 +8,3 @@
 // MARK: - ProfilePresenterOutput
 protocol ProfilePresenterOutput: AnyObject {
 }
-

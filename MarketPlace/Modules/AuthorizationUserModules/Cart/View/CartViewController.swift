@@ -45,7 +45,6 @@ class CartViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-
     }
     
     private func setConstraints() {
@@ -58,4 +57,3 @@ class CartViewController: UIViewController {
 // MARK: - CartViewInput
 extension CartViewController: CartViewInput {
 }
-
