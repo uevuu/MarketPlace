@@ -40,4 +40,11 @@ final class UserInfoCoordinator: FlowCoordinatorProtocol {
 
 // MARK: - UserInfoCoordinator
 extension UserInfoCoordinator: UserInfoPresenterOutput {
+    func goToUserInfoModule() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func goToWelcomeModule() {
+        print("go wo welcome screen")
+    }
 }

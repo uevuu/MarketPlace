@@ -9,6 +9,8 @@ import UIKit
 
 // MARK: - CashInViewController
 final class CashInViewController: UIViewController {
+    private let output: CashInViewOutput
+    
     // MARK: - UI
     
     private lazy var titleLabel: UILabel = {
@@ -50,7 +52,8 @@ final class CashInViewController: UIViewController {
     
     // MARK: - Init
     
-    init() {
+    init(output: CashInViewOutput) {
+        self.output = output
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -59,7 +62,7 @@ final class CashInViewController: UIViewController {
     }
     
     deinit {
-        print("deinit cash in ")
+        print("deinit Cash In view")
     }
     
     // MARK: - Lifecycle
@@ -103,3 +106,6 @@ final class CashInViewController: UIViewController {
     }
 }
 
+// MARK: - CashInViewInput
+extension CashInViewController: CashInViewInput {
+}

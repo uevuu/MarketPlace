@@ -8,4 +8,5 @@
 // MARK: - ProfilePresenterOutput
 protocol ProfilePresenterOutput: AnyObject {
     func goToUserInfoModule()
+    func goToCashInModule()
 }

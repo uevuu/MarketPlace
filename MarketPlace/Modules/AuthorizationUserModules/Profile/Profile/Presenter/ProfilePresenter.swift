@@ -47,6 +47,6 @@ extension ProfilePresenter: ProfileViewOutput {
     }
     
     func cashInTapped() {
-        print("present for cashing bonus")
+        output?.goToCashInModule()
     }
 }

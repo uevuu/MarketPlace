@@ -112,22 +112,6 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func cashIndButtonTapped() {
-        let viewController = CashInViewController()
-        
-        if #available(iOS 15.0, *) {
-            if let presentationController = viewController.presentationController as? UISheetPresentationController {
-                if #available(iOS 16.0, *) {
-                    presentationController.detents = [
-                        .custom { _ in
-                            return 256
-                        }
-                    ]
-                } else {
-                    presentationController.detents = [.medium()]
-                }
-            }
-        }
-        present(viewController, animated: true)
         output.cashInTapped()
     }
 }

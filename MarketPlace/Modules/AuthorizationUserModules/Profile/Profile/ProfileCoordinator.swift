@@ -54,4 +54,11 @@ extension ProfileCoordinator: ProfilePresenterOutput {
         )
         userInfoCoordinator.start(animated: true)
     }
+    func goToCashInModule() {
+        let cashInCoordinator = CashInCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        )
+        cashInCoordinator.start(animated: true)
+    }
 }

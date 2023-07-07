@@ -7,4 +7,6 @@
 
 // MARK: - UserInfoPresenterOutput
 protocol UserInfoPresenterOutput: AnyObject {
+    func goToUserInfoModule()
+    func goToWelcomeModule()
 }

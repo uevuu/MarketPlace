@@ -23,5 +23,18 @@ final class UserInfoPresenter {
 
 // MARK: - UserInfoViewOutput
 extension UserInfoPresenter: UserInfoViewOutput {
+    func backTapped() {
+        output?.goToUserInfoModule()
+    }
+    
+    func logOutTapped() {
+        output?.goToWelcomeModule()
+    }
+    
+    func deleteAccountTapped() {
+        output?.goToWelcomeModule()
+    }
+    
+    func readyTapped() {
+    }
 }
-

@@ -42,8 +42,13 @@ final class CustomTextFieldView: UIView {
         return label
     }()
     
-    init(title: String, type: TextFieldType = .text) {
+    init(
+        title: String,
+        type: TextFieldType = .text,
+        text: String? = nil
+    ) {
         super.init(frame: .zero)
+        textField.text = text
         titleLabel.text = title
         textField.setPlaceHolderWithSecondaryColor(title)
         if type == .password {

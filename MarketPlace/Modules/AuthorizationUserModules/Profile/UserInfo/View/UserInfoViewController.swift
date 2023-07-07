@@ -53,8 +53,7 @@ class UserInfoViewController: UIViewController {
     private lazy var phoneNumberView = CustomTextFieldView(title: R.string.localizable.phoneNumber())
     private lazy var genderView = CustomTextFieldView(title: R.string.localizable.gender())
     private lazy var birthDateView = CustomTextFieldView(title: R.string.localizable.birthDate())
-    private lazy var cityView = CustomTextFieldView(title: R.string.localizable.city())
-    private lazy var passwordView = CustomTextFieldView(title: R.string.localizable.password(), type: .password)
+    private lazy var passwordButton = CustomTextFieldButton()
     
     private lazy var logOutButton = RegisterButton(title: R.string.localizable.logOut())
     private lazy var deleteAccountButton = RegisterButton(title: R.string.localizable.deleteAccount())
@@ -79,8 +78,7 @@ class UserInfoViewController: UIViewController {
             phoneNumberView,
             genderView,
             birthDateView,
-            cityView,
-            passwordView,
+            passwordButton,
             buttonHorizontalStackView,
             readyButton
         ])
@@ -118,6 +116,7 @@ class UserInfoViewController: UIViewController {
     private func setup() {
         readyButton.isHidden = true
         view.backgroundColor = R.color.background()
+        passwordButton.addTarget(self, for: #selector(passwordButtonTapped))
         logOutButton.addTarget(self, for: #selector(logOutButtonTapped))
         deleteAccountButton.addTarget(self, for: #selector(deleteAccountButtonTapped))
         readyButton.addTarget(self, for: #selector(readyButtonTapped))
@@ -128,7 +127,6 @@ class UserInfoViewController: UIViewController {
         patronymicView.disableTextEmptyValidation()
         genderView.disableTextEmptyValidation()
         birthDateView.disableTextEmptyValidation()
-        cityView.disableTextEmptyValidation()
         setConstraints()
     }
     
@@ -169,23 +167,30 @@ class UserInfoViewController: UIViewController {
     
     // MARK: - Private
     
+    @objc private func passwordButtonTapped() {
+        print("change password")
+    }
+    
     @objc private func logOutButtonTapped() {
-        print("logout")
+        output.logOutTapped()
     }
     
     @objc private func deleteAccountButtonTapped() {
-        print("delete")
+        output.deleteAccountTapped()
     }
     
     @objc private func readyButtonTapped() {
-        print("ready")
+        output.readyTapped()
     }
     
     @objc private func backButtonTapped() {
-        print("back")
+        output.backTapped()
     }
 }
 
 // MARK: - UserInfoViewInput
 extension UserInfoViewController: UserInfoViewInput {
+    func hideReadyButton() {
+        readyButton.isHidden = true
+    }
 }
