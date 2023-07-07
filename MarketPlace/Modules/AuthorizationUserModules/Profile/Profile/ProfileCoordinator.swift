@@ -54,11 +54,28 @@ extension ProfileCoordinator: ProfilePresenterOutput {
         )
         userInfoCoordinator.start(animated: true)
     }
+    
     func goToCashInModule() {
         let cashInCoordinator = CashInCoordinator(
             resolver: resolver,
             navigationController: navigationController
         )
         cashInCoordinator.start(animated: true)
+    }
+    
+    func goToMyOrderModule() {
+        let myOrdersCoordinator = MyOrdersCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        )
+        myOrdersCoordinator.start(animated: true)
+    }
+    
+    func goToChooseCityModule() {
+        print("build city choose module")
+    }
+    
+    func goToAppColorTheme() {
+        print("build app color module")
     }
 }

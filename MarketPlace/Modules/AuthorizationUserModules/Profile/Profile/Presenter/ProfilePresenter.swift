@@ -11,6 +11,11 @@ import UIKit
 final class ProfilePresenter {
     weak var view: ProfileViewInput?
     private var output: ProfilePresenterOutput?
+    private let settings: [SettingType] = [
+        .myOrder,
+        .city,
+        .theme
+    ]
     
     init(output: ProfilePresenterOutput?) {
         self.output = output
@@ -24,22 +29,34 @@ final class ProfilePresenter {
 // MARK: - ProfileViewOutput
 extension ProfilePresenter: ProfileViewOutput {
     func getSettingCount() -> Int {
-        return 3
+        return settings.count
     }
     
     func configureCell(_ cell: SettingTableViewCell, at indexPath: IndexPath) {
-        if indexPath.item == 1 {
+        let setting = settings[indexPath.item]
+        switch setting {
+        case .theme:
+            cell.configureCell(title: R.string.localizable.applicationTheme())
+        case .city:
             cell.configureCell(
-                title: "Город",
+                title: R.string.localizable.city(),
                 helpData: "Казань"
             )
-        } else {
-            cell.configureCell(title: "Тема")
+        case .myOrder:
+            cell.configureCell(title: R.string.localizable.myOrder())
         }
     }
     
     func selectSetting(at indexPath: IndexPath) {
-        print("go to setting")
+        let setting = settings[indexPath.item]
+        switch setting {
+        case .theme:
+            output?.goToAppColorTheme()
+        case .city:
+            output?.goToChooseCityModule()
+        case .myOrder:
+            output?.goToMyOrderModule()
+        }
     }
     
     func profileTapped() {

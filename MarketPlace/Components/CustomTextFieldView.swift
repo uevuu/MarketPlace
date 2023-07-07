@@ -48,7 +48,10 @@ final class CustomTextFieldView: UIView {
         text: String? = nil
     ) {
         super.init(frame: .zero)
-        textField.text = text
+        if let text = text {
+            titleLabel.isHidden = false
+            textField.text = text
+        }
         titleLabel.text = title
         textField.setPlaceHolderWithSecondaryColor(title)
         if type == .password {

@@ -43,3 +43,10 @@
 "logOut" = "Log out";
 "deleteAccount" = "Delete account";
 "ready" = "Ready";
+
+"cancel" = "Cancel";
+"delete" = "Delete";
+"deleteWarning" = "Are you sure you want to delete your account? It will not be possible to undo this action";
+"logOutWarning" = "Do you really want to go out?";
+
+"orders" = "Orders";

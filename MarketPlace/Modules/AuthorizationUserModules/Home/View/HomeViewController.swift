@@ -31,8 +31,10 @@ class HomeViewController: UIViewController {
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 8
         layout.minimumLineSpacing = 8
+        layout.sectionInset.left = 8
+        layout.sectionInset.right = 8
         let screenWidth = UIScreen.main.bounds.width
-        let itemWidth = (screenWidth - 8) / 2
+        let itemWidth = (screenWidth - 24) / 2
         let itemHeight = 293 * itemWidth / 175
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         return layout

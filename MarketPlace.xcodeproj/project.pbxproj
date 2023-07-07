@@ -58,6 +58,15 @@
 		8B3D660A2A584D39009CD2D9 /* CashInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66092A584D39009CD2D9 /* CashInBuilder.swift */; };
 		8B3D660C2A584D4F009CD2D9 /* CashInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D660B2A584D4F009CD2D9 /* CashInCoordinator.swift */; };
 		8B3D660E2A585888009CD2D9 /* CustomTextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D660D2A585888009CD2D9 /* CustomTextFieldButton.swift */; };
+		8B3D66142A5867E6009CD2D9 /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66132A5867E6009CD2D9 /* SettingType.swift */; };
+		8B3D66162A587F34009CD2D9 /* MyOrdersBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66152A587F34009CD2D9 /* MyOrdersBuilder.swift */; };
+		8B3D661A2A587F53009CD2D9 /* MyOrdersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66192A587F53009CD2D9 /* MyOrdersCoordinator.swift */; };
+		8B3D661C2A587F70009CD2D9 /* MyOrdersPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D661B2A587F70009CD2D9 /* MyOrdersPresenterOutput.swift */; };
+		8B3D661E2A587F7D009CD2D9 /* MyOrdersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D661D2A587F7D009CD2D9 /* MyOrdersPresenter.swift */; };
+		8B3D66202A587F89009CD2D9 /* MyOrdersViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D661F2A587F89009CD2D9 /* MyOrdersViewIO.swift */; };
+		8B3D66222A587F96009CD2D9 /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66212A587F96009CD2D9 /* MyOrdersViewController.swift */; };
+		8B3D66242A588A6B009CD2D9 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66232A588A6B009CD2D9 /* OrderTableViewCell.swift */; };
+		8B3D66262A589929009CD2D9 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B3D66252A589929009CD2D9 /* Roboto-Medium.ttf */; };
 		8BAB8AF42A523918005167BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AF32A523918005167BA /* AppDelegate.swift */; };
 		8BAB8AF62A523918005167BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AF52A523918005167BA /* SceneDelegate.swift */; };
 		8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AFC2A523918005167BA /* MarketPlace.xcdatamodeld */; };
@@ -152,6 +161,15 @@
 		8B3D66092A584D39009CD2D9 /* CashInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashInBuilder.swift; sourceTree = "<group>"; };
 		8B3D660B2A584D4F009CD2D9 /* CashInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashInCoordinator.swift; sourceTree = "<group>"; };
 		8B3D660D2A585888009CD2D9 /* CustomTextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldButton.swift; sourceTree = "<group>"; };
+		8B3D66132A5867E6009CD2D9 /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
+		8B3D66152A587F34009CD2D9 /* MyOrdersBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersBuilder.swift; sourceTree = "<group>"; };
+		8B3D66192A587F53009CD2D9 /* MyOrdersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersCoordinator.swift; sourceTree = "<group>"; };
+		8B3D661B2A587F70009CD2D9 /* MyOrdersPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersPresenterOutput.swift; sourceTree = "<group>"; };
+		8B3D661D2A587F7D009CD2D9 /* MyOrdersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersPresenter.swift; sourceTree = "<group>"; };
+		8B3D661F2A587F89009CD2D9 /* MyOrdersViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewIO.swift; sourceTree = "<group>"; };
+		8B3D66212A587F96009CD2D9 /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
+		8B3D66232A588A6B009CD2D9 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		8B3D66252A589929009CD2D9 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		8BAB8AF02A523918005167BA /* MarketPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAB8AF32A523918005167BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BAB8AF52A523918005167BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -366,6 +384,7 @@
 				8BBFEA232A54C8EA00810D47 /* LogInResult.swift */,
 				8BBFEA252A54C8F700810D47 /* SignUpResult.swift */,
 				8B2C815B2A53AC15004C82B6 /* TextFieldType.swift */,
+				8B3D66132A5867E6009CD2D9 /* SettingType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -384,6 +403,7 @@
 		8B3690EA2A575EF50012D8D4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				8B3D660F2A586540009CD2D9 /* Setting */,
 				8B3690E72A575BFC0012D8D4 /* CashIn */,
 				8BF9D6A02A55AF5E008A2526 /* Profile */,
 				8B3690EB2A575F290012D8D4 /* UserInfo */,
@@ -434,6 +454,60 @@
 			children = (
 				8B3D66012A584D04009CD2D9 /* CashInPresenterOutput.swift */,
 				8B3D66032A584D14009CD2D9 /* CashInPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B3D660F2A586540009CD2D9 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				8B3D66122A5865CD009CD2D9 /* MyOrders */,
+				8B3D66112A5865A1009CD2D9 /* ChooseCity */,
+				8B3D66102A586586009CD2D9 /* AppColorTheme */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		8B3D66102A586586009CD2D9 /* AppColorTheme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppColorTheme;
+			sourceTree = "<group>";
+		};
+		8B3D66112A5865A1009CD2D9 /* ChooseCity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChooseCity;
+			sourceTree = "<group>";
+		};
+		8B3D66122A5865CD009CD2D9 /* MyOrders */ = {
+			isa = PBXGroup;
+			children = (
+				8B3D66182A587F42009CD2D9 /* Presenter */,
+				8B3D66172A587F3C009CD2D9 /* View */,
+				8B3D66152A587F34009CD2D9 /* MyOrdersBuilder.swift */,
+				8B3D66192A587F53009CD2D9 /* MyOrdersCoordinator.swift */,
+			);
+			path = MyOrders;
+			sourceTree = "<group>";
+		};
+		8B3D66172A587F3C009CD2D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B3D661F2A587F89009CD2D9 /* MyOrdersViewIO.swift */,
+				8B3D66212A587F96009CD2D9 /* MyOrdersViewController.swift */,
+				8B3D66232A588A6B009CD2D9 /* OrderTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B3D66182A587F42009CD2D9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B3D661B2A587F70009CD2D9 /* MyOrdersPresenterOutput.swift */,
+				8B3D661D2A587F7D009CD2D9 /* MyOrdersPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -514,6 +588,7 @@
 		8BAB8B312A52633B005167BA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				8B3D66252A589929009CD2D9 /* Roboto-Medium.ttf */,
 				8BAB8B322A5263A0005167BA /* Roboto-Bold.ttf */,
 				8BAB8B332A5263A0005167BA /* Roboto-Regular.ttf */,
 			);
@@ -713,6 +788,7 @@
 			files = (
 				8BAB8B122A52453F005167BA /* Localizable.strings in Resources */,
 				8BAB8B002A52391D005167BA /* Assets.xcassets in Resources */,
+				8B3D66262A589929009CD2D9 /* Roboto-Medium.ttf in Resources */,
 				8B3690FD2A576D4B0012D8D4 /* SystemImage.strings in Resources */,
 				8BAB8B352A5263A0005167BA /* Roboto-Regular.ttf in Resources */,
 				8BAB8B342A5263A0005167BA /* Roboto-Bold.ttf in Resources */,
@@ -807,15 +883,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BBFEA262A54C8F700810D47 /* SignUpResult.swift in Sources */,
+				8B3D66162A587F34009CD2D9 /* MyOrdersBuilder.swift in Sources */,
 				8B2C813A2A52F3F6004C82B6 /* LogInPresenterOutput.swift in Sources */,
 				8BF9D6AE2A55F21B008A2526 /* CartViewController.swift in Sources */,
 				8B2C81112A52C8C0004C82B6 /* WelcomeViewIO.swift in Sources */,
 				8B2C81402A52F796004C82B6 /* LogInCoordinator.swift in Sources */,
 				8B2C81542A537EEE004C82B6 /* CustomTextFieldView.swift in Sources */,
+				8B3D66202A587F89009CD2D9 /* MyOrdersViewIO.swift in Sources */,
 				8B2C810F2A52C8B1004C82B6 /* WelcomeViewController.swift in Sources */,
 				8BF9D6C42A55F343008A2526 /* HomePresenter.swift in Sources */,
 				8BF9D6D22A561F1C008A2526 /* CashButton.swift in Sources */,
 				8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */,
+				8B3D66142A5867E6009CD2D9 /* SettingType.swift in Sources */,
 				8B3690E22A56E3540012D8D4 /* SettingTableViewCell.swift in Sources */,
 				8B3690E42A5712E20012D8D4 /* UICollectionView+Extensions.swift in Sources */,
 				8B2C811A2A52D133004C82B6 /* ServiceLocator.swift in Sources */,
@@ -829,6 +908,7 @@
 				8B3D66062A584D22009CD2D9 /* CashInViewIO.swift in Sources */,
 				8B3D660E2A585888009CD2D9 /* CustomTextFieldButton.swift in Sources */,
 				8B2C81182A52CF8A004C82B6 /* RootCoordinator.swift in Sources */,
+				8B3D661A2A587F53009CD2D9 /* MyOrdersCoordinator.swift in Sources */,
 				8B3690F92A575FC30012D8D4 /* UserInfoViewIO.swift in Sources */,
 				8B2C81582A53ABD3004C82B6 /* UITextField+Extensions.swift in Sources */,
 				8B2C813E2A52F781004C82B6 /* LogInBuilder.swift in Sources */,
@@ -841,7 +921,9 @@
 				8B2C811D2A52D16B004C82B6 /* CoreDataAssembly.swift in Sources */,
 				8BBFEA1D2A548F9400810D47 /* SellerSwitchView.swift in Sources */,
 				8B2C814E2A531122004C82B6 /* SignUpBuilder.swift in Sources */,
+				8B3D66242A588A6B009CD2D9 /* OrderTableViewCell.swift in Sources */,
 				8B2C81442A530896004C82B6 /* BackBarButton.swift in Sources */,
+				8B3D661E2A587F7D009CD2D9 /* MyOrdersPresenter.swift in Sources */,
 				8B2C813C2A52F401004C82B6 /* LogInPresenter.swift in Sources */,
 				8B3D660C2A584D4F009CD2D9 /* CashInCoordinator.swift in Sources */,
 				8BAB8AF42A523918005167BA /* AppDelegate.swift in Sources */,
@@ -856,6 +938,7 @@
 				8BAB8B292A5259CE005167BA /* RegisterButton.swift in Sources */,
 				8BF9D6C22A55F33A008A2526 /* HomePresenterOutput.swift in Sources */,
 				8B3690FF2A5776D50012D8D4 /* AvatarView.swift in Sources */,
+				8B3D66222A587F96009CD2D9 /* MyOrdersViewController.swift in Sources */,
 				8B2C812C2A52D60B004C82B6 /* FlowCoordinatorProtocol.swift in Sources */,
 				8BAB8AF62A523918005167BA /* SceneDelegate.swift in Sources */,
 				8BF9D6A82A55F1EE008A2526 /* CartPresenterOutput.swift in Sources */,
@@ -884,6 +967,7 @@
 				8B2C81242A52D302004C82B6 /* Resolver+Extensions.swift in Sources */,
 				8BBFEA242A54C8EA00810D47 /* LogInResult.swift in Sources */,
 				8B2C81482A531052004C82B6 /* SignUpPresenter.swift in Sources */,
+				8B3D661C2A587F70009CD2D9 /* MyOrdersPresenterOutput.swift in Sources */,
 				8B3690EF2A575F670012D8D4 /* UserInfoBuilder.swift in Sources */,
 				8B3690FB2A575FD20012D8D4 /* UserInfoViewController.swift in Sources */,
 				8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */,

@@ -9,4 +9,7 @@
 protocol ProfilePresenterOutput: AnyObject {
     func goToUserInfoModule()
     func goToCashInModule()
+    func goToMyOrderModule()
+    func goToChooseCityModule()
+    func goToAppColorTheme()
 }

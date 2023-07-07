@@ -172,11 +172,35 @@ class UserInfoViewController: UIViewController {
     }
     
     @objc private func logOutButtonTapped() {
-        output.logOutTapped()
+        let optionMenu = UIAlertController(
+            title: nil,
+            message: R.string.localizable.logOutWarning(),
+            preferredStyle: .actionSheet
+        )
+        optionMenu.addDestructive(title: R.string.localizable.logOut()) { [weak output] _ in
+            output?.logOutTapped()
+        }
+        present(
+            optionMenu,
+            animated: true,
+            completion: nil
+        )
     }
     
     @objc private func deleteAccountButtonTapped() {
-        output.deleteAccountTapped()
+        let optionMenu = UIAlertController(
+            title: nil,
+            message: R.string.localizable.deleteWarning(),
+            preferredStyle: .actionSheet
+        )
+        optionMenu.addDestructive(title: R.string.localizable.delete()) { [weak output] _ in
+            output?.deleteAccountTapped()
+        }
+        present(
+            optionMenu,
+            animated: true,
+            completion: nil
+        )
     }
     
     @objc private func readyButtonTapped() {
@@ -192,5 +216,21 @@ class UserInfoViewController: UIViewController {
 extension UserInfoViewController: UserInfoViewInput {
     func hideReadyButton() {
         readyButton.isHidden = true
+    }
+}
+
+extension UIAlertController {
+    func addDestructive(title: String, confirmAction: @escaping (UIAlertAction) -> Void) {
+        let deleteAction = UIAlertAction(
+            title: title,
+            style: .destructive,
+            handler: confirmAction
+        )
+        let cancelAction = UIAlertAction(
+            title: "Отмена",
+            style: .cancel
+        )
+        addAction(deleteAction)
+        addAction(cancelAction)
     }
 }

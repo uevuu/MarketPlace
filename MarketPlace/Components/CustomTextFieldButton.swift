@@ -11,7 +11,7 @@ final class CustomTextFieldButton: UIButton {
     private lazy var textField = CustomTextFieldView(
         title: R.string.localizable.password(),
         type: .password,
-        text: "my password"
+        text: "--------"
     )
     private lazy var arrowImageView: UIImageView = {
         let imageView = UIImageView()
