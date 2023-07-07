@@ -34,7 +34,7 @@ extension MyOrdersPresenter: MyOrdersViewOutput {
         cell.configureCell(
             dataInfo: "15 марта",
             priceInfo: "5 000",
-            imageUrls: ["productImage","productImage"]
+            imageUrls: ["productImage", "productImage"]
         )
     }
     

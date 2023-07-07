@@ -9,8 +9,16 @@ import Alamofire
 
 // MARK: - NetworkApiService
 final class NetworkApiService {
-    private let baseURL = "https://kinopoiskapiunofficial.tech"
-    private let apiKey = "e30ffed0-76ab-4dd6-b41f-4c9da2b2735b"
+    private let baseURL: String
+    private let apiKey: String
+    
+    init(
+        baseUrl: String,
+        apiKey: String
+    ) {
+        self.baseURL = baseUrl
+        self.apiKey = apiKey
+    }
     
     func sendRequest<T: Codable>(
         endpoint: String,
@@ -20,7 +28,7 @@ final class NetworkApiService {
         AF.request(
             baseURL + endpoint,
             parameters: parameters,
-            headers: HTTPHeaders(["X-API-KEY": apiKey])
+            headers: HTTPHeaders([R.string.daDataApi.authorization(): apiKey])
         )
         .validate()
         .responseDecodable { (response: DataResponse<T, AFError>) in

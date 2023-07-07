@@ -67,6 +67,14 @@
 		8B3D66222A587F96009CD2D9 /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66212A587F96009CD2D9 /* MyOrdersViewController.swift */; };
 		8B3D66242A588A6B009CD2D9 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66232A588A6B009CD2D9 /* OrderTableViewCell.swift */; };
 		8B3D66262A589929009CD2D9 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B3D66252A589929009CD2D9 /* Roboto-Medium.ttf */; };
+		8B3D662C2A58A56B009CD2D9 /* DaDataApi.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B3D662B2A58A56B009CD2D9 /* DaDataApi.strings */; };
+		8B3D662E2A58A783009CD2D9 /* DaDataApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D662D2A58A783009CD2D9 /* DaDataApiService.swift */; };
+		8B3D66322A58AA94009CD2D9 /* ChooseCityBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66312A58AA94009CD2D9 /* ChooseCityBuilder.swift */; };
+		8B3D66342A58AAA4009CD2D9 /* ChooseCityCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66332A58AAA4009CD2D9 /* ChooseCityCoordinator.swift */; };
+		8B3D66362A58AAC0009CD2D9 /* ChooseCityPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66352A58AAC0009CD2D9 /* ChooseCityPresenterOutput.swift */; };
+		8B3D66382A58AAC7009CD2D9 /* ChooseCityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66372A58AAC7009CD2D9 /* ChooseCityPresenter.swift */; };
+		8B3D663A2A58AAD8009CD2D9 /* ChooseCityViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D66392A58AAD8009CD2D9 /* ChooseCityViewIO.swift */; };
+		8B3D663C2A58AAE1009CD2D9 /* ChooseCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3D663B2A58AAE1009CD2D9 /* ChooseCityViewController.swift */; };
 		8BAB8AF42A523918005167BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AF32A523918005167BA /* AppDelegate.swift */; };
 		8BAB8AF62A523918005167BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AF52A523918005167BA /* SceneDelegate.swift */; };
 		8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AFC2A523918005167BA /* MarketPlace.xcdatamodeld */; };
@@ -170,6 +178,14 @@
 		8B3D66212A587F96009CD2D9 /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
 		8B3D66232A588A6B009CD2D9 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		8B3D66252A589929009CD2D9 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		8B3D662B2A58A56B009CD2D9 /* DaDataApi.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = DaDataApi.strings; sourceTree = "<group>"; };
+		8B3D662D2A58A783009CD2D9 /* DaDataApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaDataApiService.swift; sourceTree = "<group>"; };
+		8B3D66312A58AA94009CD2D9 /* ChooseCityBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCityBuilder.swift; sourceTree = "<group>"; };
+		8B3D66332A58AAA4009CD2D9 /* ChooseCityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCityCoordinator.swift; sourceTree = "<group>"; };
+		8B3D66352A58AAC0009CD2D9 /* ChooseCityPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCityPresenterOutput.swift; sourceTree = "<group>"; };
+		8B3D66372A58AAC7009CD2D9 /* ChooseCityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCityPresenter.swift; sourceTree = "<group>"; };
+		8B3D66392A58AAD8009CD2D9 /* ChooseCityViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCityViewIO.swift; sourceTree = "<group>"; };
+		8B3D663B2A58AAE1009CD2D9 /* ChooseCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCityViewController.swift; sourceTree = "<group>"; };
 		8BAB8AF02A523918005167BA /* MarketPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAB8AF32A523918005167BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BAB8AF52A523918005167BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -463,6 +479,8 @@
 			children = (
 				8B3D66122A5865CD009CD2D9 /* MyOrders */,
 				8B3D66112A5865A1009CD2D9 /* ChooseCity */,
+				8B3D66312A58AA94009CD2D9 /* ChooseCityBuilder.swift */,
+				8B3D66332A58AAA4009CD2D9 /* ChooseCityCoordinator.swift */,
 				8B3D66102A586586009CD2D9 /* AppColorTheme */,
 			);
 			path = Setting;
@@ -478,6 +496,8 @@
 		8B3D66112A5865A1009CD2D9 /* ChooseCity */ = {
 			isa = PBXGroup;
 			children = (
+				8B3D66302A58AA76009CD2D9 /* Presenter */,
+				8B3D662F2A58AA6A009CD2D9 /* View */,
 			);
 			path = ChooseCity;
 			sourceTree = "<group>";
@@ -508,6 +528,24 @@
 			children = (
 				8B3D661B2A587F70009CD2D9 /* MyOrdersPresenterOutput.swift */,
 				8B3D661D2A587F7D009CD2D9 /* MyOrdersPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B3D662F2A58AA6A009CD2D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B3D66392A58AAD8009CD2D9 /* ChooseCityViewIO.swift */,
+				8B3D663B2A58AAE1009CD2D9 /* ChooseCityViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B3D66302A58AA76009CD2D9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B3D66352A58AAC0009CD2D9 /* ChooseCityPresenterOutput.swift */,
+				8B3D66372A58AAC7009CD2D9 /* ChooseCityPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -581,6 +619,7 @@
 				8BAB8AFF2A52391D005167BA /* Assets.xcassets */,
 				8BAB8B142A52453F005167BA /* Localizable.strings */,
 				8B3690FC2A576D4B0012D8D4 /* SystemImage.strings */,
+				8B3D662B2A58A56B009CD2D9 /* DaDataApi.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -598,6 +637,7 @@
 		8BBFEA1E2A54BFF700810D47 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8B3D662D2A58A783009CD2D9 /* DaDataApiService.swift */,
 				8BBFEA1F2A54C04D00810D47 /* LogInService.swift */,
 				8BBFEA212A54C3D900810D47 /* NetworkApiService.swift */,
 				8BBFEA282A54CA1A00810D47 /* SignUpService.swift */,
@@ -788,6 +828,7 @@
 			files = (
 				8BAB8B122A52453F005167BA /* Localizable.strings in Resources */,
 				8BAB8B002A52391D005167BA /* Assets.xcassets in Resources */,
+				8B3D662C2A58A56B009CD2D9 /* DaDataApi.strings in Resources */,
 				8B3D66262A589929009CD2D9 /* Roboto-Medium.ttf in Resources */,
 				8B3690FD2A576D4B0012D8D4 /* SystemImage.strings in Resources */,
 				8BAB8B352A5263A0005167BA /* Roboto-Regular.ttf in Resources */,
@@ -891,6 +932,7 @@
 				8B2C81542A537EEE004C82B6 /* CustomTextFieldView.swift in Sources */,
 				8B3D66202A587F89009CD2D9 /* MyOrdersViewIO.swift in Sources */,
 				8B2C810F2A52C8B1004C82B6 /* WelcomeViewController.swift in Sources */,
+				8B3D66322A58AA94009CD2D9 /* ChooseCityBuilder.swift in Sources */,
 				8BF9D6C42A55F343008A2526 /* HomePresenter.swift in Sources */,
 				8BF9D6D22A561F1C008A2526 /* CashButton.swift in Sources */,
 				8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */,
@@ -912,6 +954,8 @@
 				8B3690F92A575FC30012D8D4 /* UserInfoViewIO.swift in Sources */,
 				8B2C81582A53ABD3004C82B6 /* UITextField+Extensions.swift in Sources */,
 				8B2C813E2A52F781004C82B6 /* LogInBuilder.swift in Sources */,
+				8B3D66362A58AAC0009CD2D9 /* ChooseCityPresenterOutput.swift in Sources */,
+				8B3D663A2A58AAD8009CD2D9 /* ChooseCityViewIO.swift in Sources */,
 				8BF9D6BC2A55F301008A2526 /* ProfileViewController.swift in Sources */,
 				8B3D660A2A584D39009CD2D9 /* CashInBuilder.swift in Sources */,
 				8B2C814A2A5310A1004C82B6 /* SignUpViewIO.swift in Sources */,
@@ -965,14 +1009,18 @@
 				8B2C81262A52D318004C82B6 /* UITabBarController+Extensions.swift in Sources */,
 				8B2C81502A53119F004C82B6 /* SignUpCoordinator.swift in Sources */,
 				8B2C81242A52D302004C82B6 /* Resolver+Extensions.swift in Sources */,
+				8B3D66342A58AAA4009CD2D9 /* ChooseCityCoordinator.swift in Sources */,
+				8B3D66382A58AAC7009CD2D9 /* ChooseCityPresenter.swift in Sources */,
 				8BBFEA242A54C8EA00810D47 /* LogInResult.swift in Sources */,
 				8B2C81482A531052004C82B6 /* SignUpPresenter.swift in Sources */,
+				8B3D663C2A58AAE1009CD2D9 /* ChooseCityViewController.swift in Sources */,
 				8B3D661C2A587F70009CD2D9 /* MyOrdersPresenterOutput.swift in Sources */,
 				8B3690EF2A575F670012D8D4 /* UserInfoBuilder.swift in Sources */,
 				8B3690FB2A575FD20012D8D4 /* UserInfoViewController.swift in Sources */,
 				8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */,
 				8BAB8B272A525381005167BA /* SimpleButton.swift in Sources */,
 				8BBFEA222A54C3D900810D47 /* NetworkApiService.swift in Sources */,
+				8B3D662E2A58A783009CD2D9 /* DaDataApiService.swift in Sources */,
 				8BF9D6D02A5615AC008A2526 /* MainAccountInfoViewButton.swift in Sources */,
 				8BF9D6BE2A55F319008A2526 /* ProfileBuilder.swift in Sources */,
 			);

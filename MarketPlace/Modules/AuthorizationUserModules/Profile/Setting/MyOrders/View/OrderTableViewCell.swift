@@ -24,7 +24,7 @@ class OrderTableViewCell: UITableViewCell {
     private lazy var textStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             dataInfoLabel,
-            priceInfoLabel,
+            priceInfoLabel
         ])
         stackView.axis = .vertical
         stackView.spacing = 5

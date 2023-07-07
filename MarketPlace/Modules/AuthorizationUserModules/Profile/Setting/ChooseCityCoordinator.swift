@@ -1,5 +1,5 @@
 //
-//  MyOrdersCoordinator.swift
+//  ChooseCityCoordinator.swift
 //  MarketPlace
 //
 //  Created by Nikita Marin on 07.07.2023.
@@ -8,8 +8,8 @@
 import UIKit
 import Swinject
 
-// MARK: - MyOrdersCoordinator
-final class MyOrdersCoordinator: FlowCoordinatorProtocol {
+// MARK: - ChooseCityCoordinator
+final class ChooseCityCoordinator: FlowCoordinatorProtocol {
     private let resolver: Resolver
     private weak var navigationController: UINavigationController?
     
@@ -22,15 +22,15 @@ final class MyOrdersCoordinator: FlowCoordinatorProtocol {
     }
     
     deinit {
-        print("deinit My Orders Coordinator")
+        print("deinit Choose City Coordinator")
     }
     
     func start(animated: Bool) {
-        let myOrdersBuilder = MyOrdersBuilder(
+        let chooseCityBuilder = ChooseCityBuilder(
             resolver: resolver,
             moduleOutput: self
         )
-        let viewController = myOrdersBuilder.build()
+        let viewController = chooseCityBuilder.build()
         navigationController?.pushViewController(viewController, animated: animated)
     }
     
@@ -38,13 +38,9 @@ final class MyOrdersCoordinator: FlowCoordinatorProtocol {
     }
 }
 
-// MARK: - MyOrdersPresenterOutput
-extension MyOrdersCoordinator: MyOrdersPresenterOutput {
+// MARK: - ChooseCityPresenterOutput
+extension ChooseCityCoordinator: ChooseCityPresenterOutput {
     func goToProfileModule() {
         navigationController?.popViewController(animated: true)
-    }
-    
-    func goToOrderInfoModule() {
-        print("build order info module")
     }
 }

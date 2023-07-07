@@ -72,7 +72,11 @@ extension ProfileCoordinator: ProfilePresenterOutput {
     }
     
     func goToChooseCityModule() {
-        print("build city choose module")
+        let chooseCityCoordinator = ChooseCityCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        )
+        chooseCityCoordinator.start(animated: true)
     }
     
     func goToAppColorTheme() {

@@ -18,5 +18,9 @@ final class NetworkAssembly: Assembly {
             SignUpService()
         }
         .inObjectScope(.container)
+        
+        container.register(DaDataApiService.self) { _ in
+            DaDataApiService()
+        }
     }
 }
