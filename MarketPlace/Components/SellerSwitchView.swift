@@ -47,7 +47,7 @@ final class SellerSwitchView: UISwitch {
     
     private func setConstraints() {
         statuSwitch.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
+            make.leading.centerY.equalToSuperview()
         }
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(statuSwitch.snp.trailing).offset(15)

@@ -32,3 +32,14 @@
 "myOrder" = "Мои заказы";
 "City" = "Город";
 "applicationTheme" = "Тема приложения";
+
+"enterAmount" = "Введите сумму, на которую хотите пополнить счет";
+"pointsCount" = "Количество бонусов";
+
+"myDetails" = "Мои данные";
+"patronymic" = "Отчество";
+"gender" = "Ваш пол";
+"birthDate" = "Дата рождения";
+"logOut" = "Выйти";
+"deleteAccount" = "Удалить аккаунт";
+"ready" = "Готово";

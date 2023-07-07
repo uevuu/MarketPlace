@@ -12,6 +12,7 @@ import Swinject
 final class ProfileCoordinator: FlowCoordinatorProtocol {
     private let resolver: Resolver
     private weak var tabBar: UITabBarController?
+    private var navigationController: UINavigationController?
     
     init(
         resolver: Resolver,
@@ -32,6 +33,8 @@ final class ProfileCoordinator: FlowCoordinatorProtocol {
         )
         let viewController = profileBuilder.build()
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.addBottomLine(with: R.color.placeholderBottomLine())
+        self.navigationController = navigationController
         tabBar?.addViewController(
             viewController: navigationController,
             image: UIImage(systemName: "person.crop.circle")
@@ -44,4 +47,11 @@ final class ProfileCoordinator: FlowCoordinatorProtocol {
 
 // MARK: - ProfilePresenterOutput
 extension ProfileCoordinator: ProfilePresenterOutput {
+    func goToUserInfoModule() {
+        let userInfoCoordinator = UserInfoCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        )
+        userInfoCoordinator.start(animated: true)
+    }
 }

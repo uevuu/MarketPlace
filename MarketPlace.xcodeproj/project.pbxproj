@@ -40,6 +40,18 @@
 		8B2C81582A53ABD3004C82B6 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81572A53ABD3004C82B6 /* UITextField+Extensions.swift */; };
 		8B2C815C2A53AC15004C82B6 /* TextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C815B2A53AC15004C82B6 /* TextFieldType.swift */; };
 		8B3690E22A56E3540012D8D4 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690E12A56E3540012D8D4 /* SettingTableViewCell.swift */; };
+		8B3690E42A5712E20012D8D4 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690E32A5712E20012D8D4 /* UICollectionView+Extensions.swift */; };
+		8B3690E62A5712F00012D8D4 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690E52A5712F00012D8D4 /* UITableView+Extensions.swift */; };
+		8B3690E92A575C200012D8D4 /* CashInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690E82A575C200012D8D4 /* CashInViewController.swift */; };
+		8B3690EF2A575F670012D8D4 /* UserInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690EE2A575F670012D8D4 /* UserInfoBuilder.swift */; };
+		8B3690F12A575F780012D8D4 /* UserInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690F02A575F780012D8D4 /* UserInfoCoordinator.swift */; };
+		8B3690F42A575F9F0012D8D4 /* UserInfoPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690F32A575F9F0012D8D4 /* UserInfoPresenterOutput.swift */; };
+		8B3690F62A575FAB0012D8D4 /* UserInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690F52A575FAB0012D8D4 /* UserInfoPresenter.swift */; };
+		8B3690F92A575FC30012D8D4 /* UserInfoViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690F82A575FC30012D8D4 /* UserInfoViewIO.swift */; };
+		8B3690FB2A575FD20012D8D4 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690FA2A575FD20012D8D4 /* UserInfoViewController.swift */; };
+		8B3690FD2A576D4B0012D8D4 /* SystemImage.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B3690FC2A576D4B0012D8D4 /* SystemImage.strings */; };
+		8B3690FF2A5776D50012D8D4 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3690FE2A5776D50012D8D4 /* AvatarView.swift */; };
+		8B3691012A5790CB0012D8D4 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3691002A5790CB0012D8D4 /* UIButton+Extensions.swift */; };
 		8BAB8AF42A523918005167BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AF32A523918005167BA /* AppDelegate.swift */; };
 		8BAB8AF62A523918005167BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AF52A523918005167BA /* SceneDelegate.swift */; };
 		8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB8AFC2A523918005167BA /* MarketPlace.xcdatamodeld */; };
@@ -116,6 +128,18 @@
 		8B2C81572A53ABD3004C82B6 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		8B2C815B2A53AC15004C82B6 /* TextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldType.swift; sourceTree = "<group>"; };
 		8B3690E12A56E3540012D8D4 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		8B3690E32A5712E20012D8D4 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		8B3690E52A5712F00012D8D4 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		8B3690E82A575C200012D8D4 /* CashInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashInViewController.swift; sourceTree = "<group>"; };
+		8B3690EE2A575F670012D8D4 /* UserInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserInfoBuilder.swift; path = MarketPlace/Modules/AuthorizationUserModules/UserInfoBuilder.swift; sourceTree = SOURCE_ROOT; };
+		8B3690F02A575F780012D8D4 /* UserInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCoordinator.swift; sourceTree = "<group>"; };
+		8B3690F32A575F9F0012D8D4 /* UserInfoPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPresenterOutput.swift; sourceTree = "<group>"; };
+		8B3690F52A575FAB0012D8D4 /* UserInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoPresenter.swift; sourceTree = "<group>"; };
+		8B3690F82A575FC30012D8D4 /* UserInfoViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewIO.swift; sourceTree = "<group>"; };
+		8B3690FA2A575FD20012D8D4 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		8B3690FC2A576D4B0012D8D4 /* SystemImage.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = SystemImage.strings; sourceTree = "<group>"; };
+		8B3690FE2A5776D50012D8D4 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		8B3691002A5790CB0012D8D4 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		8BAB8AF02A523918005167BA /* MarketPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BAB8AF32A523918005167BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BAB8AF52A523918005167BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,8 +261,11 @@
 			children = (
 				8B2C81232A52D302004C82B6 /* Resolver+Extensions.swift */,
 				8B2C81552A53AB83004C82B6 /* String+Extensions .swift */,
+				8B3691002A5790CB0012D8D4 /* UIButton+Extensions.swift */,
+				8B3690E32A5712E20012D8D4 /* UICollectionView+Extensions.swift */,
 				8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */,
 				8B2C81252A52D318004C82B6 /* UITabBarController+Extensions.swift */,
+				8B3690E52A5712F00012D8D4 /* UITableView+Extensions.swift */,
 				8B2C81572A53ABD3004C82B6 /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
@@ -331,6 +358,53 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		8B3690E72A575BFC0012D8D4 /* CashIn */ = {
+			isa = PBXGroup;
+			children = (
+				8B3690E82A575C200012D8D4 /* CashInViewController.swift */,
+			);
+			path = CashIn;
+			sourceTree = "<group>";
+		};
+		8B3690EA2A575EF50012D8D4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				8B3690E72A575BFC0012D8D4 /* CashIn */,
+				8BF9D6A02A55AF5E008A2526 /* Profile */,
+				8B3690EB2A575F290012D8D4 /* UserInfo */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8B3690EB2A575F290012D8D4 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				8B3690EC2A575F4F0012D8D4 /* Presenter */,
+				8B3690ED2A575F570012D8D4 /* View */,
+				8B3690EE2A575F670012D8D4 /* UserInfoBuilder.swift */,
+				8B3690F02A575F780012D8D4 /* UserInfoCoordinator.swift */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		8B3690EC2A575F4F0012D8D4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B3690F32A575F9F0012D8D4 /* UserInfoPresenterOutput.swift */,
+				8B3690F52A575FAB0012D8D4 /* UserInfoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B3690ED2A575F570012D8D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B3690F82A575FC30012D8D4 /* UserInfoViewIO.swift */,
+				8B3690FA2A575FD20012D8D4 /* UserInfoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8BAB8AE72A523918005167BA = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +445,7 @@
 		8BAB8B0D2A523FD1005167BA /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8B3690FE2A5776D50012D8D4 /* AvatarView.swift */,
 				8B2C81432A530896004C82B6 /* BackBarButton.swift */,
 				8BF9D6CF2A5615AC008A2526 /* MainAccountInfoViewButton.swift */,
 				8BAB8B262A525381005167BA /* SimpleButton.swift */,
@@ -397,6 +472,7 @@
 				8BAB8B312A52633B005167BA /* Fonts */,
 				8BAB8AFF2A52391D005167BA /* Assets.xcassets */,
 				8BAB8B142A52453F005167BA /* Localizable.strings */,
+				8B3690FC2A576D4B0012D8D4 /* SystemImage.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -435,7 +511,7 @@
 			children = (
 				8BF9D69F2A55AF56008A2526 /* Cart */,
 				8BF9D69E2A55AF44008A2526 /* Home */,
-				8BF9D6A02A55AF5E008A2526 /* Profile */,
+				8B3690EA2A575EF50012D8D4 /* Profile */,
 				8BF9D69C2A55AB73008A2526 /* UserTabBarCoordinator.swift */,
 			);
 			path = AuthorizationUserModules;
@@ -603,6 +679,7 @@
 			files = (
 				8BAB8B122A52453F005167BA /* Localizable.strings in Resources */,
 				8BAB8B002A52391D005167BA /* Assets.xcassets in Resources */,
+				8B3690FD2A576D4B0012D8D4 /* SystemImage.strings in Resources */,
 				8BAB8B352A5263A0005167BA /* Roboto-Regular.ttf in Resources */,
 				8BAB8B342A5263A0005167BA /* Roboto-Bold.ttf in Resources */,
 			);
@@ -706,14 +783,17 @@
 				8BF9D6D22A561F1C008A2526 /* CashButton.swift in Sources */,
 				8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */,
 				8B3690E22A56E3540012D8D4 /* SettingTableViewCell.swift in Sources */,
+				8B3690E42A5712E20012D8D4 /* UICollectionView+Extensions.swift in Sources */,
 				8B2C811A2A52D133004C82B6 /* ServiceLocator.swift in Sources */,
 				8BF9D6AC2A55F20F008A2526 /* CartViewIO.swift in Sources */,
 				8BF9D6C02A55F328008A2526 /* ProfileCoordinator.swift in Sources */,
+				8B3690E62A5712F00012D8D4 /* UITableView+Extensions.swift in Sources */,
 				8BF9D6BA2A55F2F1008A2526 /* ProfileViewIO.swift in Sources */,
 				8BF9D6AA2A55F1F9008A2526 /* CartPresenter.swift in Sources */,
 				8B2C81562A53AB83004C82B6 /* String+Extensions .swift in Sources */,
 				8BF9D6B22A55F246008A2526 /* CartBuilder.swift in Sources */,
 				8B2C81182A52CF8A004C82B6 /* RootCoordinator.swift in Sources */,
+				8B3690F92A575FC30012D8D4 /* UserInfoViewIO.swift in Sources */,
 				8B2C81582A53ABD3004C82B6 /* UITextField+Extensions.swift in Sources */,
 				8B2C813E2A52F781004C82B6 /* LogInBuilder.swift in Sources */,
 				8BF9D6BC2A55F301008A2526 /* ProfileViewController.swift in Sources */,
@@ -735,6 +815,7 @@
 				8BF9D6D82A56319C008A2526 /* ProductCell.swift in Sources */,
 				8BAB8B292A5259CE005167BA /* RegisterButton.swift in Sources */,
 				8BF9D6C22A55F33A008A2526 /* HomePresenterOutput.swift in Sources */,
+				8B3690FF2A5776D50012D8D4 /* AvatarView.swift in Sources */,
 				8B2C812C2A52D60B004C82B6 /* FlowCoordinatorProtocol.swift in Sources */,
 				8BAB8AF62A523918005167BA /* SceneDelegate.swift in Sources */,
 				8BF9D6A82A55F1EE008A2526 /* CartPresenterOutput.swift in Sources */,
@@ -745,11 +826,16 @@
 				8B2C815C2A53AC15004C82B6 /* TextFieldType.swift in Sources */,
 				8BF9D6B82A55F2DD008A2526 /* ProfilePresenterOutput.swift in Sources */,
 				8BAB8B162A5245E6005167BA /* R.generated.swift in Sources */,
+				8B3691012A5790CB0012D8D4 /* UIButton+Extensions.swift in Sources */,
 				8BF9D6CC2A55F377008A2526 /* HomeCoordinator.swift in Sources */,
 				8BF9D6B62A55F2D6008A2526 /* ProfilePresenter.swift in Sources */,
 				8B2C81162A52CB4D004C82B6 /* WelcomeBuilder.swift in Sources */,
+				8B3690F12A575F780012D8D4 /* UserInfoCoordinator.swift in Sources */,
+				8B3690F62A575FAB0012D8D4 /* UserInfoPresenter.swift in Sources */,
 				8BBFEA202A54C04D00810D47 /* LogInService.swift in Sources */,
 				8B2C81462A53100C004C82B6 /* SignUpPresenterOutput .swift in Sources */,
+				8B3690F42A575F9F0012D8D4 /* UserInfoPresenterOutput.swift in Sources */,
+				8B3690E92A575C200012D8D4 /* CashInViewController.swift in Sources */,
 				8B2C811F2A52D184004C82B6 /* LocalDataSourceAssembly.swift in Sources */,
 				8BF9D69D2A55AB73008A2526 /* UserTabBarCoordinator.swift in Sources */,
 				8B2C81382A52F2DB004C82B6 /* WelcomePresenterOutput.swift in Sources */,
@@ -758,6 +844,8 @@
 				8B2C81242A52D302004C82B6 /* Resolver+Extensions.swift in Sources */,
 				8BBFEA242A54C8EA00810D47 /* LogInResult.swift in Sources */,
 				8B2C81482A531052004C82B6 /* SignUpPresenter.swift in Sources */,
+				8B3690EF2A575F670012D8D4 /* UserInfoBuilder.swift in Sources */,
+				8B3690FB2A575FD20012D8D4 /* UserInfoViewController.swift in Sources */,
 				8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */,
 				8BAB8B272A525381005167BA /* SimpleButton.swift in Sources */,
 				8BBFEA222A54C3D900810D47 /* NetworkApiService.swift in Sources */,

@@ -1,0 +1,105 @@
+//
+//  CashInViewController.swift
+//  MarketPlace
+//
+//  Created by Nikita Marin on 06.07.2023.
+//
+
+import UIKit
+
+// MARK: - CashInViewController
+final class CashInViewController: UIViewController {
+    // MARK: - UI
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = R.string.localizable.enterAmount()
+        label.font = R.font.robotoRegular(size: 15)
+        return label
+    }()
+    
+    private lazy var textField: UITextField = {
+        let textField = UITextField()
+        textField.font = R.font.robotoRegular(size: 14)
+        textField.setPlaceHolderWithSecondaryColor(R.string.localizable.pointsCount())
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private lazy var bottomLine: UIView = {
+        let view = UIView()
+        view.backgroundColor = R.color.placeholderBottomLine()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var cashInButton = SimpleButton(title: R.string.localizable.cashIn())
+    
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            titleLabel,
+            textField,
+            cashInButton
+        ])
+        stackView.axis = .vertical
+        stackView.setCustomSpacing(20, after: titleLabel)
+        stackView.setCustomSpacing(43, after: textField)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    // MARK: - Init
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        print("deinit cash in ")
+    }
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+    
+    // MARK: - Setup
+    
+    private func setup() {
+        cashInButton.addTarget(
+            self,
+            action: #selector(cashIndButtonTapped),
+            for: .touchUpInside
+        )
+        textField.addSubview(bottomLine)
+        view.addSubview(stackView)
+        view.backgroundColor = R.color.background()
+        setConstraints()
+    }
+    
+    private func setConstraints() {
+        textField.snp.makeConstraints { make in
+            make.height.equalTo(45)
+        }
+        bottomLine.snp.makeConstraints { make in
+            make.width.bottom.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        stackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(50)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+        }
+    }
+    
+    // MARK: - Private
+    @objc private func cashIndButtonTapped() {
+        dismiss(animated: true)
+    }
+}
+

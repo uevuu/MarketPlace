@@ -8,9 +8,7 @@
 import UIKit
 
 // MARK: - ProductCell
-final class ProductCell: UICollectionViewCell {
-    static let reuseIdentifier: String = "ProductCellReuseIdentifier"
-    
+final class ProductCell: UICollectionViewCell {    
     private lazy var productImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill

@@ -18,10 +18,7 @@ class HomeViewController: UIViewController {
             frame: .zero,
             collectionViewLayout: collectionViewLayout
         )
-        collectionView.register(
-            ProductCell.self,
-            forCellWithReuseIdentifier: ProductCell.reuseIdentifier
-        )
+        collectionView.register(ProductCell.self)
         collectionView.backgroundColor = R.color.background()
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -42,18 +39,18 @@ class HomeViewController: UIViewController {
     }()
     
     private lazy var searchBar: UISearchBar = {
-        let searhBar = UISearchBar()
-        searhBar.searchTextField.font = R.font.robotoRegular(size: 14)
-        searhBar.searchTextField.clearButtonMode = .never
-        searhBar.searchTextField.attributedPlaceholder = NSAttributedString(
+        let searсhBar = UISearchBar()
+        searсhBar.searchTextField.font = R.font.robotoRegular(size: 14)
+        searсhBar.searchTextField.clearButtonMode = .never
+        searсhBar.searchTextField.attributedPlaceholder = NSAttributedString(
             string: "Название товара",
             attributes: [
                 .foregroundColor: R.color.secondary() ?? UIColor.gray,
                 .font: R.font.robotoRegular(size: 14) ?? UIFont.systemFont(ofSize: 14)
             ]
         )
-        searhBar.delegate = self
-        return searhBar
+        searсhBar.delegate = self
+        return searсhBar
     }()
     
     // MARK: - Init
@@ -134,11 +131,7 @@ extension HomeViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let cellReuseIdentifier = output.getReuseIdentifierForItemAt(indexPath: indexPath)
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: cellReuseIdentifier,
-            for: indexPath
-        )
+        let cell = collectionView.dequeueReusableCell(ProductCell.self, for: indexPath)
         output.configureCell(cell, at: indexPath)
         return cell
     }

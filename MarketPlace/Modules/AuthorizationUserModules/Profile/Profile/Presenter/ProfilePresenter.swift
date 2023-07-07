@@ -27,23 +27,14 @@ extension ProfilePresenter: ProfileViewOutput {
         return 3
     }
     
-    func getReuseIdentifierForItemAt(indexPath: IndexPath) -> String {
-        return SettingTableViewCell.reuseIdentifier
-    }
-    
-    func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) {
-        switch cell {
-        case let settingCell as SettingTableViewCell:
-            if indexPath.item == 1 {
-                settingCell.configureCell(
-                    title: "Город",
-                    helpData: "Казань"
-                )
-            } else {
-                settingCell.configureCell(title: "Тема")
-            }
-        default:
-            break
+    func configureCell(_ cell: SettingTableViewCell, at indexPath: IndexPath) {
+        if indexPath.item == 1 {
+            cell.configureCell(
+                title: "Город",
+                helpData: "Казань"
+            )
+        } else {
+            cell.configureCell(title: "Тема")
         }
     }
     
@@ -52,7 +43,7 @@ extension ProfilePresenter: ProfileViewOutput {
     }
     
     func profileTapped() {
-        print("go to profile")
+        output?.goToUserInfoModule()
     }
     
     func cashInTapped() {

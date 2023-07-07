@@ -7,10 +7,8 @@
 
 import UIKit
 
-// MARK:  - SettingTableViewCell
-class SettingTableViewCell: UITableViewCell {
-    static let reuseIdentifier: String = "SettingTableViewCellReuseIdentifier"
-    
+// MARK: - SettingTableViewCell
+class SettingTableViewCell: UITableViewCell {    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = R.font.robotoRegular(size: 14)

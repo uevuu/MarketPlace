@@ -7,4 +7,5 @@
 
 // MARK: - ProfilePresenterOutput
 protocol ProfilePresenterOutput: AnyObject {
+    func goToUserInfoModule()
 }

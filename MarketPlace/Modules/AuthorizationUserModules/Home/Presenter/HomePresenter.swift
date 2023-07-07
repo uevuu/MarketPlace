@@ -27,25 +27,16 @@ extension HomePresenter: HomeViewOutput {
         return 10
     }
     
-    func getReuseIdentifierForItemAt(indexPath: IndexPath) -> String {
-        return ProductCell.reuseIdentifier
-    }
-    
     func configureCell(
-        _ cell: UICollectionViewCell,
+        _ cell: ProductCell,
         at indexPath: IndexPath
     ) {
-        switch cell {
-        case let  productCell as ProductCell:
-            productCell.configureCell(
-                imageUrl: "productImage",
-                price: 2000,
-                title: "Брюки женские серые",
-                sellerName: "Anna S"
-            )
-        default:
-            break
-        }
+        cell.configureCell(
+            imageUrl: "productImage",
+            price: 2000,
+            title: "Брюки женские серые",
+            sellerName: "Anna S"
+        )
     }
     
     func selectProduct(at indexPath: IndexPath) {

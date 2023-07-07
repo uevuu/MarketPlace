@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController {
             userInfoButton,
             moneyStatus
         ])
-        stackView.axis = .vertical
+        stackView.axis = .vertical 
         stackView.spacing = 25
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -35,10 +35,7 @@ class ProfileViewController: UIViewController {
     
     private lazy var settingTableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(
-            SettingTableViewCell.self,
-            forCellReuseIdentifier: SettingTableViewCell.reuseIdentifier
-        )
+        tableView.register(SettingTableViewCell.self)
         tableView.isScrollEnabled = false
         tableView.dataSource = self
         tableView.delegate = self
@@ -115,6 +112,22 @@ class ProfileViewController: UIViewController {
     }
     
     @objc private func cashIndButtonTapped() {
+        let viewController = CashInViewController()
+        
+        if #available(iOS 15.0, *) {
+            if let presentationController = viewController.presentationController as? UISheetPresentationController {
+                if #available(iOS 16.0, *) {
+                    presentationController.detents = [
+                        .custom { _ in
+                            return 256
+                        }
+                    ]
+                } else {
+                    presentationController.detents = [.medium()]
+                }
+            }
+        }
+        present(viewController, animated: true)
         output.cashInTapped()
     }
 }
@@ -122,9 +135,8 @@ class ProfileViewController: UIViewController {
 // MARK: - ProfileViewInput
 extension ProfileViewController: ProfileViewInput {
     func reloadSetting(at indexPath: IndexPath) {
-        DispatchQueue.main.async { [weak settingTableView] in
-            settingTableView?.reloadRows(at: [indexPath], with: .none)
-        }
+        // In Presenter: DispatchQueue.main.async !!!
+        settingTableView.reloadRows(at: [indexPath], with: .none)
     }
 }
 
@@ -141,11 +153,7 @@ extension ProfileViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let cellReuseIdentifier = output.getReuseIdentifierForItemAt(indexPath: indexPath)
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: cellReuseIdentifier,
-            for: indexPath
-        )
+        let cell = tableView.dequeueReusableCell(SettingTableViewCell.self, for: indexPath)
         cell.selectionStyle = .none
         output.configureCell(cell, at: indexPath)
         return cell

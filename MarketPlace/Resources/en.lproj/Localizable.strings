@@ -32,3 +32,14 @@
 "myOrder" = "My orders";
 "City" = "City";
 "applicationTheme" = "Application theme";
+
+"enterAmount" = "Enter the amount for which you want to recharge";
+"pointsCount" = "Bonus amount";
+
+"myDetails" = "My details";
+"patronymic" = "Patronymic";
+"gender" = "Your gender";
+"birthDate" = "Date of birth";
+"logOut" = "Log out";
+"deleteAccount" = "Delete account";
+"ready" = "Ready";

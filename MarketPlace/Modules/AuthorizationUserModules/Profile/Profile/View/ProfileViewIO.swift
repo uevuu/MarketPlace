@@ -15,8 +15,7 @@ protocol ProfileViewInput: AnyObject {
 // MARK: - ProfileViewOutput
 protocol ProfileViewOutput: AnyObject {
     func getSettingCount() -> Int
-    func getReuseIdentifierForItemAt(indexPath: IndexPath) -> String
-    func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath)
+    func configureCell(_ cell: SettingTableViewCell, at indexPath: IndexPath)
     func selectSetting(at indexPath: IndexPath)
     func profileTapped()
     func cashInTapped()

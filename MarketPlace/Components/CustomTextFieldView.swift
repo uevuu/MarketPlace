@@ -57,7 +57,11 @@ final class CustomTextFieldView: UIView {
     }
     
     private func setup() {
-        textField.addTarget(self, action: #selector(textFieldTextChanged), for: .editingChanged)
+        textField.addTarget(
+            self,
+            action: #selector(textFieldTextChanged),
+            for: .editingChanged
+        )
         addSubview(textField)
         addSubview(titleLabel)
         addSubview(bottomLine)
@@ -112,5 +116,13 @@ final class CustomTextFieldView: UIView {
         bottomLine.backgroundColor = R.color.placeholderBottomLine()
         textField.textColor = R.color.mainFont()
         errorLabel.text = nil
+    }
+    
+    func disableTextEmptyValidation() {
+        textField.removeTarget(
+            self,
+            action: #selector(textFieldTextChanged),
+            for: .editingChanged
+        )
     }
 }
