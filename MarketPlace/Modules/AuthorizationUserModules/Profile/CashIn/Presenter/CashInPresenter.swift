@@ -23,4 +23,7 @@ final class CashInPresenter {
 
 // MARK: - CashInViewOutput
 extension CashInPresenter: CashInViewOutput {
+    func deinitEvent() {
+        output?.moduleDidUnload()
+    }
 }

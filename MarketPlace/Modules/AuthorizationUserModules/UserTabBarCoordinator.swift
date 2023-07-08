@@ -31,20 +31,31 @@ final class UserTabBarCoordinator: FlowCoordinatorProtocol {
         finishHandlers.append(finishHandler)
     }
     
+    deinit {
+        print("deinit tab bar coordinator")
+    }
+    
     func start(animated: Bool) {
         window.rootViewController = tabBarController
         let homeCoordinator = HomeCoordinator(
             resolver: resolver,
             tabBar: tabBarController
-        )
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: HomeCoordinator.self)
+        }
         let cartCoordinator = CartCoordinator(
             resolver: resolver,
             tabBar: tabBarController
-        )
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: CartCoordinator.self)
+        }
         let profileCoordinator = ProfileCoordinator(
             resolver: resolver,
             tabBar: tabBarController
-        )
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: ProfileCoordinator.self)
+        }
+        profileCoordinator.delegate = self
         homeCoordinator.start(animated: false)
         cartCoordinator.start(animated: false)
         profileCoordinator.start(animated: false)
@@ -57,5 +68,11 @@ final class UserTabBarCoordinator: FlowCoordinatorProtocol {
         guard let finishHandler = completion else { return }
         finishHandlers.append(finishHandler)
         childCoordinators.finishAll(animated: animated, completion: nil)
+    }
+}
+
+extension UserTabBarCoordinator: FinishCoordinatorDelegate {
+    func close() {
+        finishHandlers.forEach { $0() }
     }
 }

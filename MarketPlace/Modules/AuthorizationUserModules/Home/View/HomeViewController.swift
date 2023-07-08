@@ -68,6 +68,7 @@ class HomeViewController: UIViewController {
     
     deinit {
         print("deinit Home view")
+        output.deinitEvent()
     }
     
     // MARK: - Lifecycle

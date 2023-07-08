@@ -7,4 +7,5 @@
 
 // MARK: - HomePresenterOutput
 protocol HomePresenterOutput: AnyObject {
+    func moduleDidUnload()
 }

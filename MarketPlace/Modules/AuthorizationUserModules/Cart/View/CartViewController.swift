@@ -26,6 +26,7 @@ class CartViewController: UIViewController {
     
     deinit {
         print("deinit Cart view")
+        output.deinitEvent()
     }
     
     // MARK: - Lifecycle

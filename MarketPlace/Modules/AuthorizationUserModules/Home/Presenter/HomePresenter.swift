@@ -10,7 +10,7 @@ import UIKit
 // MARK: - HomePresenter
 final class HomePresenter {
     weak var view: HomeViewInput?
-    private var output: HomePresenterOutput?
+    private weak var output: HomePresenterOutput?
     
     init(output: HomePresenterOutput?) {
         self.output = output
@@ -49,5 +49,9 @@ extension HomePresenter: HomeViewOutput {
     
     func filterTapped() {
         print("go to filter")
+    }
+    
+    func deinitEvent() {
+        output?.moduleDidUnload()
     }
 }

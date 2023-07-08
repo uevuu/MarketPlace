@@ -8,17 +8,25 @@
 import UIKit
 import Swinject
 
+protocol FinishCoordinatorDelegate: AnyObject {
+    func close()
+}
+
 // MARK: - UserInfoCoordinator
 final class UserInfoCoordinator: FlowCoordinatorProtocol {
     private let resolver: Resolver
     private weak var navigationController: UINavigationController?
+    private var finishHandlers: [(() -> Void)] = []
+    weak var delegate: FinishCoordinatorDelegate?
     
     init(
         resolver: Resolver,
-        navigationController: UINavigationController?
+        navigationController: UINavigationController?,
+        finishHandler: @escaping (() -> Void)
     ) {
         self.resolver = resolver
         self.navigationController = navigationController
+        finishHandlers.append(finishHandler)
     }
     
     deinit {
@@ -35,6 +43,9 @@ final class UserInfoCoordinator: FlowCoordinatorProtocol {
     }
     
     func finish(animated: Bool, completion: (() -> Void)?) {
+        guard let finishHandler = completion else { return }
+        finishHandlers.append(finishHandler)
+        navigationController?.popViewController(animated: animated)
     }
 }
 
@@ -45,6 +56,10 @@ extension UserInfoCoordinator: UserInfoPresenterOutput {
     }
     
     func goToWelcomeModule() {
-        print("go wo welcome screen")
+        delegate?.close()
+    }
+    
+    func moduleDidUnload() {
+        finishHandlers.forEach { $0() }
     }
 }

@@ -12,13 +12,18 @@ import Swinject
 final class CartCoordinator: FlowCoordinatorProtocol {
     private let resolver: Resolver
     private weak var parentTabBar: UITabBarController?
+    private var navigationController: UINavigationController?
+    private var finishHandlers: [(() -> Void)] = []
+    private var childCoordinators: [FlowCoordinatorProtocol] = []
     
     init(
         resolver: Resolver,
-        tabBar: UITabBarController
+        tabBar: UITabBarController,
+        finishHandler: @escaping (() -> Void)
     ) {
         self.resolver = resolver
         self.parentTabBar = tabBar
+        finishHandlers.append(finishHandler)
     }
     
     deinit {
@@ -32,6 +37,7 @@ final class CartCoordinator: FlowCoordinatorProtocol {
         )
         let viewController = cartBuilder.build()
         let navigationController = UINavigationController(rootViewController: viewController)
+        self.navigationController = navigationController
         parentTabBar?.addViewController(
             viewController: navigationController,
             image: UIImage(systemName: "cart")
@@ -39,9 +45,16 @@ final class CartCoordinator: FlowCoordinatorProtocol {
     }
     
     func finish(animated: Bool, completion: (() -> Void)?) {
+        guard let finishHandler = completion else { return }
+        finishHandlers.append(finishHandler)
+        childCoordinators.finishAll(animated: animated, completion: nil)
+        navigationController?.viewControllers = []
     }
 }
 
 // MARK: - CartPresenterOutput
 extension CartCoordinator: CartPresenterOutput {
+    func moduleDidUnload() {
+        finishHandlers.forEach { $0() }
+    }
 }

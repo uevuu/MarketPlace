@@ -100,7 +100,8 @@ class UserInfoViewController: UIViewController {
     }
     
     deinit {
-        print("deinit User Info view")
+        print("deinit User Info View")
+        output.deinitEvent()
     }
     
     // MARK: - Lifecycle

@@ -13,4 +13,5 @@ protocol CartViewInput: AnyObject {
 
 // MARK: - CartViewOutput
 protocol CartViewOutput: AnyObject {
+    func deinitEvent()
 }

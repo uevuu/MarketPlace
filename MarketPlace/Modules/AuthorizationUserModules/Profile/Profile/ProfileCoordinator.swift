@@ -13,13 +13,18 @@ final class ProfileCoordinator: FlowCoordinatorProtocol {
     private let resolver: Resolver
     private weak var tabBar: UITabBarController?
     private var navigationController: UINavigationController?
+    private var finishHandlers: [(() -> Void)] = []
+    private var childCoordinators: [FlowCoordinatorProtocol] = []
+    weak var delegate: FinishCoordinatorDelegate?
     
     init(
         resolver: Resolver,
-        tabBar: UITabBarController
+        tabBar: UITabBarController,
+        finishHandler: @escaping (() -> Void)
     ) {
         self.resolver = resolver
         self.tabBar = tabBar
+        finishHandlers.append(finishHandler)
     }
     
     deinit {
@@ -42,6 +47,10 @@ final class ProfileCoordinator: FlowCoordinatorProtocol {
     }
     
     func finish(animated: Bool, completion: (() -> Void)?) {
+        guard let finishHandler = completion else { return }
+        finishHandlers.append(finishHandler)
+        childCoordinators.finishAll(animated: animated, completion: nil)
+        navigationController?.viewControllers = []
     }
 }
 
@@ -51,7 +60,11 @@ extension ProfileCoordinator: ProfilePresenterOutput {
         let userInfoCoordinator = UserInfoCoordinator(
             resolver: resolver,
             navigationController: navigationController
-        )
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: UserInfoCoordinator.self)
+        }
+        userInfoCoordinator.delegate = self
+        childCoordinators.append(userInfoCoordinator)
         userInfoCoordinator.start(animated: true)
     }
     
@@ -59,7 +72,10 @@ extension ProfileCoordinator: ProfilePresenterOutput {
         let cashInCoordinator = CashInCoordinator(
             resolver: resolver,
             navigationController: navigationController
-        )
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: CashInCoordinator.self)
+        }
+        childCoordinators.append(cashInCoordinator)
         cashInCoordinator.start(animated: true)
     }
     
@@ -81,5 +97,11 @@ extension ProfileCoordinator: ProfilePresenterOutput {
     
     func goToAppColorTheme() {
         print("build app color module")
+    }
+}
+
+extension ProfileCoordinator: FinishCoordinatorDelegate {
+    func close() {
+        delegate?.close()
     }
 }

@@ -12,13 +12,16 @@ import Swinject
 final class CashInCoordinator: FlowCoordinatorProtocol {
     private let resolver: Resolver
     private weak var navigationController: UINavigationController?
+    private var finishHandlers: [(() -> Void)] = []
     
     init(
         resolver: Resolver,
-        navigationController: UINavigationController?
+        navigationController: UINavigationController?,
+        finishHandler: @escaping (() -> Void)
     ) {
         self.resolver = resolver
         self.navigationController = navigationController
+        finishHandlers.append(finishHandler)
     }
     
     deinit {
@@ -50,10 +53,18 @@ final class CashInCoordinator: FlowCoordinatorProtocol {
         )
     }
     
-    func finish(animated: Bool, completion: (() -> Void)?) {
+    func finish(
+        animated: Bool,
+        completion: (() -> Void)?
+    ) {
+        guard let finishHandler = completion else { return }
+        finishHandlers.append(finishHandler)
     }
 }
 
 // MARK: - CashInPresenterOutput
 extension CashInCoordinator: CashInPresenterOutput {
+    func moduleDidUnload() {
+        finishHandlers.forEach { $0() }
+    }
 }

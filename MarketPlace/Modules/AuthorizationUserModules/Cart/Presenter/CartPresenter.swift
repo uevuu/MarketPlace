@@ -8,7 +8,7 @@
 // MARK: - CartPresenter
 final class CartPresenter {
     weak var view: CartViewInput?
-    private var output: CartPresenterOutput?
+    private weak var output: CartPresenterOutput?
     
     init(output: CartPresenterOutput?) {
         self.output = output
@@ -21,4 +21,7 @@ final class CartPresenter {
 
 // MARK: - CartViewOutput
 extension CartPresenter: CartViewOutput {
+    func deinitEvent() {
+        output?.moduleDidUnload()
+    }
 }

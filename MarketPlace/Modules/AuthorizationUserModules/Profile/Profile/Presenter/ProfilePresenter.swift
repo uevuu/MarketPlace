@@ -10,7 +10,7 @@ import UIKit
 // MARK: - ProfilePresenter
 final class ProfilePresenter {
     weak var view: ProfileViewInput?
-    private var output: ProfilePresenterOutput?
+    private weak var output: ProfilePresenterOutput?
     private let settings: [SettingType] = [
         .myOrder,
         .city,

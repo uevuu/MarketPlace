@@ -7,4 +7,5 @@
 
 // MARK: - CashInPresenterOutput
 protocol CashInPresenterOutput: AnyObject {
+    func moduleDidUnload()
 }

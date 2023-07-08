@@ -13,6 +13,7 @@ final class RootCoordinator {
     private let window: UIWindow
     private let resolver: Resolver
     private var childCoordinators: [FlowCoordinatorProtocol] = []
+    private var isAuth = true
     
     init(window: UIWindow, resolver: Resolver) {
         self.window = window
@@ -24,8 +25,7 @@ final class RootCoordinator {
     }
     
     func start() {
-//        showLoginFlow()
-        showUserFlow()
+        isAuth ? showUserFlow() : showLoginFlow()
         window.makeKeyAndVisible()
     }
     
@@ -47,6 +47,7 @@ final class RootCoordinator {
             resolver: resolver
         ) { [weak self] in
             self?.childCoordinators.removeFlowCoordinator(ofType: UserTabBarCoordinator.self)
+            self?.showLoginFlow()
         }
         userTabBarCoordinator.start(animated: false)
         childCoordinators.append(userTabBarCoordinator)

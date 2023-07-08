@@ -7,4 +7,5 @@
 
 // MARK: - CartPresenterOutput
 protocol CartPresenterOutput: AnyObject {
+    func moduleDidUnload()
 }

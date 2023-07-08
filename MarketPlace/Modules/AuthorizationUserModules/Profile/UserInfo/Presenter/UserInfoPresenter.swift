@@ -37,4 +37,8 @@ extension UserInfoPresenter: UserInfoViewOutput {
     
     func readyTapped() {
     }
+    
+    func deinitEvent() {
+        output?.moduleDidUnload()
+    }
 }

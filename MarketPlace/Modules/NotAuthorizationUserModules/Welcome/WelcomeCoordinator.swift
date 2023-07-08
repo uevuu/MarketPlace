@@ -66,7 +66,6 @@ extension WelcomeCoordinator: WelcomePresenterOutput {
 
 extension WelcomeCoordinator: WelcomeCoordinatorFinishDelegate {
     func welcomeCoordinatorDidFinish() {
-//        childCoordinators.finishAll(animated: false, completion: nil)
         finishHandlers.forEach { $0() }
     }
 }

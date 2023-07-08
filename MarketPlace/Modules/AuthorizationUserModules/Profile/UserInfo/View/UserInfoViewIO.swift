@@ -16,4 +16,5 @@ protocol UserInfoViewOutput: AnyObject {
     func logOutTapped()
     func deleteAccountTapped()
     func readyTapped()
+    func deinitEvent()
 }

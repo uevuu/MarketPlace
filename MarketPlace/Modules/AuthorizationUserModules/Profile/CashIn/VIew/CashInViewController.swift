@@ -62,6 +62,7 @@ final class CashInViewController: UIViewController {
     }
     
     deinit {
+        output.deinitEvent()
         print("deinit Cash In view")
     }
     
