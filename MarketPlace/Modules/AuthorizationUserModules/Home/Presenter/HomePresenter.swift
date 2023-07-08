@@ -40,7 +40,7 @@ extension HomePresenter: HomeViewOutput {
     }
     
     func selectProduct(at indexPath: IndexPath) {
-        print("go to product view")
+        output?.goToProductModule()
     }
     
     func handleTextInput(_ text: String) {

@@ -54,6 +54,17 @@ final class HomeCoordinator: FlowCoordinatorProtocol {
 
 // MARK: - HomePresenterOutput
 extension HomeCoordinator: HomePresenterOutput {
+    func goToProductModule() {
+        let productInfoCoordinator = ProductInfoCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: ProductInfoCoordinator.self)
+        }
+        childCoordinators.append(productInfoCoordinator)
+        productInfoCoordinator.start(animated: true)
+    }
+    
     func moduleDidUnload() {
         finishHandlers.forEach { $0() }
     }
