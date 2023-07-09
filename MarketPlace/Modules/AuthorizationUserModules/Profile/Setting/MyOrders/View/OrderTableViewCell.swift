@@ -21,6 +21,14 @@ class OrderTableViewCell: UITableViewCell {
         return label
     }()
     
+    private lazy var forwardImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: R.string.systemImage.forward())
+        imageView.tintColor = R.color.secondary()
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
     private lazy var textStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             dataInfoLabel,
@@ -56,15 +64,22 @@ class OrderTableViewCell: UITableViewCell {
             imageView.contentMode = .scaleAspectFill
         }
         contentView.addSubview(textStackView)
+        contentView.addSubview(forwardImageView)
         contentView.addSubview(imageStackView)
         setConstraints()
     }
     
     private func setConstraints() {
+        forwardImageView.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(18)
+            make.height.equalTo(22)
+            make.width.equalTo(12)
+            make.centerY.equalTo(textStackView.snp.centerY)
+        }
         textStackView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(14)
             make.leading.equalToSuperview().offset(18)
-            make.trailing.equalToSuperview().offset(18)
+            make.trailing.equalTo(forwardImageView.snp.leading).inset(10)
         }
         let imageHeight = ((contentView.bounds.width - 74) * 65) / (48 * 5)
         imageStackView.snp.makeConstraints { make in

@@ -15,4 +15,9 @@ extension UIButton {
     ) {
         addTarget(target, action: action, for: event)
     }
+    
+    func setTitle(_ title: String, titleSize: CGFloat = 13) {
+        self.setTitle(title, for: .normal)
+        titleLabel?.font = R.font.robotoRegular(size: titleSize)
+    }
 }

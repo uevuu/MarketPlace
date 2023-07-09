@@ -123,6 +123,7 @@
 		8BF9D6D22A561F1C008A2526 /* CashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6D12A561F1C008A2526 /* CashButton.swift */; };
 		8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6D52A562C5F008A2526 /* UserMoneyStatusView.swift */; };
 		8BF9D6D82A56319C008A2526 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9D6D72A56319C008A2526 /* ProductCell.swift */; };
+		8BF9EFCF2A5AC18300903E1D /* ProductInCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFCE2A5AC18300903E1D /* ProductInCartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,6 +246,7 @@
 		8BF9D6D12A561F1C008A2526 /* CashButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashButton.swift; sourceTree = "<group>"; };
 		8BF9D6D52A562C5F008A2526 /* UserMoneyStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMoneyStatusView.swift; sourceTree = "<group>"; };
 		8BF9D6D72A56319C008A2526 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		8BF9EFCE2A5AC18300903E1D /* ProductInCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInCartTableViewCell.swift; sourceTree = "<group>"; };
 		8D070571E3963A5776D4FAF5 /* Pods-MarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketPlace.debug.xcconfig"; path = "Target Support Files/Pods-MarketPlace/Pods-MarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4CDFD529BBBCBA03D6DE93 /* Pods_MarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -752,6 +754,7 @@
 			children = (
 				8BF9D6AB2A55F20F008A2526 /* CartViewIO.swift */,
 				8BF9D6AD2A55F21B008A2526 /* CartViewController.swift */,
+				8BF9EFCE2A5AC18300903E1D /* ProductInCartTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1054,6 +1057,7 @@
 				8B2C81462A53100C004C82B6 /* SignUpPresenterOutput .swift in Sources */,
 				8B3690F42A575F9F0012D8D4 /* UserInfoPresenterOutput.swift in Sources */,
 				8B3690E92A575C200012D8D4 /* CashInViewController.swift in Sources */,
+				8BF9EFCF2A5AC18300903E1D /* ProductInCartTableViewCell.swift in Sources */,
 				8B2C811F2A52D184004C82B6 /* LocalDataSourceAssembly.swift in Sources */,
 				8BF9D69D2A55AB73008A2526 /* UserTabBarCoordinator.swift in Sources */,
 				8B2C81382A52F2DB004C82B6 /* WelcomePresenterOutput.swift in Sources */,

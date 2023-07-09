@@ -9,3 +9,7 @@
 "camera" = "camera";
 "person" = "person.crop.circle";
 "chevronRight" = "chevron.right";
+"checkmark" = "checkmark";
+"checkmarkCircleFill" = "checkmark.circle.fill";
+"circle" = "circle";
+"forward" = "chevron.forward";

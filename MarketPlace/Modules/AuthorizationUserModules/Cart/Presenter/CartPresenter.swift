@@ -5,6 +5,8 @@
 //  Created by Nikita Marin on 05.07.2023.
 //
 
+import Foundation
+
 // MARK: - CartPresenter
 final class CartPresenter {
     weak var view: CartViewInput?
@@ -21,6 +23,22 @@ final class CartPresenter {
 
 // MARK: - CartViewOutput
 extension CartPresenter: CartViewOutput {
+    func getItemsInCartCount() -> Int {
+        return 6
+    }
+    func configureCell(
+        _ cell: ProductInCartTableViewCell,
+        at indexPath: IndexPath
+    ) {
+        cell.configureCell(
+            title: "Кроссовки Nike",
+            sellerName: "Anna S",
+            count: "1 шт.",
+            price: "3 500 б.",
+            imageUrlString: "productImage"
+        )
+    }
+    
     func deinitEvent() {
         output?.moduleDidUnload()
     }

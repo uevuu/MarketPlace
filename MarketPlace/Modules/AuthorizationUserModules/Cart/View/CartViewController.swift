@@ -12,6 +12,56 @@ class CartViewController: UIViewController {
     private let output: CartViewOutput
     
     // MARK: - UI
+    private lazy var deleteSelectedButton: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(R.color.error(), for: .normal)
+        button.setTitle(R.string.localizable.deleteSelected(), for: .normal)
+        button.titleLabel?.font = R.font.robotoRegular(size: 14)
+        button.addTarget(self, for: #selector(deleteSelectedButtonTapped))
+        return button
+    }()
+    
+    private lazy var selectAllButton: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(R.color.mainFont(), for: .normal)
+        button.setTitle(R.string.localizable.selectAll(), for: .normal)
+        button.setImage(
+            UIImage(systemName: R.string.systemImage.circle()),
+            for: .normal
+        )
+        button.setImage(
+            UIImage(systemName: R.string.systemImage.checkmarkCircleFill()),
+            for: .selected
+        )
+        button.tintColor = R.color.blue()
+        button.titleLabel?.font = R.font.robotoRegular(size: 14)
+        button.addTarget(self, for: #selector(selectAllButtonTapped))
+        button.imageEdgeInsets.left = -8
+        return button
+    }()
+    
+    private lazy var topStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            deleteSelectedButton,
+            selectAllButton
+        ])
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private lazy var productsTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(ProductInCartTableViewCell.self)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.contentInset.bottom = 70
+        return tableView
+    }()
+    
+    private lazy var proceedToCheckoutButton = SimpleButton(title: R.string.localizable.proceedToCheckout())
     
     // MARK: - Init
     
@@ -40,20 +90,72 @@ class CartViewController: UIViewController {
     // MARK: - Setup
     
     private func setup() {
+        proceedToCheckoutButton.addTarget(self, for: #selector(proceedToCheckoutButtonTapped))
+        view.addSubview(topStackView)
+        view.addSubview(productsTableView)
+        view.addSubview(proceedToCheckoutButton)
         view.backgroundColor = R.color.background()
         setConstraints()
     }
     
     private func configureNavigationBar() {
+        title = R.string.localizable.cart()
+        navigationController?.navigationBar.titleTextAttributes = [
+            .font: R.font.robotoRegular(size: 15) ?? UIFont()
+        ]
     }
     
     private func setConstraints() {
+        topStackView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(55)
+        }
+        productsTableView.snp.makeConstraints { make in
+            make.top.equalTo(topStackView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        proceedToCheckoutButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(21)
+        }
     }
     
     // MARK: - Private
+    @objc private func deleteSelectedButtonTapped() {
+        print("delete selected")
+    }
     
+    @objc private func selectAllButtonTapped() {
+        selectAllButton.isSelected.toggle()
+        print("select all")
+    }
+    
+    @objc private func proceedToCheckoutButtonTapped() {
+        print("go to make order module")
+    }
 }
 
 // MARK: - CartViewInput
 extension CartViewController: CartViewInput {
+}
+
+// MARK: - UITableViewDataSource
+extension CartViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return output.getItemsInCartCount()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = productsTableView.dequeueReusableCell(ProductInCartTableViewCell.self, for: indexPath)
+        cell.selectionStyle = .none
+        output.configureCell(cell, at: indexPath)
+        return cell
+    }
+}
+
+extension CartViewController: UITableViewDelegate {
 }

@@ -58,3 +58,9 @@
 "addToCart" = "Add to cart";
 
 "mockDescription" = "Стильное и комфортное платье изготовлено из мягкой, тактильно-приятной ткани. Базовый элемент женского гардероба на каждый день.";
+
+"cart" = "Cart";
+"deleteSelected" = "Delete selected";
+"selectAll" = "Select all";
+"proceedToCheckout" = "Proceed to checkout";
+"count" = "Count:";
