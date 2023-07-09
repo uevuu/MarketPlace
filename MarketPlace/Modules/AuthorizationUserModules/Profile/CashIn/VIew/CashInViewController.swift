@@ -24,6 +24,8 @@ final class CashInViewController: UIViewController {
         let textField = UITextField()
         textField.font = R.font.robotoRegular(size: 14)
         textField.setPlaceHolderWithSecondaryColor(R.string.localizable.pointsCount())
+        textField.keyboardType = .numberPad
+        textField.delegate = self
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -109,4 +111,17 @@ final class CashInViewController: UIViewController {
 
 // MARK: - CashInViewInput
 extension CashInViewController: CashInViewInput {
+}
+
+// MARK: - UITextFieldDelegate
+extension CashInViewController: UITextFieldDelegate {
+    func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
 }

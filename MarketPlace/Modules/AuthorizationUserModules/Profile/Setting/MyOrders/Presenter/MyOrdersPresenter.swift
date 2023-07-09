@@ -45,4 +45,8 @@ extension MyOrdersPresenter: MyOrdersViewOutput {
     func backTapped() {
         output?.goToProfileModule()
     }
+    
+    func deinitEvent() {
+        output?.moduleDidUnload()
+    }
 }

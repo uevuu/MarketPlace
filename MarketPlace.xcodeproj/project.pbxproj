@@ -131,6 +131,14 @@
 		8BF9EFE12A5B03BD00903E1D /* SelectProductCountViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFE02A5B03BD00903E1D /* SelectProductCountViewIO.swift */; };
 		8BF9EFE32A5B03CA00903E1D /* SelectProductCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFE22A5B03CA00903E1D /* SelectProductCountViewController.swift */; };
 		8BF9EFE52A5B263800903E1D /* ProductCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFE42A5B263800903E1D /* ProductCountView.swift */; };
+		8BF9EFEB2A5B604800903E1D /* OrderInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFEA2A5B604800903E1D /* OrderInfoBuilder.swift */; };
+		8BF9EFED2A5B607100903E1D /* OrderInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFEC2A5B607100903E1D /* OrderInfoCoordinator.swift */; };
+		8BF9EFEF2A5B609E00903E1D /* OrderInfoPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFEE2A5B609E00903E1D /* OrderInfoPresenterOutput.swift */; };
+		8BF9EFF12A5B60B900903E1D /* OrderInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFF02A5B60B900903E1D /* OrderInfoPresenter.swift */; };
+		8BF9EFF32A5B60CD00903E1D /* OrderInfoViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFF22A5B60CD00903E1D /* OrderInfoViewIO.swift */; };
+		8BF9EFF52A5B60DA00903E1D /* OrderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFF42A5B60DA00903E1D /* OrderInfoViewController.swift */; };
+		8BF9EFF72A5B653000903E1D /* UserOrderInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFF62A5B653000903E1D /* UserOrderInfoTableViewCell.swift */; };
+		8BF9EFF92A5B72DB00903E1D /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9EFF82A5B72DB00903E1D /* UILabel+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -261,6 +269,14 @@
 		8BF9EFE02A5B03BD00903E1D /* SelectProductCountViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProductCountViewIO.swift; sourceTree = "<group>"; };
 		8BF9EFE22A5B03CA00903E1D /* SelectProductCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProductCountViewController.swift; sourceTree = "<group>"; };
 		8BF9EFE42A5B263800903E1D /* ProductCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCountView.swift; sourceTree = "<group>"; };
+		8BF9EFEA2A5B604800903E1D /* OrderInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoBuilder.swift; sourceTree = "<group>"; };
+		8BF9EFEC2A5B607100903E1D /* OrderInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoCoordinator.swift; sourceTree = "<group>"; };
+		8BF9EFEE2A5B609E00903E1D /* OrderInfoPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoPresenterOutput.swift; sourceTree = "<group>"; };
+		8BF9EFF02A5B60B900903E1D /* OrderInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoPresenter.swift; sourceTree = "<group>"; };
+		8BF9EFF22A5B60CD00903E1D /* OrderInfoViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoViewIO.swift; sourceTree = "<group>"; };
+		8BF9EFF42A5B60DA00903E1D /* OrderInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoViewController.swift; sourceTree = "<group>"; };
+		8BF9EFF62A5B653000903E1D /* UserOrderInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrderInfoTableViewCell.swift; sourceTree = "<group>"; };
+		8BF9EFF82A5B72DB00903E1D /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		8D070571E3963A5776D4FAF5 /* Pods-MarketPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketPlace.debug.xcconfig"; path = "Target Support Files/Pods-MarketPlace/Pods-MarketPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4CDFD529BBBCBA03D6DE93 /* Pods_MarketPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -341,6 +357,7 @@
 				8B2C81552A53AB83004C82B6 /* String+Extensions .swift */,
 				8B3691002A5790CB0012D8D4 /* UIButton+Extensions.swift */,
 				8B3690E32A5712E20012D8D4 /* UICollectionView+Extensions.swift */,
+				8BF9EFF82A5B72DB00903E1D /* UILabel+Extensions.swift */,
 				8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */,
 				8B2C81252A52D318004C82B6 /* UITabBarController+Extensions.swift */,
 				8B3690E52A5712F00012D8D4 /* UITableView+Extensions.swift */,
@@ -509,6 +526,7 @@
 		8B3D660F2A586540009CD2D9 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				8BF9EFE62A5B601800903E1D /* OrderInfo */,
 				8B3D66122A5865CD009CD2D9 /* MyOrders */,
 				8B3D66112A5865A1009CD2D9 /* ChooseCity */,
 				8B3D66102A586586009CD2D9 /* AppColorTheme */,
@@ -859,6 +877,36 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		8BF9EFE62A5B601800903E1D /* OrderInfo */ = {
+			isa = PBXGroup;
+			children = (
+				8BF9EFE72A5B602700903E1D /* Presenter */,
+				8BF9EFE82A5B602C00903E1D /* View */,
+				8BF9EFEA2A5B604800903E1D /* OrderInfoBuilder.swift */,
+				8BF9EFEC2A5B607100903E1D /* OrderInfoCoordinator.swift */,
+			);
+			path = OrderInfo;
+			sourceTree = "<group>";
+		};
+		8BF9EFE72A5B602700903E1D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8BF9EFEE2A5B609E00903E1D /* OrderInfoPresenterOutput.swift */,
+				8BF9EFF02A5B60B900903E1D /* OrderInfoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8BF9EFE82A5B602C00903E1D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8BF9EFF22A5B60CD00903E1D /* OrderInfoViewIO.swift */,
+				8BF9EFF42A5B60DA00903E1D /* OrderInfoViewController.swift */,
+				8BF9EFF62A5B653000903E1D /* UserOrderInfoTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B181952DFFC6349F7F39DDDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1031,6 +1079,7 @@
 				8B3D66162A587F34009CD2D9 /* MyOrdersBuilder.swift in Sources */,
 				8B2C813A2A52F3F6004C82B6 /* LogInPresenterOutput.swift in Sources */,
 				8BF9D6AE2A55F21B008A2526 /* CartViewController.swift in Sources */,
+				8BF9EFF12A5B60B900903E1D /* OrderInfoPresenter.swift in Sources */,
 				8B2C81112A52C8C0004C82B6 /* WelcomeViewIO.swift in Sources */,
 				8B2C81402A52F796004C82B6 /* LogInCoordinator.swift in Sources */,
 				8B2C81542A537EEE004C82B6 /* CustomTextFieldView.swift in Sources */,
@@ -1046,10 +1095,12 @@
 				8B2C811A2A52D133004C82B6 /* ServiceLocator.swift in Sources */,
 				8BF9D6AC2A55F20F008A2526 /* CartViewIO.swift in Sources */,
 				8BF9D6C02A55F328008A2526 /* ProfileCoordinator.swift in Sources */,
+				8BF9EFF92A5B72DB00903E1D /* UILabel+Extensions.swift in Sources */,
 				8B3690E62A5712F00012D8D4 /* UITableView+Extensions.swift in Sources */,
 				8BF9D6BA2A55F2F1008A2526 /* ProfileViewIO.swift in Sources */,
 				8BF9D6AA2A55F1F9008A2526 /* CartPresenter.swift in Sources */,
 				8B2C81562A53AB83004C82B6 /* String+Extensions .swift in Sources */,
+				8BF9EFEF2A5B609E00903E1D /* OrderInfoPresenterOutput.swift in Sources */,
 				8BF9D6B22A55F246008A2526 /* CartBuilder.swift in Sources */,
 				8B3D66062A584D22009CD2D9 /* CashInViewIO.swift in Sources */,
 				8B3D660E2A585888009CD2D9 /* CustomTextFieldButton.swift in Sources */,
@@ -1094,6 +1145,7 @@
 				8BAB8AF62A523918005167BA /* SceneDelegate.swift in Sources */,
 				8BF9D6A82A55F1EE008A2526 /* CartPresenterOutput.swift in Sources */,
 				8B2C81212A52D199004C82B6 /* NetworkAssembly.swift in Sources */,
+				8BF9EFF52A5B60DA00903E1D /* OrderInfoViewController.swift in Sources */,
 				8BF9EFD92A5B038600903E1D /* SelectProductCountBuilder.swift in Sources */,
 				8B2C81142A52CB40004C82B6 /* WelcomeCoordinator.swift in Sources */,
 				8B2C81362A52F2BA004C82B6 /* LogInViewIO.swift in Sources */,
@@ -1102,9 +1154,12 @@
 				8B2C815C2A53AC15004C82B6 /* TextFieldType.swift in Sources */,
 				8BF9D6B82A55F2DD008A2526 /* ProfilePresenterOutput.swift in Sources */,
 				8BAB8B162A5245E6005167BA /* R.generated.swift in Sources */,
+				8BF9EFED2A5B607100903E1D /* OrderInfoCoordinator.swift in Sources */,
 				8BF9EFE32A5B03CA00903E1D /* SelectProductCountViewController.swift in Sources */,
 				8B96EAA22A59C88C00FD2466 /* ProductInfoPresenter.swift in Sources */,
+				8BF9EFF72A5B653000903E1D /* UserOrderInfoTableViewCell.swift in Sources */,
 				8B3691012A5790CB0012D8D4 /* UIButton+Extensions.swift in Sources */,
+				8BF9EFF32A5B60CD00903E1D /* OrderInfoViewIO.swift in Sources */,
 				8BF9D6CC2A55F377008A2526 /* HomeCoordinator.swift in Sources */,
 				8BF9D6B62A55F2D6008A2526 /* ProfilePresenter.swift in Sources */,
 				8B2C81162A52CB4D004C82B6 /* WelcomeBuilder.swift in Sources */,
@@ -1131,6 +1186,7 @@
 				8B3D661C2A587F70009CD2D9 /* MyOrdersPresenterOutput.swift in Sources */,
 				8B3690EF2A575F670012D8D4 /* UserInfoBuilder.swift in Sources */,
 				8B96EAAC2A59D47300FD2466 /* ProductImageCell.swift in Sources */,
+				8BF9EFEB2A5B604800903E1D /* OrderInfoBuilder.swift in Sources */,
 				8BF9EFE12A5B03BD00903E1D /* SelectProductCountViewIO.swift in Sources */,
 				8B3690FB2A575FD20012D8D4 /* UserInfoViewController.swift in Sources */,
 				8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */,

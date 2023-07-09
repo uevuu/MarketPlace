@@ -20,4 +20,5 @@ protocol MyOrdersViewOutput: AnyObject {
     )
     func selectOrder(at indexPath: IndexPath)
     func backTapped()
+    func deinitEvent()
 }

@@ -9,4 +9,5 @@
 protocol MyOrdersPresenterOutput: AnyObject {
     func goToProfileModule()
     func goToOrderInfoModule()
+    func moduleDidUnload()
 }

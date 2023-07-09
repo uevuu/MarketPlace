@@ -69,3 +69,9 @@
 "selectCount" = "Выберите количество";
 "remain" = "Осталось";
 "productCount" = "Количество товаров";
+
+"cancelOrder" = "Отменить товар";
+"issueReturn" = "Оформить возврат";
+"received" = "Получен";
+"new" = "Новый";
+"orderingInformation" = "Информация о заказе";

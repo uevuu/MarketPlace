@@ -83,7 +83,10 @@ extension ProfileCoordinator: ProfilePresenterOutput {
         let myOrdersCoordinator = MyOrdersCoordinator(
             resolver: resolver,
             navigationController: navigationController
-        )
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: MyOrdersCoordinator.self)
+        }
+        childCoordinators.append(myOrdersCoordinator)
         myOrdersCoordinator.start(animated: true)
     }
     

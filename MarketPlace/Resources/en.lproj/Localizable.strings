@@ -69,3 +69,9 @@
 "selectCount" = "Select count";
 "remain" = "Remain";
 "productCount" = "Product count";
+
+"cancelProduct" = "Cancel product";
+"issueReturn" = "Issue a return";
+"received" = "Received";
+"new" = "New";
+"orderingInformation" = "Ordering information";

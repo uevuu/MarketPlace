@@ -12,13 +12,17 @@ import Swinject
 final class MyOrdersCoordinator: FlowCoordinatorProtocol {
     private let resolver: Resolver
     private weak var navigationController: UINavigationController?
+    private var finishHandlers: [(() -> Void)] = []
+    private var childCoordinators: [FlowCoordinatorProtocol] = []
     
     init(
         resolver: Resolver,
-        navigationController: UINavigationController?
+        navigationController: UINavigationController?,
+        finishHandler: @escaping (() -> Void)
     ) {
         self.resolver = resolver
         self.navigationController = navigationController
+        finishHandlers.append(finishHandler)
     }
     
     deinit {
@@ -35,6 +39,10 @@ final class MyOrdersCoordinator: FlowCoordinatorProtocol {
     }
     
     func finish(animated: Bool, completion: (() -> Void)?) {
+        guard let finishHandler = completion else { return }
+        finishHandlers.append(finishHandler)
+        childCoordinators.finishAll(animated: animated, completion: nil)
+        navigationController?.popViewController(animated: animated)
     }
 }
 
@@ -45,6 +53,17 @@ extension MyOrdersCoordinator: MyOrdersPresenterOutput {
     }
     
     func goToOrderInfoModule() {
-        print("build order info module")
+        let orderInfoCoordinator = OrderInfoCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: OrderInfoCoordinator.self)
+        }
+        childCoordinators.append(orderInfoCoordinator)
+        orderInfoCoordinator.start(animated: true)
+    }
+    
+    func moduleDidUnload() {
+        finishHandlers.forEach { $0() }
     }
 }
