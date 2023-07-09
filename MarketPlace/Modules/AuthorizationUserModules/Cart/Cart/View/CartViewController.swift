@@ -53,6 +53,7 @@ class CartViewController: UIViewController {
     
     private lazy var productsTableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = R.color.background()
         tableView.register(ProductInCartTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
@@ -126,16 +127,39 @@ class CartViewController: UIViewController {
     
     // MARK: - Private
     @objc private func deleteSelectedButtonTapped() {
-        print("delete selected")
+        output.deleteAll()
     }
     
     @objc private func selectAllButtonTapped() {
-        selectAllButton.isSelected.toggle()
-        print("select all")
+        output.selectAll()
     }
     
     @objc private func proceedToCheckoutButtonTapped() {
-        print("go to make order module")
+        output.proceedToCheckout()
+    }
+    
+    @objc private func selectButtonTapped(_ sender: ProductInCartTableViewCell) {
+        output.selectProduct(at: sender.tag)
+    }
+    
+    @objc private func countButtonTapped(_ sender: ProductInCartTableViewCell) {
+        output.selectCount(at: sender.tag)
+    }
+    
+    @objc private func deleteButtonTapped(_ sender: ProductInCartTableViewCell) {
+        let optionMenu = UIAlertController(
+            title: nil,
+            message: R.string.localizable.deleteProductWarning(),
+            preferredStyle: .actionSheet
+        )
+        optionMenu.addDestructive(title: R.string.localizable.deleteProduct()) { [weak output] _ in
+            output?.deleteProduct(at: sender.tag)
+        }
+        present(
+            optionMenu,
+            animated: true,
+            completion: nil
+        )
     }
 }
 
@@ -151,11 +175,22 @@ extension CartViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = productsTableView.dequeueReusableCell(ProductInCartTableViewCell.self, for: indexPath)
-        cell.selectionStyle = .none
+        cell.selectedButton.tag = indexPath.item
+        cell.selectedButton.addTarget(self, for: #selector(selectButtonTapped(_:)))
+        cell.countButton.addTarget(self, for: #selector(countButtonTapped(_:)))
+        cell.countButton.tag = indexPath.item
+        cell.deleteButton.addTarget(self, for: #selector(deleteButtonTapped(_:)))
+        cell.deleteButton.tag = indexPath.item
         output.configureCell(cell, at: indexPath)
         return cell
     }
 }
 
 extension CartViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        output.selectProduct(at: indexPath)
+    }
 }

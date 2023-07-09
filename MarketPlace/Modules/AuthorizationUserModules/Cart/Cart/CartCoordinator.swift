@@ -58,4 +58,25 @@ extension CartCoordinator: CartPresenterOutput {
     func moduleDidUnload() {
         finishHandlers.forEach { $0() }
     }
+    
+    func goToProductModule() {
+        let productInfoCoordinator = ProductInfoCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: ProductInfoCoordinator.self)
+        }
+        childCoordinators.append(productInfoCoordinator)
+        productInfoCoordinator.start(animated: true)
+    }
+    func goToSelectProductCountModule() {
+        let cashInCoordinator = SelectProductCountCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: SelectProductCountCoordinator.self)
+        }
+        childCoordinators.append(cashInCoordinator)
+        cashInCoordinator.start(animated: true)
+    }
 }

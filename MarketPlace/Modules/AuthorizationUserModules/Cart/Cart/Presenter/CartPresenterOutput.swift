@@ -8,4 +8,6 @@
 // MARK: - CartPresenterOutput
 protocol CartPresenterOutput: AnyObject {
     func moduleDidUnload()
+    func goToProductModule()
+    func goToSelectProductCountModule()
 }

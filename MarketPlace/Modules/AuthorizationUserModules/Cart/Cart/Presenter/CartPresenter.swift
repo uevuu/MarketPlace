@@ -39,6 +39,34 @@ extension CartPresenter: CartViewOutput {
         )
     }
     
+    func deleteAll() {
+        print("delete all")
+    }
+    
+    func selectAll() {
+        print("select all")
+    }
+    
+    func selectProduct(at index: Int) {
+        print("select at \(index)")
+    }
+    
+    func deleteProduct(at index: Int) {
+        print("delete at \(index)")
+    }
+    
+    func selectCount(at index: Int) {
+        output?.goToSelectProductCountModule()
+    }
+    
+    func proceedToCheckout() {
+        print("proceedToCheckout")
+    }
+    
+    func selectProduct(at indexPath: IndexPath) {
+        output?.goToProductModule()
+    }
+    
     func deinitEvent() {
         output?.moduleDidUnload()
     }

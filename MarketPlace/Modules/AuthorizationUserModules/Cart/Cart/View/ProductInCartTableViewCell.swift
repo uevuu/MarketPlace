@@ -36,7 +36,7 @@ final class ProductInCartTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var countButton: UIButton = {
+    lazy var countButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(R.color.background(), for: .normal)
         button.backgroundColor = R.color.blue()
@@ -53,7 +53,7 @@ final class ProductInCartTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var deleteButton: UIButton = {
+    lazy var deleteButton: UIButton = {
         let button = UIButton()
         button.setTitle(R.string.localizable.delete(), for: .normal)
         button.setTitleColor(R.color.blue(), for: .normal)
@@ -63,7 +63,7 @@ final class ProductInCartTableViewCell: UITableViewCell {
         return button
     }()
     
-    private lazy var selectedButton: UIButton = {
+    lazy var selectedButton: UIButton = {
         let button = UIButton()
         button.tintColor = R.color.blue()
         button.setImage(
@@ -130,6 +130,8 @@ final class ProductInCartTableViewCell: UITableViewCell {
     }
     
     private func setup() {
+        selectionStyle = .none
+        backgroundColor = .clear
         contentView.addSubview(productImageView)
         contentView.addSubview(finalStackView)
         titleInfoStackView.addSubview(selectedButton)
