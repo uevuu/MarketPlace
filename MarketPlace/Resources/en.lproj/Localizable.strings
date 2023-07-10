@@ -75,3 +75,9 @@
 "received" = "Received";
 "new" = "New";
 "orderingInformation" = "Ordering information";
+
+"orderAmount" = "Order amount";
+"goodsWorth" = "Goods worth";
+"total" = "Total";
+"delivery" = "Delivery";
+"products" = "Products";

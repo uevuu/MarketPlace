@@ -18,6 +18,7 @@ protocol OrderInfoViewOutput: AnyObject {
         _ cell: UserOrderInfoTableViewCell,
         at indexPath: IndexPath
     )
+    func configureHeader(_ header: OrderInfoPreViewHeader)
     func backTapped()
     func deinitEvent()
 }

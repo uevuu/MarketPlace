@@ -5,7 +5,7 @@
 //  Created by Nikita Marin on 05.07.2023.
 //
 
-import UIKit
+import Foundation
 
 // MARK: - HomeViewInput
 protocol HomeViewInput: AnyObject {

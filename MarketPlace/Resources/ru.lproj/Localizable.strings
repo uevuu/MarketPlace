@@ -75,3 +75,9 @@
 "received" = "Получен";
 "new" = "Новый";
 "orderingInformation" = "Информация о заказе";
+
+"orderAmount" = "Сумма заказа";
+"goodsWorth" = "Товаров на сумму";
+"total" = "Итого";
+"delivery" = "Доставка";
+"products" = "Товары";

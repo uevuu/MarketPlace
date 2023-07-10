@@ -14,19 +14,17 @@ class OrderInfoViewController: UIViewController {
     // MARK: - UI
     
     private lazy var productsTableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.backgroundColor = R.color.background()
+        tableView.registerHeaderFooter(OrderInfoPreViewHeader.self)
         tableView.register(UserOrderInfoTableViewCell.self)
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.tableHeaderView = headerView
         return tableView
     }()
     
-    private lazy var headerView: UIView = {
-        let view = UIView()
-        return view
-    }()
-
     // MARK: - Init
     
     init(output: OrderInfoViewOutput) {
@@ -82,6 +80,10 @@ class OrderInfoViewController: UIViewController {
     @objc private func backButtonTapped() {
         output.backTapped()
     }
+    
+    @objc private func actionButtonTapped(_ sender: UserOrderInfoTableViewCell) {
+        print(sender.tag)
+    }
 }
 
 // MARK: - OrderInfoViewInput
@@ -101,8 +103,38 @@ extension OrderInfoViewController: UITableViewDataSource {
         _ tableView: UITableView,
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(UserOrderInfoTableViewCell.self, for: indexPath)
+        let cell = tableView.dequeueReusableCell(UserOrderInfoTableViewCell.self, for: indexPath)                
+        cell.actionButton.addTarget(self, for: #selector(actionButtonTapped(_:)))
+        cell.actionButton.tag = indexPath.item
         output.configureCell(cell, at: indexPath)
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension OrderInfoViewController: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        viewForHeaderInSection section: Int
+    ) -> UIView? {
+        let header = productsTableView.dequeueReusableHeaderFooterView(OrderInfoPreViewHeader.self)
+        output.configureHeader(header)
+        return header
+    }
+}
+
+extension UITableView {
+    func registerHeaderFooter(_ headerFooterClass: UITableViewHeaderFooterView.Type) {
+        register(
+            headerFooterClass,
+            forHeaderFooterViewReuseIdentifier: "\(headerFooterClass.self)"
+        )
+    }
+    
+    func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(_ reusableViewClass: T.Type) -> T {
+        guard let header = dequeueReusableHeaderFooterView(withIdentifier: "\(reusableViewClass.self)") as? T else {
+            fatalError("Forgot register \(T.self)")
+        }
+        return header
     }
 }

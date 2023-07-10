@@ -41,6 +41,9 @@ extension OrderInfoPresenter: OrderInfoViewOutput {
             imageUrlString: "productImage"
         )
     }
+    func configureHeader(_ header: OrderInfoPreViewHeader) {
+        header.configureHeader(address: "г Казань, ул Чистопольская, д 13", price: "5 000 б.")
+    }
     
     func backTapped() {
         output?.goToMyOrderModule()

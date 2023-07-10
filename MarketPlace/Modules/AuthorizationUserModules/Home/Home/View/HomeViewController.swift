@@ -55,11 +55,32 @@ class HomeViewController: UIViewController {
         return searсhBar
     }()
     
+    private lazy var addProductButton: UIButton = {
+        let button = UIButton()
+        button.setImage(
+            UIImage(systemName: R.string.systemImage.plus()),
+            for: .normal
+        )
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 50 / 2
+        button.backgroundColor = R.color.plusBackground()
+        button.isHidden = true
+        button.tintColor = R.color.blue()
+        return button
+    }()
+    
     // MARK: - Init
     
-    init(output: HomeViewOutput) {
+    init(
+        output: HomeViewOutput,
+        isSeller: Bool = false
+    ) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
+        if isSeller {
+            addProductButton.isHidden = false
+            addProductButton.addTarget(self, for: #selector(addProductButtonTapped))
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -84,6 +105,7 @@ class HomeViewController: UIViewController {
     private func setup() {
         view.backgroundColor = R.color.background()
         view.addSubview(collectionView)
+        view.addSubview(addProductButton)
         setConstraints()
     }
     
@@ -106,12 +128,21 @@ class HomeViewController: UIViewController {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
+        addProductButton.snp.makeConstraints { make in
+            make.height.width.equalTo(50)
+            make.trailing.equalToSuperview().inset(16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(16)
+        }
     }
     
     // MARK: - Private
     
     @objc private func filterButtonTapped() {
         output.filterTapped()
+    }
+    
+    @objc private func addProductButtonTapped() {
+        print("tap")
     }
 }
 

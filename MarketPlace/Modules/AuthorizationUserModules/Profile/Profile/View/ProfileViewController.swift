@@ -35,6 +35,7 @@ class ProfileViewController: UIViewController {
     
     private lazy var settingTableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = R.color.background()
         tableView.register(SettingTableViewCell.self)
         tableView.isScrollEnabled = false
         tableView.dataSource = self

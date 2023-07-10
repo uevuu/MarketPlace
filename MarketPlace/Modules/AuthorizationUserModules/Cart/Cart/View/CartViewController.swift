@@ -100,10 +100,10 @@ class CartViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        title = R.string.localizable.cart()
         navigationController?.navigationBar.titleTextAttributes = [
             .font: R.font.robotoRegular(size: 15) ?? UIFont()
         ]
+        navigationItem.title = R.string.localizable.cart()
     }
     
     private func setConstraints() {

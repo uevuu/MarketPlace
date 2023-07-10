@@ -41,14 +41,15 @@ class SettingTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
+        setup()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupViews() {
+    private func setup() {
+        backgroundColor = .clear
         contentView.addSubview(bottomLine)
         contentView.addSubview(titleLabel)
         contentView.addSubview(helpLabel)

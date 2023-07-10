@@ -15,6 +15,7 @@ class MyOrdersViewController: UIViewController {
     
     private lazy var ordersTableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = R.color.background()
         tableView.register(OrderTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
@@ -97,7 +98,6 @@ extension MyOrdersViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(OrderTableViewCell.self, for: indexPath)
-        cell.selectionStyle = .none
         output.configureCell(cell, at: indexPath)
         return cell
     }

@@ -50,7 +50,7 @@ class UserOrderInfoTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var actionButton: UIButton = {
+    lazy var actionButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(R.color.blue(), for: .normal)
         return button
@@ -83,6 +83,7 @@ class UserOrderInfoTableViewCell: UITableViewCell {
     }
     
     private func setup() {
+        backgroundColor = .clear
         selectionStyle = .none
         contentView.addSubview(productImageView)
         contentView.addSubview(infoStackView)

@@ -31,6 +31,7 @@ class ChooseCityViewController: UIViewController {
     
     private lazy var cityTableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = R.color.background()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -126,6 +127,7 @@ extension ChooseCityViewController: UITableViewDataSource {
         let cell = UITableViewCell()
         cell.textLabel?.font = R.font.robotoRegular(size: 14)
         cell.tintColor = R.color.blue()
+        cell.backgroundColor = .clear
         cell.selectionStyle = .none
         output.configureCell(cell, at: indexPath)
         return cell
