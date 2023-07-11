@@ -1,5 +1,5 @@
 //
-//  SellerInfoCoordinator.swift
+//  SellerProfileViewIO.swift
 //  MarketPlace
 //
 //  Created by Nikita Marin on 10.07.2023.

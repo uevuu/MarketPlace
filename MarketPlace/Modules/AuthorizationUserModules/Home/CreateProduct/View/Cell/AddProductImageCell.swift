@@ -59,7 +59,6 @@ final class AddProductImageCell: UICollectionViewCell {
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let view = super.hitTest(point, with: event)
         if  addPhotoButton.frame.minX < point.x &&
             point.x < addPhotoButton.frame.maxX &&
             addPhotoButton.frame.minY < point.y &&

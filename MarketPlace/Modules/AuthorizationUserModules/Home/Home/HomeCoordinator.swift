@@ -10,6 +10,7 @@ import Swinject
 
 // MARK: - HomeCoordinator
 final class HomeCoordinator: FlowCoordinatorProtocol {
+    private let isSeller: Bool
     private let resolver: Resolver
     private weak var parentTabBar: UITabBarController?
     private var navigationController: UINavigationController?
@@ -17,10 +18,12 @@ final class HomeCoordinator: FlowCoordinatorProtocol {
     private var childCoordinators: [FlowCoordinatorProtocol] = []
     
     init(
+        isSeller: Bool = false,
         resolver: Resolver,
         tabBar: UITabBarController,
         finishHandler: @escaping (() -> Void)
     ) {
+        self.isSeller = isSeller
         self.resolver = resolver
         self.parentTabBar = tabBar
         finishHandlers.append(finishHandler)
@@ -32,6 +35,7 @@ final class HomeCoordinator: FlowCoordinatorProtocol {
     
     func start(animated: Bool) {
         let homeBuilder = HomeBuilder(
+            isSeller: isSeller,
             resolver: resolver,
             moduleOutput: self
         )
@@ -56,14 +60,25 @@ final class HomeCoordinator: FlowCoordinatorProtocol {
 // MARK: - HomePresenterOutput
 extension HomeCoordinator: HomePresenterOutput {
     func goToProductModule() {
-        let productInfoCoordinator = ProductInfoCoordinator(
-            resolver: resolver,
-            navigationController: navigationController
-        ) { [weak self] in
-            self?.childCoordinators.removeFlowCoordinator(ofType: ProductInfoCoordinator.self)
+        if isSeller {
+            let editProductCoordinator = EditProductCoordinator(
+                resolver: resolver,
+                navigationController: navigationController
+            ) { [weak self] in
+                self?.childCoordinators.removeFlowCoordinator(ofType: EditProductCoordinator.self)
+            }
+            childCoordinators.append(editProductCoordinator)
+            editProductCoordinator.start(animated: true)
+        } else {
+            let productInfoCoordinator = ProductInfoCoordinator(
+                resolver: resolver,
+                navigationController: navigationController
+            ) { [weak self] in
+                self?.childCoordinators.removeFlowCoordinator(ofType: ProductInfoCoordinator.self)
+            }
+            childCoordinators.append(productInfoCoordinator)
+            productInfoCoordinator.start(animated: true)
         }
-        childCoordinators.append(productInfoCoordinator)
-        productInfoCoordinator.start(animated: true)
     }
     
     func goToFilterModule() {

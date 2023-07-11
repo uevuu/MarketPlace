@@ -64,7 +64,7 @@ class HomeViewController: UIViewController {
         button.clipsToBounds = true
         button.layer.cornerRadius = 50 / 2
         button.backgroundColor = R.color.plusBackground()
-        button.isHidden = true
+        button.addTarget(self, for: #selector(addProductButtonTapped))
         button.tintColor = R.color.blue()
         return button
     }()
@@ -77,10 +77,7 @@ class HomeViewController: UIViewController {
     ) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
-        if isSeller {
-            addProductButton.isHidden = false
-            addProductButton.addTarget(self, for: #selector(addProductButtonTapped))
-        }
+        addProductButton.isHidden = !isSeller
     }
     
     required init?(coder: NSCoder) {

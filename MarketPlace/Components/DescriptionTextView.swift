@@ -38,7 +38,6 @@ final class DescriptionTextView: UIView {
         label.font = R.font.robotoRegular(size: 12)
         label.textColor = R.color.textFieldFont()
         label.text = R.string.localizable.maximumCharacters()
-        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

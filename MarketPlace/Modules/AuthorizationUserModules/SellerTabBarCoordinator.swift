@@ -39,12 +39,14 @@ final class SellerTabBarCoordinator: FlowCoordinatorProtocol {
     func start(animated: Bool) {
         window.rootViewController = tabBarController
         let homeCoordinator = HomeCoordinator(
+            isSeller: true, 
             resolver: resolver,
             tabBar: tabBarController
         ) { [weak self] in
             self?.childCoordinators.removeFlowCoordinator(ofType: HomeCoordinator.self)
         }
         let myOrdersCoordinator = MyOrdersCoordinator(
+            isSeller: true, 
             resolver: resolver,
             tabBar: tabBarController
         ) { [weak self] in

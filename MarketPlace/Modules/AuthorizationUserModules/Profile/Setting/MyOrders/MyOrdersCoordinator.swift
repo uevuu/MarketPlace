@@ -10,6 +10,7 @@ import Swinject
 
 // MARK: - MyOrdersCoordinator
 final class MyOrdersCoordinator: FlowCoordinatorProtocol {
+    private let isSeller: Bool
     private let resolver: Resolver
     private weak var parentTabBar: UITabBarController?
     private weak var navigationController: UINavigationController?
@@ -17,11 +18,13 @@ final class MyOrdersCoordinator: FlowCoordinatorProtocol {
     private var childCoordinators: [FlowCoordinatorProtocol] = []
     
     init(
+        isSeller: Bool = false,
         resolver: Resolver,
         navigationController: UINavigationController? = nil,
         tabBar: UITabBarController? = nil,
         finishHandler: @escaping (() -> Void)
     ) {
+        self.isSeller = isSeller
         self.resolver = resolver
         self.parentTabBar = tabBar
         self.navigationController = navigationController
@@ -34,6 +37,7 @@ final class MyOrdersCoordinator: FlowCoordinatorProtocol {
     
     func start(animated: Bool) {
         let myOrdersBuilder = MyOrdersBuilder(
+            isSeller: isSeller, 
             resolver: resolver,
             moduleOutput: self
         )

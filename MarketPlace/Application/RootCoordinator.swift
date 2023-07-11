@@ -42,11 +42,11 @@ final class RootCoordinator {
     }
     
     private func showUserFlow() {
-        let userTabBarCoordinator = UserTabBarCoordinator(
+        let userTabBarCoordinator = SellerTabBarCoordinator(
             window: window,
             resolver: resolver
         ) { [weak self] in
-            self?.childCoordinators.removeFlowCoordinator(ofType: UserTabBarCoordinator.self)
+            self?.childCoordinators.removeFlowCoordinator(ofType: SellerTabBarCoordinator.self)
             self?.showLoginFlow()
         }
         userTabBarCoordinator.start(animated: false)

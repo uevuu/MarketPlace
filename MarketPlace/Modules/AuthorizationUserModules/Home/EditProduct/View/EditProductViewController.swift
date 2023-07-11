@@ -1,15 +1,15 @@
 //
-//  ProductInfoViewController.swift
+//  EditProductViewController.swift
 //  MarketPlace
 //
-//  Created by Nikita Marin on 08.07.2023.
+//  Created by Nikita Marin on 11.07.2023.
 //
 
 import UIKit
 
-// MARK: - ProductInfoViewController
-class ProductInfoViewController: UIViewController {
-    private let output: ProductInfoViewOutput
+// MARK: - EditProductViewController
+class EditProductViewController: UIViewController {
+    private let output: EditProductViewOutput
     
     // MARK: - UI
     
@@ -23,15 +23,16 @@ class ProductInfoViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let collectionView = ProductInfoCollectionView()
         collectionView.register(ProductImageCell.self)
-        collectionView.registerFooter(ProductInfoView.self)
+        collectionView.registerFooter(EditProductInfoFooter.self)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
-
+    
     // MARK: - Init
     
-    init(output: ProductInfoViewOutput) {
+    init(output: EditProductViewOutput) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,7 +42,7 @@ class ProductInfoViewController: UIViewController {
     }
     
     deinit {
-        print("deinit Product Info View")
+        print("deinit Edit Product View")
         output.deinitEvent()
     }
     
@@ -51,6 +52,11 @@ class ProductInfoViewController: UIViewController {
         super.viewDidLoad()
         configureNavigationBar()
         setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
     }
     
     // MARK: - Setup
@@ -71,6 +77,9 @@ class ProductInfoViewController: UIViewController {
         navigationItem.leftBarButtonItem = BackBarButton()
         navigationItem.leftBarButtonItem?.action = #selector(backButtonTapped)
         navigationItem.leftBarButtonItem?.target = self
+        navigationItem.rightBarButtonItem = DeleteBarButton()
+        navigationItem.rightBarButtonItem?.action = #selector(deleteButtonTapped)
+        navigationItem.rightBarButtonItem?.target = self
     }
     
     private func setConstraints() {
@@ -91,17 +100,21 @@ class ProductInfoViewController: UIViewController {
         output.backTapped()
     }
     
-    @objc private func addToCartButtonTapped() {
-        output.addToCartTapped()
+    @objc private func deleteButtonTapped() {
+        output.deleteTapped()
+    }
+    
+    @objc private func editButtonTapped() {
+        output.editTapped()
     }
 }
 
-// MARK: - ProductInfoViewInput
-extension ProductInfoViewController: ProductInfoViewInput {
+// MARK: - EditProductViewInput
+extension EditProductViewController: EditProductViewInput {
 }
 
 // MARK: - UICollectionViewDataSource
-extension ProductInfoViewController: UICollectionViewDataSource {
+extension EditProductViewController: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
@@ -116,8 +129,8 @@ extension ProductInfoViewController: UICollectionViewDataSource {
         viewForSupplementaryElementOfKind kind: String,
         at indexPath: IndexPath
     ) -> UICollectionReusableView {
-        let footer = collectionView.dequeueReusableFooter(ProductInfoView.self, for: indexPath)
-        footer.addToCartButton.addTarget(self, for: #selector(addToCartButtonTapped))
+        let footer = collectionView.dequeueReusableFooter(EditProductInfoFooter.self, for: indexPath)
+        footer.editButton.addTarget(self, for: #selector(editButtonTapped))
         output.configureFooter(footer, at: indexPath)
         return footer
     }
@@ -133,7 +146,7 @@ extension ProductInfoViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-extension ProductInfoViewController: UICollectionViewDelegate {
+extension EditProductViewController: UICollectionViewDelegate {
     func collectionView(
         _ collectionView: UICollectionView,
         didEndDisplaying cell: UICollectionViewCell,

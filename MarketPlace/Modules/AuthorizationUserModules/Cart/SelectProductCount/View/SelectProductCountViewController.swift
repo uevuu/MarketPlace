@@ -172,6 +172,9 @@ extension SelectProductCountViewController: UITextFieldDelegate {
         replacementString string: String
     ) -> Bool {
         let allowedCharacters = CharacterSet.decimalDigits
+        if textField.text?.isEmpty == true && string == "0" {
+            return false
+        }
         let characterSet = CharacterSet(charactersIn: string)
         return allowedCharacters.isSuperset(of: characterSet)
     }

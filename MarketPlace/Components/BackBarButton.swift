@@ -24,3 +24,21 @@ final class BackBarButton: UIBarButtonItem {
         tintColor = R.color.secondary()
     }
 }
+
+// MARK: - DeleteBarButton
+final class DeleteBarButton: UIBarButtonItem {
+    override init() {
+        super.init()
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup() {
+        image = UIImage(systemName: "trash")
+        style = .plain
+        tintColor = R.color.secondary()
+    }
+}

@@ -25,9 +25,13 @@ class MyOrdersViewController: UIViewController {
 
     // MARK: - Init
     
-    init(output: MyOrdersViewOutput) {
+    init(
+        output: MyOrdersViewOutput,
+        isSeller: Bool = false
+    ) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
+        !isSeller ? navigationItem.leftBarButtonItem = BackBarButton() : nil
     }
     
     required init?(coder: NSCoder) {
@@ -60,7 +64,6 @@ class MyOrdersViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [
             .font: R.font.robotoRegular(size: 15) ?? UIFont()
         ]
-        navigationItem.leftBarButtonItem = BackBarButton()
         navigationItem.leftBarButtonItem?.action = #selector(backButtonTapped)
         navigationItem.leftBarButtonItem?.target = self
     }
