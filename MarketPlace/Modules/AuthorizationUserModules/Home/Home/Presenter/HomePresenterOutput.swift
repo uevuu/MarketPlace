@@ -7,6 +7,8 @@
 
 // MARK: - HomePresenterOutput
 protocol HomePresenterOutput: AnyObject {
-    func moduleDidUnload()
     func goToProductModule()
+    func goToFilterModule()
+    func goToCreateProductModule()
+    func moduleDidUnload()
 }

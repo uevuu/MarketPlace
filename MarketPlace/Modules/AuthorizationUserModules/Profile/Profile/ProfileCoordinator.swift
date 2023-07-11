@@ -28,7 +28,7 @@ final class ProfileCoordinator: FlowCoordinatorProtocol {
     }
     
     deinit {
-        print("deinit Home Coordinator")
+        print("deinit Profile Coordinator")
     }
     
     func start(animated: Bool) {

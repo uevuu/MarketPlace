@@ -48,7 +48,11 @@ extension HomePresenter: HomeViewOutput {
     }
     
     func filterTapped() {
-        print("go to filter")
+        output?.goToFilterModule()
+    }
+    
+    func addProductTapped() {
+        output?.goToCreateProductModule()
     }
     
     func deinitEvent() {

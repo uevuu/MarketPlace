@@ -81,3 +81,17 @@
 "total" = "Total";
 "delivery" = "Delivery";
 "products" = "Products";
+
+"filters" = "Filters";
+"Price" = "Price";
+"allCategory" = "All category";
+"from" = "From";
+"to" = "To";
+"apply" = "Apply";
+
+"productСreation" = "Product creation";
+"title" = "Title";
+"amount" = "Amount";
+"descriptionWithoutDot" = "Description";
+"next" = "Next";
+"maximumCharacters" = "Maximum 7500 characters";

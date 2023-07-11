@@ -1,19 +1,20 @@
 //
-//  UserTabBarCoordinator.swift
+//  SellerTabBarCoordinator.swift
 //  MarketPlace
 //
-//  Created by Nikita Marin on 05.07.2023.
+//  Created by Nikita Marin on 10.07.2023.
 //
 
 import UIKit
 import Swinject
 
-// MARK: - UserTabBarCoordinator
-final class UserTabBarCoordinator: FlowCoordinatorProtocol {
+// MARK: - SellerTabBarCoordinator
+final class SellerTabBarCoordinator: FlowCoordinatorProtocol {
     private let resolver: Resolver
     private let window: UIWindow
     private let tabBarController: UITabBarController = {
         var tabBar = UITabBarController()
+        tabBar.tabBar.backgroundImage = UIImage()
         tabBar.tabBar.barTintColor = R.color.background()
         tabBar.tabBar.tintColor = R.color.blue()
         return tabBar
@@ -32,7 +33,7 @@ final class UserTabBarCoordinator: FlowCoordinatorProtocol {
     }
     
     deinit {
-        print("deinit user tab bar coordinator")
+        print("deinit seller tab bar coordinator")
     }
     
     func start(animated: Bool) {
@@ -43,11 +44,11 @@ final class UserTabBarCoordinator: FlowCoordinatorProtocol {
         ) { [weak self] in
             self?.childCoordinators.removeFlowCoordinator(ofType: HomeCoordinator.self)
         }
-        let cartCoordinator = CartCoordinator(
+        let myOrdersCoordinator = MyOrdersCoordinator(
             resolver: resolver,
             tabBar: tabBarController
         ) { [weak self] in
-            self?.childCoordinators.removeFlowCoordinator(ofType: CartCoordinator.self)
+            self?.childCoordinators.removeFlowCoordinator(ofType: MyOrdersCoordinator.self)
         }
         let profileCoordinator = ProfileCoordinator(
             resolver: resolver,
@@ -57,10 +58,10 @@ final class UserTabBarCoordinator: FlowCoordinatorProtocol {
         }
         profileCoordinator.delegate = self
         homeCoordinator.start(animated: false)
-        cartCoordinator.start(animated: false)
+        myOrdersCoordinator.start(animated: false)
         profileCoordinator.start(animated: false)
         childCoordinators.append(homeCoordinator)
-        childCoordinators.append(cartCoordinator)
+        childCoordinators.append(myOrdersCoordinator)
         childCoordinators.append(profileCoordinator)
     }
     
@@ -71,7 +72,7 @@ final class UserTabBarCoordinator: FlowCoordinatorProtocol {
     }
 }
 
-extension UserTabBarCoordinator: FinishCoordinatorDelegate {
+extension SellerTabBarCoordinator: FinishCoordinatorDelegate {
     func close() {
         finishHandlers.forEach { $0() }
     }

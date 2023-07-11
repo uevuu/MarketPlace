@@ -19,5 +19,6 @@ protocol HomeViewOutput: AnyObject {
     func selectProduct(at indexPath: IndexPath)
     func handleTextInput(_ text: String)
     func filterTapped()
+    func addProductTapped()
     func deinitEvent()
 }

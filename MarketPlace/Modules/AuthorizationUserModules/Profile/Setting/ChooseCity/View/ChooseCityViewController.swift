@@ -148,6 +148,7 @@ extension ChooseCityViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UISearchBarDelegate
 extension ChooseCityViewController: UISearchBarDelegate {
     func searchBar(
         _ searchBar: UISearchBar,

@@ -68,9 +68,9 @@
 "deleteProductWarning" = "Вы точно хотите удалить выбранный товар? Отменить данное действие будет невозможно";
 "selectCount" = "Выберите количество";
 "remain" = "Осталось";
-"productCount" = "Количество товаров";
+"productCount" = "Количество товара";
 
-"cancelOrder" = "Отменить товар";
+"cancelProduct" = "Отменить товар";
 "issueReturn" = "Оформить возврат";
 "received" = "Получен";
 "new" = "Новый";
@@ -81,3 +81,17 @@
 "total" = "Итого";
 "delivery" = "Доставка";
 "products" = "Товары";
+
+"filters" = "Фильтры";
+"Price" = "Цена";
+"allCategory" = "Все категории";
+"from" = "От";
+"to" = "До";
+"apply" = "Применить";
+
+"productСreation" = "Создание товара";
+"title" = "Название";
+"amount" = "Сумма";
+"descriptionWithoutDot" = "Описание";
+"next" = "Далее";
+"maximumCharacters" = "Максимум 7500 символов";

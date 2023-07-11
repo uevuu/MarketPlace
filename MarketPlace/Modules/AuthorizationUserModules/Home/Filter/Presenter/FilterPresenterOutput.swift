@@ -10,4 +10,3 @@ protocol FilterPresenterOutput: AnyObject {
     func goToHomeModule()
     func moduleDidUnload()
 }
-

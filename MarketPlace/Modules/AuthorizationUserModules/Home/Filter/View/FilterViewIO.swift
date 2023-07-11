@@ -5,7 +5,7 @@
 //  Created by Nikita Marin on 10.07.2023.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - FilterViewInput
 protocol FilterViewInput: AnyObject {
@@ -15,7 +15,7 @@ protocol FilterViewInput: AnyObject {
 // MARK: - FilterViewOutput
 protocol FilterViewOutput: AnyObject {
     func getFilterCount() -> Int
-    func configureCell(_ cell: ProductCell, at indexPath: IndexPath)
+    func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath)
     func selectCategory(at indexPath: IndexPath)
     func handleMinPriceInput(_ text: String)
     func handleMaxPriceInput(_ text: String)

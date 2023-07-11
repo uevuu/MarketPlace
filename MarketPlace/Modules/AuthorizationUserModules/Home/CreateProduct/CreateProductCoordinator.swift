@@ -1,15 +1,15 @@
 //
-//  FilterCoordinator.swift
+//  CreateProductCoordinator.swift
 //  MarketPlace
 //
-//  Created by Nikita Marin on 10.07.2023.
+//  Created by Nikita Marin on 11.07.2023.
 //
 
 import UIKit
 import Swinject
 
-// MARK: - FilterCoordinator
-final class FilterCoordinator: FlowCoordinatorProtocol {
+// MARK: - CreateProductCoordinator
+final class CreateProductCoordinator: FlowCoordinatorProtocol {
     private let resolver: Resolver
     private weak var navigationController: UINavigationController?
     private var finishHandlers: [(() -> Void)] = []
@@ -25,15 +25,15 @@ final class FilterCoordinator: FlowCoordinatorProtocol {
     }
     
     deinit {
-        print("deinit Filter Coordinator")
+        print("deinit Create Product Coordinator")
     }
     
     func start(animated: Bool) {
-        let filterBuilder = FilterBuilder(
+        let createProductBuilder = CreateProductBuilder(
             resolver: resolver,
             moduleOutput: self
         )
-        let viewController = filterBuilder.build()
+        let viewController = createProductBuilder.build()
         navigationController?.pushViewController(viewController, animated: animated)
     }
     
@@ -44,10 +44,14 @@ final class FilterCoordinator: FlowCoordinatorProtocol {
     }
 }
 
-// MARK: - FilterPresenterOutput
-extension FilterCoordinator: FilterPresenterOutput {
+// MARK: - CreateProductPresenterOutput
+extension CreateProductCoordinator: CreateProductPresenterOutput {
     func goToHomeModule() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func goToSelectCategoryModule() {
+        print("go to select category")
     }
     
     func moduleDidUnload() {

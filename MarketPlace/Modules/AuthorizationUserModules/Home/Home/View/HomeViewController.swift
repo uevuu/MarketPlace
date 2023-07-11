@@ -142,7 +142,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func addProductButtonTapped() {
-        print("tap")
+        output.addProductTapped()
     }
 }
 

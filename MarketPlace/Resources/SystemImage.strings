@@ -14,3 +14,5 @@
 "circle" = "circle";
 "forward" = "chevron.forward";
 "plus" = "plus";
+"circle" = "circle";
+"circle.inset.filled" = "circleFilled";

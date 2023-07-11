@@ -37,6 +37,7 @@ final class HomeCoordinator: FlowCoordinatorProtocol {
         )
         let viewController = homeBuilder.build()
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.addBottomLine(with: R.color.placeholderBottomLine())
         self.navigationController = navigationController
         parentTabBar?.addViewController(
             viewController: navigationController,
@@ -63,6 +64,28 @@ extension HomeCoordinator: HomePresenterOutput {
         }
         childCoordinators.append(productInfoCoordinator)
         productInfoCoordinator.start(animated: true)
+    }
+    
+    func goToFilterModule() {
+        let filterCoordinator = FilterCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: FilterCoordinator.self)
+        }
+        childCoordinators.append(filterCoordinator)
+        filterCoordinator.start(animated: true)
+    }
+    
+    func goToCreateProductModule() {
+        let createProductCoordinator = CreateProductCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: CreateProductCoordinator.self)
+        }
+        childCoordinators.append(createProductCoordinator)
+        createProductCoordinator.start(animated: true)
     }
     
     func moduleDidUnload() {

@@ -56,7 +56,7 @@ class MyOrdersViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        title = R.string.localizable.orders()
+        navigationItem.title = R.string.localizable.orders()
         navigationController?.navigationBar.titleTextAttributes = [
             .font: R.font.robotoRegular(size: 15) ?? UIFont()
         ]

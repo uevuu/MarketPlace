@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		67CDCD95E2C741C14C1D2F12 /* Pods_MarketPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4CDFD529BBBCBA03D6DE93 /* Pods_MarketPlace.framework */; };
+		8B292B1F2A5D3D3A00A73DA6 /* CreateProductFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B1E2A5D3D3A00A73DA6 /* CreateProductFooterView.swift */; };
+		8B292B212A5D44E100A73DA6 /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B202A5D44E000A73DA6 /* DescriptionTextView.swift */; };
 		8B2C810F2A52C8B1004C82B6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C810E2A52C8B1004C82B6 /* WelcomeViewController.swift */; };
 		8B2C81112A52C8C0004C82B6 /* WelcomeViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81102A52C8C0004C82B6 /* WelcomeViewIO.swift */; };
 		8B2C81142A52CB40004C82B6 /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81132A52CB40004C82B6 /* WelcomeCoordinator.swift */; };
@@ -88,6 +90,17 @@
 		8B687D592A5C23DE00038E0F /* SellerInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D582A5C23DE00038E0F /* SellerInfoBuilder.swift */; };
 		8B687D5B2A5C23EC00038E0F /* SellerInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D5A2A5C23EC00038E0F /* SellerInfoCoordinator.swift */; };
 		8B687D5D2A5C418C00038E0F /* OrderInfoPreViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D5C2A5C418C00038E0F /* OrderInfoPreViewHeader.swift */; };
+		8B687D5F2A5C94D800038E0F /* PriceFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D5E2A5C94D800038E0F /* PriceFilterView.swift */; };
+		8B687D612A5CA75E00038E0F /* SellerTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D602A5CA75E00038E0F /* SellerTabBarCoordinator.swift */; };
+		8B687D632A5CB6E700038E0F /* CreateProductTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D622A5CB6E700038E0F /* CreateProductTextFieldView.swift */; };
+		8B687D682A5CB88100038E0F /* CreateProductBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D672A5CB88100038E0F /* CreateProductBuilder.swift */; };
+		8B687D6A2A5CB89700038E0F /* CreateProductCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D692A5CB89700038E0F /* CreateProductCoordinator.swift */; };
+		8B687D6C2A5CB8AD00038E0F /* CreateProductPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D6B2A5CB8AD00038E0F /* CreateProductPresenterOutput.swift */; };
+		8B687D6E2A5CB8B300038E0F /* CreateProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D6D2A5CB8B300038E0F /* CreateProductPresenter.swift */; };
+		8B687D712A5CB8CA00038E0F /* CreateProductViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D702A5CB8CA00038E0F /* CreateProductViewIO.swift */; };
+		8B687D732A5CB8D300038E0F /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D722A5CB8D300038E0F /* CreateProductViewController.swift */; };
+		8B687D772A5CC7B700038E0F /* AddProductImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D762A5CC7B700038E0F /* AddProductImageCell.swift */; };
+		8B687D792A5CC7CE00038E0F /* DeleteProductImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B687D782A5CC7CE00038E0F /* DeleteProductImageCell.swift */; };
 		8B96EAA02A59C88500FD2466 /* ProductInfoPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96EA9F2A59C88500FD2466 /* ProductInfoPresenterOutput.swift */; };
 		8B96EAA22A59C88C00FD2466 /* ProductInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96EAA12A59C88C00FD2466 /* ProductInfoPresenter.swift */; };
 		8B96EAA42A59C89700FD2466 /* ProductInfoViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B96EAA32A59C89700FD2466 /* ProductInfoViewIO.swift */; };
@@ -156,6 +169,8 @@
 
 /* Begin PBXFileReference section */
 		816A3AE550E036B5CDA3E828 /* Pods-MarketPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketPlace.release.xcconfig"; path = "Target Support Files/Pods-MarketPlace/Pods-MarketPlace.release.xcconfig"; sourceTree = "<group>"; };
+		8B292B1E2A5D3D3A00A73DA6 /* CreateProductFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductFooterView.swift; sourceTree = "<group>"; };
+		8B292B202A5D44E000A73DA6 /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
 		8B2C810E2A52C8B1004C82B6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8B2C81102A52C8C0004C82B6 /* WelcomeViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewIO.swift; sourceTree = "<group>"; };
 		8B2C81132A52CB40004C82B6 /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
@@ -236,6 +251,17 @@
 		8B687D582A5C23DE00038E0F /* SellerInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerInfoBuilder.swift; sourceTree = "<group>"; };
 		8B687D5A2A5C23EC00038E0F /* SellerInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerInfoCoordinator.swift; sourceTree = "<group>"; };
 		8B687D5C2A5C418C00038E0F /* OrderInfoPreViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInfoPreViewHeader.swift; sourceTree = "<group>"; };
+		8B687D5E2A5C94D800038E0F /* PriceFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceFilterView.swift; sourceTree = "<group>"; };
+		8B687D602A5CA75E00038E0F /* SellerTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerTabBarCoordinator.swift; sourceTree = "<group>"; };
+		8B687D622A5CB6E700038E0F /* CreateProductTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductTextFieldView.swift; sourceTree = "<group>"; };
+		8B687D672A5CB88100038E0F /* CreateProductBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductBuilder.swift; sourceTree = "<group>"; };
+		8B687D692A5CB89700038E0F /* CreateProductCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductCoordinator.swift; sourceTree = "<group>"; };
+		8B687D6B2A5CB8AD00038E0F /* CreateProductPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductPresenterOutput.swift; sourceTree = "<group>"; };
+		8B687D6D2A5CB8B300038E0F /* CreateProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductPresenter.swift; sourceTree = "<group>"; };
+		8B687D702A5CB8CA00038E0F /* CreateProductViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewIO.swift; sourceTree = "<group>"; };
+		8B687D722A5CB8D300038E0F /* CreateProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewController.swift; sourceTree = "<group>"; };
+		8B687D762A5CC7B700038E0F /* AddProductImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductImageCell.swift; sourceTree = "<group>"; };
+		8B687D782A5CC7CE00038E0F /* DeleteProductImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProductImageCell.swift; sourceTree = "<group>"; };
 		8B96EA9F2A59C88500FD2466 /* ProductInfoPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoPresenterOutput.swift; sourceTree = "<group>"; };
 		8B96EAA12A59C88C00FD2466 /* ProductInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoPresenter.swift; sourceTree = "<group>"; };
 		8B96EAA32A59C89700FD2466 /* ProductInfoViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewIO.swift; sourceTree = "<group>"; };
@@ -630,6 +656,7 @@
 		8B687D392A5C1B0F00038E0F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8B687D642A5CB85300038E0F /* CreateProduct */,
 				8B687D3A2A5C1B2500038E0F /* Filter */,
 				8BF9D69E2A55AF44008A2526 /* Home */,
 			);
@@ -692,6 +719,46 @@
 				8B687D522A5C23A000038E0F /* SellerInfoPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B687D642A5CB85300038E0F /* CreateProduct */ = {
+			isa = PBXGroup;
+			children = (
+				8B687D662A5CB87100038E0F /* Presenter */,
+				8B687D652A5CB86D00038E0F /* View */,
+				8B687D672A5CB88100038E0F /* CreateProductBuilder.swift */,
+				8B687D692A5CB89700038E0F /* CreateProductCoordinator.swift */,
+			);
+			path = CreateProduct;
+			sourceTree = "<group>";
+		};
+		8B687D652A5CB86D00038E0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B687D752A5CC7A700038E0F /* Cell */,
+				8B687D702A5CB8CA00038E0F /* CreateProductViewIO.swift */,
+				8B687D722A5CB8D300038E0F /* CreateProductViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B687D662A5CB87100038E0F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B687D6B2A5CB8AD00038E0F /* CreateProductPresenterOutput.swift */,
+				8B687D6D2A5CB8B300038E0F /* CreateProductPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B687D752A5CC7A700038E0F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8B687D762A5CC7B700038E0F /* AddProductImageCell.swift */,
+				8B687D782A5CC7CE00038E0F /* DeleteProductImageCell.swift */,
+				8B292B1E2A5D3D3A00A73DA6 /* CreateProductFooterView.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8B96EA9C2A59C62400FD2466 /* ProductInfo */ = {
@@ -767,8 +834,11 @@
 			children = (
 				8B3690FE2A5776D50012D8D4 /* AvatarView.swift */,
 				8B2C81432A530896004C82B6 /* BackBarButton.swift */,
+				8B687D622A5CB6E700038E0F /* CreateProductTextFieldView.swift */,
+				8B292B202A5D44E000A73DA6 /* DescriptionTextView.swift */,
 				8BF9D6CF2A5615AC008A2526 /* MainAccountInfoViewButton.swift */,
 				8BAB8B262A525381005167BA /* SimpleButton.swift */,
+				8B687D5E2A5C94D800038E0F /* PriceFilterView.swift */,
 				8BF9EFE42A5B263800903E1D /* ProductCountView.swift */,
 				8BAB8B282A5259CE005167BA /* RegisterButton.swift */,
 				8B3D660D2A585888009CD2D9 /* CustomTextFieldButton.swift */,
@@ -838,6 +908,7 @@
 				8B96EA9C2A59C62400FD2466 /* ProductInfo */,
 				8B687D392A5C1B0F00038E0F /* Home */,
 				8B3690EA2A575EF50012D8D4 /* Profile */,
+				8B687D602A5CA75E00038E0F /* SellerTabBarCoordinator.swift */,
 				8BF9D69C2A55AB73008A2526 /* UserTabBarCoordinator.swift */,
 			);
 			path = AuthorizationUserModules;
@@ -1171,6 +1242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BBFEA262A54C8F700810D47 /* SignUpResult.swift in Sources */,
+				8B687D612A5CA75E00038E0F /* SellerTabBarCoordinator.swift in Sources */,
+				8B687D732A5CB8D300038E0F /* CreateProductViewController.swift in Sources */,
 				8B3D66162A587F34009CD2D9 /* MyOrdersBuilder.swift in Sources */,
 				8B2C813A2A52F3F6004C82B6 /* LogInPresenterOutput.swift in Sources */,
 				8BF9D6AE2A55F21B008A2526 /* CartViewController.swift in Sources */,
@@ -1193,8 +1266,10 @@
 				8B2C811A2A52D133004C82B6 /* ServiceLocator.swift in Sources */,
 				8BF9D6AC2A55F20F008A2526 /* CartViewIO.swift in Sources */,
 				8BF9D6C02A55F328008A2526 /* ProfileCoordinator.swift in Sources */,
+				8B687D682A5CB88100038E0F /* CreateProductBuilder.swift in Sources */,
 				8BF9EFF92A5B72DB00903E1D /* UILabel+Extensions.swift in Sources */,
 				8B3690E62A5712F00012D8D4 /* UITableView+Extensions.swift in Sources */,
+				8B292B212A5D44E100A73DA6 /* DescriptionTextView.swift in Sources */,
 				8BF9D6BA2A55F2F1008A2526 /* ProfileViewIO.swift in Sources */,
 				8BF9D6AA2A55F1F9008A2526 /* CartPresenter.swift in Sources */,
 				8B687D482A5C1B8300038E0F /* FilterViewIO.swift in Sources */,
@@ -1207,6 +1282,7 @@
 				8B3D661A2A587F53009CD2D9 /* MyOrdersCoordinator.swift in Sources */,
 				8B3690F92A575FC30012D8D4 /* UserInfoViewIO.swift in Sources */,
 				8B2C81582A53ABD3004C82B6 /* UITextField+Extensions.swift in Sources */,
+				8B687D772A5CC7B700038E0F /* AddProductImageCell.swift in Sources */,
 				8B2C813E2A52F781004C82B6 /* LogInBuilder.swift in Sources */,
 				8B3D66362A58AAC0009CD2D9 /* ChooseCityPresenterOutput.swift in Sources */,
 				8B3D663A2A58AAD8009CD2D9 /* ChooseCityViewIO.swift in Sources */,
@@ -1224,11 +1300,13 @@
 				8B3D66242A588A6B009CD2D9 /* OrderTableViewCell.swift in Sources */,
 				8B2C81442A530896004C82B6 /* BackBarButton.swift in Sources */,
 				8B3D661E2A587F7D009CD2D9 /* MyOrdersPresenter.swift in Sources */,
+				8B687D792A5CC7CE00038E0F /* DeleteProductImageCell.swift in Sources */,
 				8B2C813C2A52F401004C82B6 /* LogInPresenter.swift in Sources */,
 				8B3D660C2A584D4F009CD2D9 /* CashInCoordinator.swift in Sources */,
 				8B96EAA82A59C8B600FD2466 /* ProductInfoBuilder.swift in Sources */,
 				8BAB8AF42A523918005167BA /* AppDelegate.swift in Sources */,
 				8BBFEA292A54CA1A00810D47 /* SignUpService.swift in Sources */,
+				8B687D6C2A5CB8AD00038E0F /* CreateProductPresenterOutput.swift in Sources */,
 				8B2C81342A52F29E004C82B6 /* LogInViewController.swift in Sources */,
 				8B3D66022A584D04009CD2D9 /* CashInPresenterOutput.swift in Sources */,
 				8B687D532A5C23A000038E0F /* SellerInfoPresenter.swift in Sources */,
@@ -1252,6 +1330,7 @@
 				8BF9EFD92A5B038600903E1D /* SelectProductCountBuilder.swift in Sources */,
 				8B687D572A5C23D100038E0F /* SellerInfoViewController.swift in Sources */,
 				8B2C81142A52CB40004C82B6 /* WelcomeCoordinator.swift in Sources */,
+				8B687D6A2A5CB89700038E0F /* CreateProductCoordinator.swift in Sources */,
 				8B2C81362A52F2BA004C82B6 /* LogInViewIO.swift in Sources */,
 				8BF9EFE52A5B263800903E1D /* ProductCountView.swift in Sources */,
 				8BF9D6B02A55F234008A2526 /* CartCoordinator.swift in Sources */,
@@ -1263,11 +1342,13 @@
 				8B96EAA22A59C88C00FD2466 /* ProductInfoPresenter.swift in Sources */,
 				8BF9EFF72A5B653000903E1D /* UserOrderInfoTableViewCell.swift in Sources */,
 				8B687D4A2A5C1B9100038E0F /* FilterViewController .swift in Sources */,
+				8B687D712A5CB8CA00038E0F /* CreateProductViewIO.swift in Sources */,
 				8B3691012A5790CB0012D8D4 /* UIButton+Extensions.swift in Sources */,
 				8BF9EFF32A5B60CD00903E1D /* OrderInfoViewIO.swift in Sources */,
 				8BF9D6CC2A55F377008A2526 /* HomeCoordinator.swift in Sources */,
 				8BF9D6B62A55F2D6008A2526 /* ProfilePresenter.swift in Sources */,
 				8B2C81162A52CB4D004C82B6 /* WelcomeBuilder.swift in Sources */,
+				8B687D5F2A5C94D800038E0F /* PriceFilterView.swift in Sources */,
 				8B96EAAE2A5A1FF100FD2466 /* ProductInfoView.swift in Sources */,
 				8B3690F12A575F780012D8D4 /* UserInfoCoordinator.swift in Sources */,
 				8B3690F62A575FAB0012D8D4 /* UserInfoPresenter.swift in Sources */,
@@ -1296,6 +1377,8 @@
 				8BF9EFEB2A5B604800903E1D /* OrderInfoBuilder.swift in Sources */,
 				8BF9EFE12A5B03BD00903E1D /* SelectProductCountViewIO.swift in Sources */,
 				8B3690FB2A575FD20012D8D4 /* UserInfoViewController.swift in Sources */,
+				8B687D632A5CB6E700038E0F /* CreateProductTextFieldView.swift in Sources */,
+				8B687D6E2A5CB8B300038E0F /* CreateProductPresenter.swift in Sources */,
 				8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */,
 				8B96EAA02A59C88500FD2466 /* ProductInfoPresenterOutput.swift in Sources */,
 				8BF9EFDF2A5B03B000903E1D /* SelectProductCountPresenter.swift in Sources */,
@@ -1307,6 +1390,7 @@
 				8B687D5B2A5C23EC00038E0F /* SellerInfoCoordinator.swift in Sources */,
 				8B96EAA42A59C89700FD2466 /* ProductInfoViewIO.swift in Sources */,
 				8BF9D6BE2A55F319008A2526 /* ProfileBuilder.swift in Sources */,
+				8B292B1F2A5D3D3A00A73DA6 /* CreateProductFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

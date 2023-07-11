@@ -46,4 +46,16 @@ final class SimpleButton: UIButton {
             make.centerX.centerY.equalToSuperview()
         }
     }
+    
+    func makeNotReady() {
+        isEnabled = false
+        label.textColor = R.color.notReadyFont()
+        backgroundColor = R.color.notReadyButton()
+    }
+    
+    func makeDefault() {
+        isEnabled = true
+        label.textColor = .white
+        backgroundColor = R.color.blue()
+    }
 }
