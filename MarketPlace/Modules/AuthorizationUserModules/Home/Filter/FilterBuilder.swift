@@ -23,7 +23,8 @@ final class FilterBuilder {
     
     func build() -> UIViewController {
         let presenter = FilterPresenter(
-            output: moduleOutput
+            output: moduleOutput,
+            categoryService: resolver.resolve()
         )
         let view = FilterViewController(output: presenter)
         presenter.view = view

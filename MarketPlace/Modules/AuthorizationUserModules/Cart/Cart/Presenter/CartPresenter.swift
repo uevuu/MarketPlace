@@ -60,7 +60,7 @@ extension CartPresenter: CartViewOutput {
     }
     
     func proceedToCheckout() {
-        print("proceedToCheckout")
+        output?.goToSelectAddressModule()
     }
     
     func selectProduct(at indexPath: IndexPath) {

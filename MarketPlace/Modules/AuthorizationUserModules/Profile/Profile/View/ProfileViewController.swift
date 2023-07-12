@@ -63,6 +63,7 @@ class ProfileViewController: UIViewController {
        
     override func viewDidLoad() {
         super.viewDidLoad()
+        output.viewDidLoadEvent()
         setup()
     }
     
@@ -120,8 +121,15 @@ class ProfileViewController: UIViewController {
 // MARK: - ProfileViewInput
 extension ProfileViewController: ProfileViewInput {
     func reloadSetting(at indexPath: IndexPath) {
-        // In Presenter: DispatchQueue.main.async !!!
         settingTableView.reloadRows(at: [indexPath], with: .none)
+    }
+    
+    func reloadInfo(
+        name: String,
+        email: String
+    ) {
+        userInfoButton.nameLabel.text = name
+        userInfoButton.emailLabel.text = email
     }
 }
 

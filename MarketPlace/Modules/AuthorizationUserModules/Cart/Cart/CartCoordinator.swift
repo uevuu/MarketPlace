@@ -79,4 +79,15 @@ extension CartCoordinator: CartPresenterOutput {
         childCoordinators.append(cashInCoordinator)
         cashInCoordinator.start(animated: true)
     }
+    
+    func goToSelectAddressModule() {
+        let selectAddressCoordinator = SelectAddressCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: SelectAddressCoordinator.self)
+        }
+        childCoordinators.append(selectAddressCoordinator)
+        selectAddressCoordinator.start(animated: true)
+    }
 }

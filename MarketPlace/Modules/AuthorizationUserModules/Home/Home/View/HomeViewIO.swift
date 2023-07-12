@@ -14,6 +14,7 @@ protocol HomeViewInput: AnyObject {
 
 // MARK: - HomeViewOutput
 protocol HomeViewOutput: AnyObject {
+    func viewDidLoadEvent()
     func getProductsCount() -> Int
     func configureCell(_ cell: ProductCell, at indexPath: IndexPath)
     func selectProduct(at indexPath: IndexPath)

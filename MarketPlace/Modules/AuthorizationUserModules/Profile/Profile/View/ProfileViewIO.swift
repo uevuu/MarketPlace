@@ -9,11 +9,16 @@ import UIKit
 
 // MARK: - ProfileViewInput
 protocol ProfileViewInput: AnyObject {
+    func reloadInfo(
+        name: String,
+        email: String
+    )
     func reloadSetting(at indexPath: IndexPath)
 }
 
 // MARK: - ProfileViewOutput
 protocol ProfileViewOutput: AnyObject {
+    func viewDidLoadEvent()
     func getSettingCount() -> Int
     func configureCell(_ cell: SettingTableViewCell, at indexPath: IndexPath)
     func selectSetting(at indexPath: IndexPath)

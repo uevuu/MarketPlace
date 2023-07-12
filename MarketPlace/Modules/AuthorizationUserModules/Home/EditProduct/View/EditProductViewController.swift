@@ -54,11 +54,6 @@ class EditProductViewController: UIViewController {
         setup()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("view will appear")
-    }
-    
     // MARK: - Setup
     
     private func setup() {

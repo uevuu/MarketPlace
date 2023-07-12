@@ -48,6 +48,7 @@ class FilterViewController: UIViewController {
        
     override func viewDidLoad() {
         super.viewDidLoad()
+        output.viewDidLoadEvent()
         configureNavigationBar()
         setup()
     }
@@ -55,6 +56,7 @@ class FilterViewController: UIViewController {
     // MARK: - Setup
     
     private func setup() {
+        applyButton.addTarget(self, for: #selector(applyButtonTapped))
         priceFilterView.minTextField.delegate = self
         priceFilterView.maxTextField.delegate = self
         view.addSubview(filterTableView)
@@ -91,11 +93,16 @@ class FilterViewController: UIViewController {
     @objc private func backButtonTapped() {
         output.backTapped()
     }
+    
+    @objc private func applyButtonTapped() {
+        output.applyTapped()
+    }
 }
 
 // MARK: - ChooseCityViewInput
 extension FilterViewController: FilterViewInput {
     func reloadFilter() {
+        filterTableView.reloadData()
     }
 }
 
@@ -116,16 +123,7 @@ extension FilterViewController: UITableViewDataSource {
         cell.textLabel?.font = R.font.robotoRegular(size: 14)
         cell.tintColor = R.color.blue()
         cell.backgroundColor = .clear
-        
-        let imageView = UIImageView(image: UIImage(systemName: "circle"))
-        cell.textLabel?.text = "Категория"
-        cell.textLabel?.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset((indexPath.item + 1) * 17)
-        }
-        cell.accessoryView = imageView
         cell.selectionStyle = .none
-        
         output.configureCell(cell, at: indexPath)
         return cell
     }

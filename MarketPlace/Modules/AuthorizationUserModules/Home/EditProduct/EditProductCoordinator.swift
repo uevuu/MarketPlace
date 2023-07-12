@@ -52,12 +52,19 @@ extension EditProductCoordinator: EditProductPresenterOutput {
         navigationController?.popViewController(animated: true)
     }
     
-    func goToSetProductModule() {
+    func goToSetProductCountModule() {
         print("next")
     }
     
     func goToEditModule() {
-        print("modal show")
+        let createProductCoordinator = CreateProductCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: CreateProductCoordinator.self)
+        }
+        childCoordinators.append(createProductCoordinator)
+        createProductCoordinator.start(animated: true)
     }
     
     func moduleDidUnload() {

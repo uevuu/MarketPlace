@@ -9,5 +9,6 @@
 protocol CartPresenterOutput: AnyObject {
     func moduleDidUnload()
     func goToProductModule()
+    func goToSelectAddressModule()
     func goToSelectProductCountModule()
 }

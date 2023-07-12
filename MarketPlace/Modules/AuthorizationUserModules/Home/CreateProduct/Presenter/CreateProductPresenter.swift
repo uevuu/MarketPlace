@@ -31,6 +31,10 @@ extension CreateProductPresenter: CreateProductViewOutput {
         return 9
     }
     
+    func deletePhoto(at index: Int) {
+        print("delete")
+    }
+    
     func nextTapped() {
         output?.goToSelectCategoryModule()
     }

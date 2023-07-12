@@ -22,6 +22,25 @@
 		8B292B3D2A5DAE5000A73DA6 /* DescriptionPriceViewForProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B3C2A5DAE5000A73DA6 /* DescriptionPriceViewForProduct.swift */; };
 		8B292B3F2A5DAE8A00A73DA6 /* TitleViewForProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B3E2A5DAE8A00A73DA6 /* TitleViewForProduct.swift */; };
 		8B292B412A5DB0FA00A73DA6 /* SellerProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B402A5DB0FA00A73DA6 /* SellerProfileCoordinator.swift */; };
+		8B292B462A5DEBAF00A73DA6 /* SelectCategoryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B452A5DEBAF00A73DA6 /* SelectCategoryBuilder.swift */; };
+		8B292B482A5DEBB900A73DA6 /* SelectCategoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B472A5DEBB900A73DA6 /* SelectCategoryCoordinator.swift */; };
+		8B292B4A2A5DEC3300A73DA6 /* SelectCategoryPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B492A5DEC3300A73DA6 /* SelectCategoryPresenterOutput.swift */; };
+		8B292B4C2A5DEC4100A73DA6 /* SelectCategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B4B2A5DEC4100A73DA6 /* SelectCategoryPresenter.swift */; };
+		8B292B4E2A5DEC4F00A73DA6 /* SelectCategoryViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B4D2A5DEC4F00A73DA6 /* SelectCategoryViewIO.swift */; };
+		8B292B502A5DEC5B00A73DA6 /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B4F2A5DEC5B00A73DA6 /* SelectCategoryViewController.swift */; };
+		8B292B552A5E234500A73DA6 /* DaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B542A5E234400A73DA6 /* DaData.swift */; };
+		8B292B572A5E23D300A73DA6 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B562A5E23D300A73DA6 /* UserStatus.swift */; };
+		8B292B5B2A5E265900A73DA6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B5A2A5E265900A73DA6 /* NetworkService.swift */; };
+		8B292B5D2A5E3E6F00A73DA6 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B5C2A5E3E6F00A73DA6 /* ProductsService.swift */; };
+		8B292B5F2A5E44E100A73DA6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B5E2A5E44E100A73DA6 /* Product.swift */; };
+		8B292B612A5E732900A73DA6 /* CategoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B602A5E732900A73DA6 /* CategoryService.swift */; };
+		8B292B632A5E7CFF00A73DA6 /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B622A5E7CFF00A73DA6 /* UserInfoService.swift */; };
+		8B292B6A2A5EA90F00A73DA6 /* SelectAddressBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B692A5EA90F00A73DA6 /* SelectAddressBuilder.swift */; };
+		8B292B6C2A5EA92900A73DA6 /* SelectAddressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B6B2A5EA92900A73DA6 /* SelectAddressCoordinator.swift */; };
+		8B292B6E2A5EA94100A73DA6 /* SelectAddressPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B6D2A5EA94100A73DA6 /* SelectAddressPresenter.swift */; };
+		8B292B702A5EA94D00A73DA6 /* SelectAddressPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B6F2A5EA94D00A73DA6 /* SelectAddressPresenterOutput.swift */; };
+		8B292B722A5EA95900A73DA6 /* SelectAddressViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B712A5EA95900A73DA6 /* SelectAddressViewIO.swift */; };
+		8B292B742A5EA96100A73DA6 /* SelectAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B732A5EA96100A73DA6 /* SelectAddressViewController.swift */; };
 		8B2C810F2A52C8B1004C82B6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C810E2A52C8B1004C82B6 /* WelcomeViewController.swift */; };
 		8B2C81112A52C8C0004C82B6 /* WelcomeViewIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81102A52C8C0004C82B6 /* WelcomeViewIO.swift */; };
 		8B2C81142A52CB40004C82B6 /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2C81132A52CB40004C82B6 /* WelcomeCoordinator.swift */; };
@@ -133,7 +152,7 @@
 		8BBFEA1B2A547C4A00810D47 /* UINavigationController+ Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */; };
 		8BBFEA1D2A548F9400810D47 /* SellerSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA1C2A548F9400810D47 /* SellerSwitchView.swift */; };
 		8BBFEA202A54C04D00810D47 /* LogInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA1F2A54C04D00810D47 /* LogInService.swift */; };
-		8BBFEA222A54C3D900810D47 /* NetworkApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA212A54C3D900810D47 /* NetworkApiService.swift */; };
+		8BBFEA222A54C3D900810D47 /* DaDataNetworkApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA212A54C3D900810D47 /* DaDataNetworkApiService.swift */; };
 		8BBFEA242A54C8EA00810D47 /* LogInResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA232A54C8EA00810D47 /* LogInResult.swift */; };
 		8BBFEA262A54C8F700810D47 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA252A54C8F700810D47 /* SignUpResult.swift */; };
 		8BBFEA292A54CA1A00810D47 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBFEA282A54CA1A00810D47 /* SignUpService.swift */; };
@@ -194,6 +213,25 @@
 		8B292B3C2A5DAE5000A73DA6 /* DescriptionPriceViewForProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionPriceViewForProduct.swift; sourceTree = "<group>"; };
 		8B292B3E2A5DAE8A00A73DA6 /* TitleViewForProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewForProduct.swift; sourceTree = "<group>"; };
 		8B292B402A5DB0FA00A73DA6 /* SellerProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerProfileCoordinator.swift; sourceTree = "<group>"; };
+		8B292B452A5DEBAF00A73DA6 /* SelectCategoryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryBuilder.swift; sourceTree = "<group>"; };
+		8B292B472A5DEBB900A73DA6 /* SelectCategoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryCoordinator.swift; sourceTree = "<group>"; };
+		8B292B492A5DEC3300A73DA6 /* SelectCategoryPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryPresenterOutput.swift; sourceTree = "<group>"; };
+		8B292B4B2A5DEC4100A73DA6 /* SelectCategoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryPresenter.swift; sourceTree = "<group>"; };
+		8B292B4D2A5DEC4F00A73DA6 /* SelectCategoryViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewIO.swift; sourceTree = "<group>"; };
+		8B292B4F2A5DEC5B00A73DA6 /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
+		8B292B542A5E234400A73DA6 /* DaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaData.swift; sourceTree = "<group>"; };
+		8B292B562A5E23D300A73DA6 /* UserStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
+		8B292B5A2A5E265900A73DA6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		8B292B5C2A5E3E6F00A73DA6 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
+		8B292B5E2A5E44E100A73DA6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		8B292B602A5E732900A73DA6 /* CategoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryService.swift; sourceTree = "<group>"; };
+		8B292B622A5E7CFF00A73DA6 /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
+		8B292B692A5EA90F00A73DA6 /* SelectAddressBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressBuilder.swift; sourceTree = "<group>"; };
+		8B292B6B2A5EA92900A73DA6 /* SelectAddressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressCoordinator.swift; sourceTree = "<group>"; };
+		8B292B6D2A5EA94100A73DA6 /* SelectAddressPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressPresenter.swift; sourceTree = "<group>"; };
+		8B292B6F2A5EA94D00A73DA6 /* SelectAddressPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressPresenterOutput.swift; sourceTree = "<group>"; };
+		8B292B712A5EA95900A73DA6 /* SelectAddressViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressViewIO.swift; sourceTree = "<group>"; };
+		8B292B732A5EA96100A73DA6 /* SelectAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAddressViewController.swift; sourceTree = "<group>"; };
 		8B2C810E2A52C8B1004C82B6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8B2C81102A52C8C0004C82B6 /* WelcomeViewIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewIO.swift; sourceTree = "<group>"; };
 		8B2C81132A52CB40004C82B6 /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
@@ -308,7 +346,7 @@
 		8BBFEA1A2A547C4A00810D47 /* UINavigationController+ Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+ Extensions.swift"; sourceTree = "<group>"; };
 		8BBFEA1C2A548F9400810D47 /* SellerSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerSwitchView.swift; sourceTree = "<group>"; };
 		8BBFEA1F2A54C04D00810D47 /* LogInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInService.swift; sourceTree = "<group>"; };
-		8BBFEA212A54C3D900810D47 /* NetworkApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkApiService.swift; sourceTree = "<group>"; };
+		8BBFEA212A54C3D900810D47 /* DaDataNetworkApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaDataNetworkApiService.swift; sourceTree = "<group>"; };
 		8BBFEA232A54C8EA00810D47 /* LogInResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResult.swift; sourceTree = "<group>"; };
 		8BBFEA252A54C8F700810D47 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
 		8BBFEA282A54CA1A00810D47 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
@@ -379,7 +417,9 @@
 		8B292B222A5D7A6800A73DA6 /*  Models */ = {
 			isa = PBXGroup;
 			children = (
+				8B292B542A5E234400A73DA6 /* DaData.swift */,
 				8B292B232A5D7AAF00A73DA6 /* UserInfo.swift */,
+				8B292B5E2A5E44E100A73DA6 /* Product.swift */,
 			);
 			path = " Models";
 			sourceTree = "<group>";
@@ -445,6 +485,86 @@
 				8B292B3A2A5DA84C00A73DA6 /* EditProductInfoFooter.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		8B292B422A5DEB6000A73DA6 /* SelectCategory */ = {
+			isa = PBXGroup;
+			children = (
+				8B292B432A5DEB9A00A73DA6 /* Presenter */,
+				8B292B442A5DEBA000A73DA6 /* View */,
+				8B292B452A5DEBAF00A73DA6 /* SelectCategoryBuilder.swift */,
+				8B292B472A5DEBB900A73DA6 /* SelectCategoryCoordinator.swift */,
+			);
+			path = SelectCategory;
+			sourceTree = "<group>";
+		};
+		8B292B432A5DEB9A00A73DA6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B292B492A5DEC3300A73DA6 /* SelectCategoryPresenterOutput.swift */,
+				8B292B4B2A5DEC4100A73DA6 /* SelectCategoryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B292B442A5DEBA000A73DA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B292B4D2A5DEC4F00A73DA6 /* SelectCategoryViewIO.swift */,
+				8B292B4F2A5DEC5B00A73DA6 /* SelectCategoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B292B582A5E248400A73DA6 /* DaData */ = {
+			isa = PBXGroup;
+			children = (
+				8BBFEA212A54C3D900810D47 /* DaDataNetworkApiService.swift */,
+				8B3D662D2A58A783009CD2D9 /* DaDataApiService.swift */,
+			);
+			path = DaData;
+			sourceTree = "<group>";
+		};
+		8B292B592A5E263100A73DA6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8B292B602A5E732900A73DA6 /* CategoryService.swift */,
+				8BBFEA1F2A54C04D00810D47 /* LogInService.swift */,
+				8B292B5A2A5E265900A73DA6 /* NetworkService.swift */,
+				8BBFEA282A54CA1A00810D47 /* SignUpService.swift */,
+				8B292B5C2A5E3E6F00A73DA6 /* ProductsService.swift */,
+				8B292B622A5E7CFF00A73DA6 /* UserInfoService.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8B292B662A5EA8E400A73DA6 /* SelectAddress */ = {
+			isa = PBXGroup;
+			children = (
+				8B292B672A5EA8F500A73DA6 /* Presenter */,
+				8B292B682A5EA8FB00A73DA6 /* View */,
+				8B292B692A5EA90F00A73DA6 /* SelectAddressBuilder.swift */,
+				8B292B6B2A5EA92900A73DA6 /* SelectAddressCoordinator.swift */,
+			);
+			path = SelectAddress;
+			sourceTree = "<group>";
+		};
+		8B292B672A5EA8F500A73DA6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B292B6D2A5EA94100A73DA6 /* SelectAddressPresenter.swift */,
+				8B292B6F2A5EA94D00A73DA6 /* SelectAddressPresenterOutput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8B292B682A5EA8FB00A73DA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B292B712A5EA95900A73DA6 /* SelectAddressViewIO.swift */,
+				8B292B732A5EA96100A73DA6 /* SelectAddressViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8B2C81092A52C86B004C82B6 /* Modules */ = {
@@ -595,6 +715,7 @@
 				8BBFEA252A54C8F700810D47 /* SignUpResult.swift */,
 				8B2C815B2A53AC15004C82B6 /* TextFieldType.swift */,
 				8B3D66132A5867E6009CD2D9 /* SettingType.swift */,
+				8B292B562A5E23D300A73DA6 /* UserStatus.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -753,6 +874,7 @@
 				8B292B272A5D89A900A73DA6 /* EditProduct */,
 				8B687D3A2A5C1B2500038E0F /* Filter */,
 				8BF9D69E2A55AF44008A2526 /* Home */,
+				8B292B422A5DEB6000A73DA6 /* SelectCategory */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -980,10 +1102,8 @@
 		8BBFEA1E2A54BFF700810D47 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8B3D662D2A58A783009CD2D9 /* DaDataApiService.swift */,
-				8BBFEA1F2A54C04D00810D47 /* LogInService.swift */,
-				8BBFEA212A54C3D900810D47 /* NetworkApiService.swift */,
-				8BBFEA282A54CA1A00810D47 /* SignUpService.swift */,
+				8B292B582A5E248400A73DA6 /* DaData */,
+				8B292B592A5E263100A73DA6 /* Main */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1104,6 +1224,7 @@
 		8BF9EFD22A5B031000903E1D /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				8B292B662A5EA8E400A73DA6 /* SelectAddress */,
 				8BF9D69F2A55AF56008A2526 /* Cart */,
 				8BF9EFD52A5B034B00903E1D /* SelectProductCount */,
 			);
@@ -1347,6 +1468,7 @@
 				8BF9EFF12A5B60B900903E1D /* OrderInfoPresenter.swift in Sources */,
 				8B2C81112A52C8C0004C82B6 /* WelcomeViewIO.swift in Sources */,
 				8B2C81402A52F796004C82B6 /* LogInCoordinator.swift in Sources */,
+				8B292B6E2A5EA94100A73DA6 /* SelectAddressPresenter.swift in Sources */,
 				8B292B2B2A5D89E900A73DA6 /* EditProductBuilder.swift in Sources */,
 				8B2C81542A537EEE004C82B6 /* CustomTextFieldView.swift in Sources */,
 				8B3D66202A587F89009CD2D9 /* MyOrdersViewIO.swift in Sources */,
@@ -1365,6 +1487,7 @@
 				8B2C811A2A52D133004C82B6 /* ServiceLocator.swift in Sources */,
 				8BF9D6AC2A55F20F008A2526 /* CartViewIO.swift in Sources */,
 				8BF9D6C02A55F328008A2526 /* ProfileCoordinator.swift in Sources */,
+				8B292B462A5DEBAF00A73DA6 /* SelectCategoryBuilder.swift in Sources */,
 				8B687D682A5CB88100038E0F /* CreateProductBuilder.swift in Sources */,
 				8BF9EFF92A5B72DB00903E1D /* UILabel+Extensions.swift in Sources */,
 				8B3690E62A5712F00012D8D4 /* UITableView+Extensions.swift in Sources */,
@@ -1395,6 +1518,7 @@
 				8B2C814A2A5310A1004C82B6 /* SignUpViewIO.swift in Sources */,
 				8B2C81292A52D57C004C82B6 /* WelcomePresenter.swift in Sources */,
 				8BF9EFDD2A5B03A400903E1D /* SelectProductCountPresenterOutput.swift in Sources */,
+				8B292B612A5E732900A73DA6 /* CategoryService.swift in Sources */,
 				8BF9EFDB2A5B039100903E1D /* SelectProductCountCoordinator.swift in Sources */,
 				8BF9D6C82A55F35E008A2526 /* HomeViewController.swift in Sources */,
 				8BBFEA1B2A547C4A00810D47 /* UINavigationController+ Extensions.swift in Sources */,
@@ -1406,6 +1530,8 @@
 				8B3D661E2A587F7D009CD2D9 /* MyOrdersPresenter.swift in Sources */,
 				8B687D792A5CC7CE00038E0F /* DeleteProductImageCell.swift in Sources */,
 				8B2C813C2A52F401004C82B6 /* LogInPresenter.swift in Sources */,
+				8B292B502A5DEC5B00A73DA6 /* SelectCategoryViewController.swift in Sources */,
+				8B292B722A5EA95900A73DA6 /* SelectAddressViewIO.swift in Sources */,
 				8B3D660C2A584D4F009CD2D9 /* CashInCoordinator.swift in Sources */,
 				8B96EAA82A59C8B600FD2466 /* ProductInfoBuilder.swift in Sources */,
 				8BAB8AF42A523918005167BA /* AppDelegate.swift in Sources */,
@@ -1418,6 +1544,7 @@
 				8BF9D6CA2A55F369008A2526 /* HomeBuilder.swift in Sources */,
 				8BF9D6C62A55F354008A2526 /* HomeViewIO.swift in Sources */,
 				8B2C814C2A5310CC004C82B6 /* SignUpViewController.swift in Sources */,
+				8B292B4A2A5DEC3300A73DA6 /* SelectCategoryPresenterOutput.swift in Sources */,
 				8B3D66042A584D14009CD2D9 /* CashInPresenter.swift in Sources */,
 				8BF9D6D82A56319C008A2526 /* ProductCell.swift in Sources */,
 				8BAB8B292A5259CE005167BA /* RegisterButton.swift in Sources */,
@@ -1433,6 +1560,7 @@
 				8BF9EFF52A5B60DA00903E1D /* OrderInfoViewController.swift in Sources */,
 				8BF9EFD92A5B038600903E1D /* SelectProductCountBuilder.swift in Sources */,
 				8B292B312A5D8A2200A73DA6 /* EditProductPresenter.swift in Sources */,
+				8B292B6A2A5EA90F00A73DA6 /* SelectAddressBuilder.swift in Sources */,
 				8B687D572A5C23D100038E0F /* SellerProfileViewController.swift in Sources */,
 				8B2C81142A52CB40004C82B6 /* WelcomeCoordinator.swift in Sources */,
 				8B687D6A2A5CB89700038E0F /* CreateProductCoordinator.swift in Sources */,
@@ -1440,6 +1568,7 @@
 				8BF9EFE52A5B263800903E1D /* ProductCountView.swift in Sources */,
 				8BF9D6B02A55F234008A2526 /* CartCoordinator.swift in Sources */,
 				8B2C815C2A53AC15004C82B6 /* TextFieldType.swift in Sources */,
+				8B292B5F2A5E44E100A73DA6 /* Product.swift in Sources */,
 				8BF9D6B82A55F2DD008A2526 /* ProfilePresenterOutput.swift in Sources */,
 				8BAB8B162A5245E6005167BA /* R.generated.swift in Sources */,
 				8BF9EFED2A5B607100903E1D /* OrderInfoCoordinator.swift in Sources */,
@@ -1457,11 +1586,16 @@
 				8B96EAAE2A5A1FF100FD2466 /* ProductInfoView.swift in Sources */,
 				8B3690F12A575F780012D8D4 /* UserInfoCoordinator.swift in Sources */,
 				8B3690F62A575FAB0012D8D4 /* UserInfoPresenter.swift in Sources */,
+				8B292B702A5EA94D00A73DA6 /* SelectAddressPresenterOutput.swift in Sources */,
+				8B292B742A5EA96100A73DA6 /* SelectAddressViewController.swift in Sources */,
+				8B292B632A5E7CFF00A73DA6 /* UserInfoService.swift in Sources */,
 				8B292B332A5D8A3100A73DA6 /* EditProductViewIO.swift in Sources */,
 				8BBFEA202A54C04D00810D47 /* LogInService.swift in Sources */,
 				8B2C81462A53100C004C82B6 /* SignUpPresenterOutput .swift in Sources */,
+				8B292B572A5E23D300A73DA6 /* UserStatus.swift in Sources */,
 				8B3690F42A575F9F0012D8D4 /* UserInfoPresenterOutput.swift in Sources */,
 				8B292B382A5DA1A900A73DA6 /* ProductInfoCollectionView.swift in Sources */,
+				8B292B4E2A5DEC4F00A73DA6 /* SelectCategoryViewIO.swift in Sources */,
 				8B3690E92A575C200012D8D4 /* CashInViewController.swift in Sources */,
 				8BF9EFCF2A5AC18300903E1D /* ProductInCartTableViewCell.swift in Sources */,
 				8B2C811F2A52D184004C82B6 /* LocalDataSourceAssembly.swift in Sources */,
@@ -1473,30 +1607,36 @@
 				8B2C81242A52D302004C82B6 /* Resolver+Extensions.swift in Sources */,
 				8B3D66342A58AAA4009CD2D9 /* ChooseCityCoordinator.swift in Sources */,
 				8B3D66382A58AAC7009CD2D9 /* ChooseCityPresenter.swift in Sources */,
+				8B292B552A5E234500A73DA6 /* DaData.swift in Sources */,
 				8BBFEA242A54C8EA00810D47 /* LogInResult.swift in Sources */,
 				8B2C81482A531052004C82B6 /* SignUpPresenter.swift in Sources */,
+				8B292B5D2A5E3E6F00A73DA6 /* ProductsService.swift in Sources */,
 				8B3D663C2A58AAE1009CD2D9 /* ChooseCityViewController.swift in Sources */,
 				8B292B3D2A5DAE5000A73DA6 /* DescriptionPriceViewForProduct.swift in Sources */,
 				8B3D661C2A587F70009CD2D9 /* MyOrdersPresenterOutput.swift in Sources */,
 				8B3690EF2A575F670012D8D4 /* UserInfoBuilder.swift in Sources */,
+				8B292B5B2A5E265900A73DA6 /* NetworkService.swift in Sources */,
 				8B687D432A5C1B6A00038E0F /* FilterPresenterOutput.swift in Sources */,
 				8B96EAAC2A59D47300FD2466 /* ProductImageCell.swift in Sources */,
 				8BF9EFEB2A5B604800903E1D /* OrderInfoBuilder.swift in Sources */,
 				8BF9EFE12A5B03BD00903E1D /* SelectProductCountViewIO.swift in Sources */,
 				8B3690FB2A575FD20012D8D4 /* UserInfoViewController.swift in Sources */,
 				8B292B352A5D8A4100A73DA6 /* EditProductViewController.swift in Sources */,
+				8B292B482A5DEBB900A73DA6 /* SelectCategoryCoordinator.swift in Sources */,
 				8B687D632A5CB6E700038E0F /* CreateProductTextFieldView.swift in Sources */,
 				8B687D6E2A5CB8B300038E0F /* CreateProductPresenter.swift in Sources */,
 				8BF9D6D62A562C5F008A2526 /* UserMoneyStatusView.swift in Sources */,
 				8B96EAA02A59C88500FD2466 /* ProductInfoPresenterOutput.swift in Sources */,
 				8BF9EFDF2A5B03B000903E1D /* SelectProductCountPresenter.swift in Sources */,
 				8BAB8B272A525381005167BA /* SimpleButton.swift in Sources */,
-				8BBFEA222A54C3D900810D47 /* NetworkApiService.swift in Sources */,
+				8BBFEA222A54C3D900810D47 /* DaDataNetworkApiService.swift in Sources */,
 				8B3D662E2A58A783009CD2D9 /* DaDataApiService.swift in Sources */,
 				8BF9D6D02A5615AC008A2526 /* MainAccountInfoViewButton.swift in Sources */,
+				8B292B4C2A5DEC4100A73DA6 /* SelectCategoryPresenter.swift in Sources */,
 				8B96EAAA2A59C8BD00FD2466 /* ProductInfoCoordinator.swift in Sources */,
 				8B687D5B2A5C23EC00038E0F /* SellerProfileBuilder.swift in Sources */,
 				8B96EAA42A59C89700FD2466 /* ProductInfoViewIO.swift in Sources */,
+				8B292B6C2A5EA92900A73DA6 /* SelectAddressCoordinator.swift in Sources */,
 				8BF9D6BE2A55F319008A2526 /* ProfileBuilder.swift in Sources */,
 				8B292B1F2A5D3D3A00A73DA6 /* CreateProductFooterView.swift in Sources */,
 			);

@@ -51,7 +51,7 @@ extension EditProductPresenter: EditProductViewOutput {
     }
     
     func countTapped() {
-        output?.goToSetProductModule()
+        output?.goToSetProductCountModule()
     }
     
     func deleteTapped() {

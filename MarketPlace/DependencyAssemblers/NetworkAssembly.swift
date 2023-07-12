@@ -12,15 +12,23 @@ final class NetworkAssembly: Assembly {
         container.register(LogInService.self) { _ in
             LogInService()
         }
-        .inObjectScope(.container)
-        
-        container.register(SignUpService.self) { _ in
-            SignUpService()
-        }
-        .inObjectScope(.container)
-        
         container.register(DaDataApiService.self) { _ in
             DaDataApiService()
         }
+        container.register(SignUpService.self) { _ in
+            SignUpService()
+        }
+        container.register(ProductsService.self) { _ in
+            ProductsService()
+        }
+        .inObjectScope(.container)
+        container.register(CategoryService.self) { _ in
+            CategoryService()
+        }
+        .inObjectScope(.container)
+        container.register(UserInfoService.self) { _ in
+            UserInfoService()
+        }
+        .inObjectScope(.container)
     }
 }

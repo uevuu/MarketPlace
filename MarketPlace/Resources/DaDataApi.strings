@@ -8,14 +8,15 @@
 
 "authorization" = "Authorization";
 
-"secretKey" = "...";
+"secretKey" = "Token 420619e643d6fd7e167358e890b21aacb789a5af";
 "baseUrl" = "https://suggestions.dadata.ru/suggestions";
+"apiSuggestAddress" = "/api/4_1/rs/suggest/address";
 
 "query" = "query";
-"bounds" = "bounds";
 "count" = "count";
-
-"citySettlement" = "city-settlement";
-
-"suggestAddress" = "/api/4_1/rs/suggest/address";
-
+"fromBound" = "from_bound";
+"toBound" = "to_bound";
+"value" = "value";
+"city" = "city";
+"settlement" = "settlement";
+"house" = "house";

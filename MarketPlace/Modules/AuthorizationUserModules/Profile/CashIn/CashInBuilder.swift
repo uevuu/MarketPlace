@@ -22,7 +22,10 @@ final class CashInBuilder {
     }
     
     func build() -> UIViewController {
-        let presenter = CashInPresenter(output: moduleOutput)
+        let presenter = CashInPresenter(
+            output: moduleOutput,
+            userInfoService: resolver.resolve()
+        )
         let view = CashInViewController(output: presenter)
         presenter.view = view
         return view

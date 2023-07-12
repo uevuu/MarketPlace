@@ -19,14 +19,14 @@ final class MainAccountInfoViewButton: UIButton {
         return imageView
     }()
     
-    private lazy var nameLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Иванов Иван"
         label.font = R.font.robotoRegular(size: 16)
         return label
     }()
     
-    private lazy var emailLabel: UILabel = {
+    lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.text = "ivanov@mail.ru"
         label.font = R.font.robotoRegular(size: 14)

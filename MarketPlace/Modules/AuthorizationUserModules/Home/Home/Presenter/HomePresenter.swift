@@ -11,8 +11,14 @@ import UIKit
 final class HomePresenter {
     weak var view: HomeViewInput?
     private weak var output: HomePresenterOutput?
+    private let productsService: ProductsService
+    private var products: [Product] = []
     
-    init(output: HomePresenterOutput?) {
+    init(
+        output: HomePresenterOutput?,
+        productsService: ProductsService
+    ) {
+        self.productsService = productsService
         self.output = output
     }
     
@@ -23,19 +29,34 @@ final class HomePresenter {
 
 // MARK: - HomeViewOutput
 extension HomePresenter: HomeViewOutput {
+    func viewDidLoadEvent() {
+        productsService.getProducts { [weak self] result in
+            switch result {
+            case .success(let products):
+                self?.products = products
+                DispatchQueue.main.async {
+                    self?.view?.reloadView()
+                }
+            case .failure(let error):
+                print(String(describing: error))
+            }
+        }
+    }
+    
     func getProductsCount() -> Int {
-        return 10
+        return products.count
     }
     
     func configureCell(
         _ cell: ProductCell,
         at indexPath: IndexPath
     ) {
+        let product = products[indexPath.item]
         cell.configureCell(
             imageUrl: "productImage",
-            price: 2000,
-            title: "Брюки женские серые",
-            sellerName: "Anna S"
+            price: product.price,
+            title: product.title,
+            sellerName: product.sellerId
         )
     }
     

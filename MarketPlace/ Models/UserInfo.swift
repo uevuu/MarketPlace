@@ -13,12 +13,11 @@ struct UserInfo: Codable {
     let email: String
     let name: String
     let surname: String
-    let patronymic: String
-    let passwordHash: String
-    let gender: String
-    let birthDate: String
+    let patronymic: String?
+    let gender: String?
+    let birthDate: String?
     let phone: String
-    let profilePicture: String
+    let profilePicture: String?
     let points: Int
-    let city: String
+    let city: String?
 }

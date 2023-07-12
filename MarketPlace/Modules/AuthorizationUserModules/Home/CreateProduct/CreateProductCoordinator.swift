@@ -13,6 +13,7 @@ final class CreateProductCoordinator: FlowCoordinatorProtocol {
     private let resolver: Resolver
     private weak var navigationController: UINavigationController?
     private var finishHandlers: [(() -> Void)] = []
+    private var childCoordinators: [FlowCoordinatorProtocol] = []
     
     init(
         resolver: Resolver,
@@ -51,7 +52,14 @@ extension CreateProductCoordinator: CreateProductPresenterOutput {
     }
     
     func goToSelectCategoryModule() {
-        print("go to select category")
+        let selectCategoryCoordinator = SelectCategoryCoordinator(
+            resolver: resolver,
+            navigationController: navigationController
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: SelectCategoryCoordinator.self)
+        }
+        childCoordinators.append(selectCategoryCoordinator)
+        selectCategoryCoordinator.start(animated: true)
     }
     
     func moduleDidUnload() {

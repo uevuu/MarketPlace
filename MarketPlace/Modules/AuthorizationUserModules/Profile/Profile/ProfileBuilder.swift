@@ -19,7 +19,10 @@ final class ProfileBuilder {
     }
     
     func build() -> UIViewController {
-        let presenter = ProfilePresenter(output: moduleOutput)
+        let presenter = ProfilePresenter(
+            output: moduleOutput,
+            userInfoService: resolver.resolve()
+        )
         let view = ProfileViewController(output: presenter)
         presenter.view = view
         return view

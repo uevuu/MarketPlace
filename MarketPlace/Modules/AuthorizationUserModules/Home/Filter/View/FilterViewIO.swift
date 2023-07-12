@@ -14,6 +14,7 @@ protocol FilterViewInput: AnyObject {
 
 // MARK: - FilterViewOutput
 protocol FilterViewOutput: AnyObject {
+    func viewDidLoadEvent()
     func getFilterCount() -> Int
     func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath)
     func selectCategory(at indexPath: IndexPath)

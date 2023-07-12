@@ -25,11 +25,11 @@ final class RootCoordinator {
     }
     
     func start() {
-        isAuth ? showUserFlow() : showLoginFlow()
+        showUserFlow()
         window.makeKeyAndVisible()
     }
     
-    private func showLoginFlow() {
+    private func showWelcomeFlow() {
         let welcomeCoordinator = WelcomeCoordinator(
             resolver: resolver,
             window: window
@@ -42,14 +42,54 @@ final class RootCoordinator {
     }
     
     private func showUserFlow() {
-        let userTabBarCoordinator = SellerTabBarCoordinator(
-            window: window,
-            resolver: resolver
-        ) { [weak self] in
-            self?.childCoordinators.removeFlowCoordinator(ofType: SellerTabBarCoordinator.self)
-            self?.showLoginFlow()
+        if let status = UserDefaults.standard.string(forKey: "roles") {
+            if status == "SELLER" {
+                let sellerTabBarCoordinator = SellerTabBarCoordinator(
+                    window: window,
+                    resolver: resolver
+                ) { [weak self] in
+                    self?.childCoordinators.removeFlowCoordinator(ofType: SellerTabBarCoordinator.self)
+                    self?.showWelcomeFlow()
+                }
+                sellerTabBarCoordinator.start(animated: false)
+                childCoordinators.append(sellerTabBarCoordinator)
+            } else {
+                let userTabBarCoordinator = UserTabBarCoordinator(
+                    window: window,
+                    resolver: resolver
+                ) { [weak self] in
+                    self?.childCoordinators.removeFlowCoordinator(ofType: UserTabBarCoordinator.self)
+                    self?.showWelcomeFlow()
+                }
+                userTabBarCoordinator.start(animated: false)
+                childCoordinators.append(userTabBarCoordinator)
+            }
+        } else {
+            showWelcomeFlow()
         }
-        userTabBarCoordinator.start(animated: false)
-        childCoordinators.append(userTabBarCoordinator)
     }
+//
+//    private func showUserFlow() {
+//        let userTabBarCoordinator = UserTabBarCoordinator(
+//            window: window,
+//            resolver: resolver
+//        ) { [weak self] in
+//            self?.childCoordinators.removeFlowCoordinator(ofType: UserTabBarCoordinator.self)
+//            self?.showWelcomeFlow()
+//        }
+//        userTabBarCoordinator.start(animated: false)
+//        childCoordinators.append(userTabBarCoordinator)
+//    }
+//
+//    private func showSellerFlow() {
+//        let sellerTabBarCoordinator = SellerTabBarCoordinator(
+//            window: window,
+//            resolver: resolver
+//        ) { [weak self] in
+//            self?.childCoordinators.removeFlowCoordinator(ofType: SellerTabBarCoordinator.self)
+//            self?.showWelcomeFlow()
+//        }
+//        sellerTabBarCoordinator.start(animated: false)
+//        childCoordinators.append(sellerTabBarCoordinator)
+//    }
 }

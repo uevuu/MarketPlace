@@ -84,6 +84,6 @@ final class ProductCell: UICollectionViewCell {
         productImageView.image = UIImage(named: imageUrl)
         priceLabel.text = "\(price) б."
         titleLabel.text = title
-        sellerNameLabel.text = sellerName
+        sellerNameLabel.text = "Seller #\(sellerName.prefix(4))"
     }
 }

@@ -97,7 +97,7 @@ class CreateProductViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        title = R.string.localizable.productDescription()
+        title = R.string.localizable.productСreation()
         navigationController?.navigationBar.titleTextAttributes = [
             .font: R.font.robotoRegular(size: 15) ?? UIFont()
         ]
@@ -124,11 +124,23 @@ class CreateProductViewController: UIViewController {
     }
     
     @objc private func deletePhotoButtonTapped(_ sender: DeleteProductImageCell) {
-        print(sender.tag)
+        let optionMenu = UIAlertController(
+            title: nil,
+            message: R.string.localizable.deleteProductPhotoWarning(),
+            preferredStyle: .actionSheet
+        )
+        optionMenu.addDestructive(title: R.string.localizable.delete()) { [weak output] _ in
+            output?.deletePhoto(at: sender.tag)
+        }
+        present(
+            optionMenu,
+            animated: true,
+            completion: nil
+        )
     }
     
     @objc private func nextButtonTapped() {
-        print("next")
+        output.nextTapped()
     }
 }
 

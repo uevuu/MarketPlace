@@ -1,5 +1,5 @@
 //
-//  NetworkApiService.swift
+//  DaDataNetworkApiService.swift
 //  MarketPlace
 //
 //  Created by Nikita Marin on 05.07.2023.
@@ -7,8 +7,8 @@
 
 import Alamofire
 
-// MARK: - NetworkApiService
-final class NetworkApiService {
+// MARK: - DaDataNetworkApiService
+final class DaDataNetworkApiService {
     private let baseURL: String
     private let apiKey: String
     
@@ -27,7 +27,9 @@ final class NetworkApiService {
     ) {
         AF.request(
             baseURL + endpoint,
+            method: .post,
             parameters: parameters,
+            encoding: JSONEncoding.default,
             headers: HTTPHeaders([R.string.daDataApi.authorization(): apiKey])
         )
         .validate()

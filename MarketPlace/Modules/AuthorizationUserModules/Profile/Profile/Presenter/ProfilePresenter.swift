@@ -11,14 +11,19 @@ import UIKit
 final class ProfilePresenter {
     weak var view: ProfileViewInput?
     private weak var output: ProfilePresenterOutput?
+    private let userInfoService: UserInfoService
     private let settings: [SettingType] = [
         .myOrder,
         .city,
         .theme
     ]
     
-    init(output: ProfilePresenterOutput?) {
+    init(
+        output: ProfilePresenterOutput?,
+        userInfoService: UserInfoService
+    ) {
         self.output = output
+        self.userInfoService = userInfoService
     }
     
     deinit {
@@ -28,6 +33,17 @@ final class ProfilePresenter {
 
 // MARK: - ProfileViewOutput
 extension ProfilePresenter: ProfileViewOutput {
+    func viewDidLoadEvent() {
+        userInfoService.getInfo { [weak self] result in
+            switch result {
+            case .success(let info):
+                print(info.name)
+            case .failure(let error):
+                print(String(describing: error))
+            }
+        }
+    }
+    
     func getSettingCount() -> Int {
         return settings.count
     }

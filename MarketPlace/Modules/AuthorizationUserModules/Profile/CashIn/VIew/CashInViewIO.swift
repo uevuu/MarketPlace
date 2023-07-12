@@ -11,5 +11,6 @@ protocol CashInViewInput: AnyObject {
 
 // MARK: - CashInViewOutput
 protocol CashInViewOutput: AnyObject {
+    func cashIn(points: String)
     func deinitEvent()
 }

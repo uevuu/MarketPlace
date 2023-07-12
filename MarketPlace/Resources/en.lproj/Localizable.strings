@@ -97,3 +97,5 @@
 "maximumCharacters" = "Maximum 7500 characters";
 
 "edit" = "Edit";
+"deleteProductPhotoWarning" = "Are you sure you want to delete a photo? It will be impossible to cancel this action";
+"choosingcCategory" = "Choosing a category";

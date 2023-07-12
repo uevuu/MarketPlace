@@ -8,7 +8,7 @@
 // MARK: - EditProductPresenterOutput
 protocol EditProductPresenterOutput: AnyObject {
     func goToHomeModule()
-    func goToSetProductModule()
+    func goToSetProductCountModule()
     func goToEditModule()
     func moduleDidUnload()
 }
