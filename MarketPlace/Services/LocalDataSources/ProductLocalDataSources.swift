@@ -1,11 +1,11 @@
 //
-//  ProductLocalDataSource.swift
+//  ProductLocalDataSources.swift
 //  MarketPlace
 //
 //  Created by Nikita Marin on 14.10.2023.
 //
 
-final class ProductLocalDataSource {
+final class ProductLocalDataSources {
     private var selectedProduct: Product?
     
     func getSelectedProduct() -> Product {

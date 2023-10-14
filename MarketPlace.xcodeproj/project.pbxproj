@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		67CDCD95E2C741C14C1D2F12 /* Pods_MarketPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4CDFD529BBBCBA03D6DE93 /* Pods_MarketPlace.framework */; };
+		8B1236122AD99B81002AC7C6 /* MockProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1236112AD99B81002AC7C6 /* MockProductsService.swift */; };
+		8B1236152AD99B9A002AC7C6 /* ProductsServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1236142AD99B9A002AC7C6 /* ProductsServiceImp.swift */; };
+		8B1236182AD99C6F002AC7C6 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1236172AD99C6F002AC7C6 /* CartService.swift */; };
+		8B12361A2AD99ECD002AC7C6 /* MockCartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1236192AD99ECD002AC7C6 /* MockCartService.swift */; };
+		8B1236202ADB357E002AC7C6 /* ProductLocalDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12361F2ADB357E002AC7C6 /* ProductLocalDataSources.swift */; };
 		8B292B1F2A5D3D3A00A73DA6 /* CreateProductFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B1E2A5D3D3A00A73DA6 /* CreateProductFooterView.swift */; };
 		8B292B212A5D44E100A73DA6 /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B202A5D44E000A73DA6 /* DescriptionTextView.swift */; };
 		8B292B242A5D7AAF00A73DA6 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B292B232A5D7AAF00A73DA6 /* UserInfo.swift */; };
@@ -199,6 +204,11 @@
 
 /* Begin PBXFileReference section */
 		816A3AE550E036B5CDA3E828 /* Pods-MarketPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketPlace.release.xcconfig"; path = "Target Support Files/Pods-MarketPlace/Pods-MarketPlace.release.xcconfig"; sourceTree = "<group>"; };
+		8B1236112AD99B81002AC7C6 /* MockProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProductsService.swift; sourceTree = "<group>"; };
+		8B1236142AD99B9A002AC7C6 /* ProductsServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsServiceImp.swift; sourceTree = "<group>"; };
+		8B1236172AD99C6F002AC7C6 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
+		8B1236192AD99ECD002AC7C6 /* MockCartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCartService.swift; sourceTree = "<group>"; };
+		8B12361F2ADB357E002AC7C6 /* ProductLocalDataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLocalDataSources.swift; sourceTree = "<group>"; };
 		8B292B1E2A5D3D3A00A73DA6 /* CreateProductFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductFooterView.swift; sourceTree = "<group>"; };
 		8B292B202A5D44E000A73DA6 /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
 		8B292B232A5D7AAF00A73DA6 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -414,6 +424,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8B1236102AD9908E002AC7C6 /* ProductsService */ = {
+			isa = PBXGroup;
+			children = (
+				8B292B5C2A5E3E6F00A73DA6 /* ProductsService.swift */,
+				8B1236112AD99B81002AC7C6 /* MockProductsService.swift */,
+				8B1236142AD99B9A002AC7C6 /* ProductsServiceImp.swift */,
+			);
+			path = ProductsService;
+			sourceTree = "<group>";
+		};
+		8B1236162AD99C60002AC7C6 /* CartService */ = {
+			isa = PBXGroup;
+			children = (
+				8B1236172AD99C6F002AC7C6 /* CartService.swift */,
+				8B1236192AD99ECD002AC7C6 /* MockCartService.swift */,
+			);
+			path = CartService;
+			sourceTree = "<group>";
+		};
+		8B12361E2ADB355D002AC7C6 /* LocalDataSources */ = {
+			isa = PBXGroup;
+			children = (
+				8B12361F2ADB357E002AC7C6 /* ProductLocalDataSources.swift */,
+			);
+			path = LocalDataSources;
+			sourceTree = "<group>";
+		};
 		8B292B222A5D7A6800A73DA6 /*  Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,11 +565,12 @@
 		8B292B592A5E263100A73DA6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8B1236162AD99C60002AC7C6 /* CartService */,
+				8B1236102AD9908E002AC7C6 /* ProductsService */,
 				8B292B602A5E732900A73DA6 /* CategoryService.swift */,
 				8BBFEA1F2A54C04D00810D47 /* LogInService.swift */,
 				8B292B5A2A5E265900A73DA6 /* NetworkService.swift */,
 				8BBFEA282A54CA1A00810D47 /* SignUpService.swift */,
-				8B292B5C2A5E3E6F00A73DA6 /* ProductsService.swift */,
 				8B292B622A5E7CFF00A73DA6 /* UserInfoService.swift */,
 			);
 			path = Main;
@@ -1102,6 +1140,7 @@
 		8BBFEA1E2A54BFF700810D47 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				8B12361E2ADB355D002AC7C6 /* LocalDataSources */,
 				8B292B582A5E248400A73DA6 /* DaData */,
 				8B292B592A5E263100A73DA6 /* Main */,
 			);
@@ -1471,6 +1510,7 @@
 				8B292B6E2A5EA94100A73DA6 /* SelectAddressPresenter.swift in Sources */,
 				8B292B2B2A5D89E900A73DA6 /* EditProductBuilder.swift in Sources */,
 				8B2C81542A537EEE004C82B6 /* CustomTextFieldView.swift in Sources */,
+				8B1236182AD99C6F002AC7C6 /* CartService.swift in Sources */,
 				8B3D66202A587F89009CD2D9 /* MyOrdersViewIO.swift in Sources */,
 				8B2C810F2A52C8B1004C82B6 /* WelcomeViewController.swift in Sources */,
 				8B687D552A5C23AB00038E0F /* SellerProfileViewIO.swift in Sources */,
@@ -1478,6 +1518,7 @@
 				8BF9D6C42A55F343008A2526 /* HomePresenter.swift in Sources */,
 				8BF9D6D22A561F1C008A2526 /* CashButton.swift in Sources */,
 				8BAB8AFE2A523918005167BA /* MarketPlace.xcdatamodeld in Sources */,
+				8B1236122AD99B81002AC7C6 /* MockProductsService.swift in Sources */,
 				8B292B2F2A5D8A1D00A73DA6 /* EditProductPresenterOutput.swift in Sources */,
 				8B687D452A5C1B7000038E0F /* FilterPresenter.swift in Sources */,
 				8B3D66142A5867E6009CD2D9 /* SettingType.swift in Sources */,
@@ -1542,6 +1583,7 @@
 				8B687D532A5C23A000038E0F /* SellerProfilePresenter.swift in Sources */,
 				8B687D3E2A5C1B4500038E0F /* FilterBuilder.swift in Sources */,
 				8BF9D6CA2A55F369008A2526 /* HomeBuilder.swift in Sources */,
+				8B12361A2AD99ECD002AC7C6 /* MockCartService.swift in Sources */,
 				8BF9D6C62A55F354008A2526 /* HomeViewIO.swift in Sources */,
 				8B2C814C2A5310CC004C82B6 /* SignUpViewController.swift in Sources */,
 				8B292B4A2A5DEC3300A73DA6 /* SelectCategoryPresenterOutput.swift in Sources */,
@@ -1566,6 +1608,7 @@
 				8B687D6A2A5CB89700038E0F /* CreateProductCoordinator.swift in Sources */,
 				8B2C81362A52F2BA004C82B6 /* LogInViewIO.swift in Sources */,
 				8BF9EFE52A5B263800903E1D /* ProductCountView.swift in Sources */,
+				8B1236152AD99B9A002AC7C6 /* ProductsServiceImp.swift in Sources */,
 				8BF9D6B02A55F234008A2526 /* CartCoordinator.swift in Sources */,
 				8B2C815C2A53AC15004C82B6 /* TextFieldType.swift in Sources */,
 				8B292B5F2A5E44E100A73DA6 /* Product.swift in Sources */,
@@ -1629,6 +1672,7 @@
 				8B96EAA02A59C88500FD2466 /* ProductInfoPresenterOutput.swift in Sources */,
 				8BF9EFDF2A5B03B000903E1D /* SelectProductCountPresenter.swift in Sources */,
 				8BAB8B272A525381005167BA /* SimpleButton.swift in Sources */,
+				8B1236202ADB357E002AC7C6 /* ProductLocalDataSources.swift in Sources */,
 				8BBFEA222A54C3D900810D47 /* DaDataNetworkApiService.swift in Sources */,
 				8B3D662E2A58A783009CD2D9 /* DaDataApiService.swift in Sources */,
 				8BF9D6D02A5615AC008A2526 /* MainAccountInfoViewButton.swift in Sources */,
@@ -1781,6 +1825,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Q2UKGPQBB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarketPlace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1809,6 +1854,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2Q2UKGPQBB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarketPlace/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 // MARK: - ProductImageCell
 final class ProductImageCell: UICollectionViewCell {
@@ -38,6 +39,6 @@ final class ProductImageCell: UICollectionViewCell {
     }
     
     func configureCell(imageUrl: String) {
-        imageView.image = UIImage(named: imageUrl)
+        imageView.kf.setImage(with: URL(string: imageUrl))
     }
 }

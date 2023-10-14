@@ -27,7 +27,8 @@ final class HomeBuilder {
     func build() -> UIViewController {
         let presenter = HomePresenter(
             output: moduleOutput,
-            productsService: resolver.resolve()
+            productsService: resolver.resolve(), 
+            productLocalDataSources: resolver.resolve()
         )
         let view = HomeViewController(
             output: presenter,

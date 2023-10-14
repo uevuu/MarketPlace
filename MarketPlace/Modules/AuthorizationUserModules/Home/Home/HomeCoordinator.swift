@@ -41,7 +41,6 @@ final class HomeCoordinator: FlowCoordinatorProtocol {
         )
         let viewController = homeBuilder.build()
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.addBottomLine(with: R.color.placeholderBottomLine())
         self.navigationController = navigationController
         parentTabBar?.addViewController(
             viewController: navigationController,

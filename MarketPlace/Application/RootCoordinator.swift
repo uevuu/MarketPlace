@@ -25,7 +25,16 @@ final class RootCoordinator {
     }
     
     func start() {
-        showUserFlow()
+//        showUserFlow()
+        let sellerTabBarCoordinator = UserTabBarCoordinator(
+            window: window,
+            resolver: resolver
+        ) { [weak self] in
+            self?.childCoordinators.removeFlowCoordinator(ofType: UserTabBarCoordinator.self)
+            self?.showWelcomeFlow()
+        }
+        sellerTabBarCoordinator.start(animated: false)
+        childCoordinators.append(sellerTabBarCoordinator)
         window.makeKeyAndVisible()
     }
     

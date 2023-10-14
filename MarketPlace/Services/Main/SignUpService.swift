@@ -32,7 +32,7 @@ final class SignUpService {
         .validate()
         .responseDecodable { (response: DataResponse<UserInfo, AFError>) in
             switch response.result {
-            case .success(_):
+            case .success:
                 return completion(.success)
             case .failure(let error):
                 print(error.errorDescription?.lowercased())

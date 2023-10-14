@@ -9,5 +9,9 @@ import Swinject
 
 final class LocalDataSourceAssembly: Assembly {
     func assemble(container: Container) {
+        container.register(ProductLocalDataSources.self) { _ in
+            ProductLocalDataSources()
+        }
+        .inObjectScope(.container)
     }
 }

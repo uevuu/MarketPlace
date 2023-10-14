@@ -37,6 +37,8 @@ class SelectAddressViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    private lazy var nextButton = SimpleButton(title: R.string.localizable.next())
 
     // MARK: - Init
     
@@ -65,8 +67,10 @@ class SelectAddressViewController: UIViewController {
     // MARK: - Setup
     
     private func setup() {
+        nextButton.addTarget(self, for: #selector(nextButtonTapped))
         view.addSubview(searchBar)
         view.addSubview(cityTableView)
+        view.addSubview(nextButton)
         view.backgroundColor = R.color.background()
         setConstraints()
     }
@@ -92,12 +96,21 @@ class SelectAddressViewController: UIViewController {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
+        nextButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().inset(16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(21)
+        }
     }
     
     // MARK: - Private
     
     @objc private func backButtonTapped() {
         output.backTapped()
+    }
+    
+    @objc private func nextButtonTapped() {
+        print("in future")
     }
 }
 

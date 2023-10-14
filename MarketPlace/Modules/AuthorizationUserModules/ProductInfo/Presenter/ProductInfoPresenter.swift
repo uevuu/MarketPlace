@@ -11,9 +11,14 @@ import Foundation
 final class ProductInfoPresenter {
     weak var view: ProductInfoViewInput?
     private weak var output: ProductInfoPresenterOutput?
+    private let selectedProduct: Product
     
-    init(output: ProductInfoPresenterOutput?) {
+    init(
+        output: ProductInfoPresenterOutput?,
+        productLocalDataSources: ProductLocalDataSources
+    ) {
         self.output = output
+        self.selectedProduct = productLocalDataSources.getSelectedProduct()
     }
     
     deinit {
@@ -24,14 +29,18 @@ final class ProductInfoPresenter {
 // MARK: - ProductInfoViewOutput
 extension ProductInfoPresenter: ProductInfoViewOutput {
     func getImagesCount() -> Int {
-        return 4
+        return selectedProduct.moreImages.count + 1
     }
     
     func configureCell(
         _ cell: ProductImageCell,
         at indexPath: IndexPath
     ) {
-        cell.configureCell(imageUrl: "productImage")
+        if indexPath.item == 0 {
+            cell.configureCell(imageUrl: selectedProduct.image)
+        } else {
+            cell.configureCell(imageUrl: selectedProduct.moreImages[indexPath.item - 1])
+        }
     }
     
     func configureFooter(
@@ -39,10 +48,10 @@ extension ProductInfoPresenter: ProductInfoViewOutput {
         at indexPath: IndexPath
     ) {
         footer.configureCell(
-            title: "Платье женское черное",
-            sellerName: "Anna S",
-            price: "3 500 б.",
-            description: R.string.localizable.mockDescription()
+            title: selectedProduct.title,
+            sellerName: selectedProduct.sellerName,
+            price: "\(selectedProduct.price) б.",
+            description: selectedProduct.description
         )
     }
     

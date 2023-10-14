@@ -12,14 +12,17 @@ final class HomePresenter {
     weak var view: HomeViewInput?
     private weak var output: HomePresenterOutput?
     private let productsService: ProductsService
+    private let productLocalDataSources: ProductLocalDataSources
     private var products: [Product] = []
     
     init(
         output: HomePresenterOutput?,
-        productsService: ProductsService
+        productsService: ProductsService,
+        productLocalDataSources: ProductLocalDataSources
     ) {
-        self.productsService = productsService
         self.output = output
+        self.productsService = productsService
+        self.productLocalDataSources = productLocalDataSources
     }
     
     deinit {
@@ -53,14 +56,15 @@ extension HomePresenter: HomeViewOutput {
     ) {
         let product = products[indexPath.item]
         cell.configureCell(
-            imageUrl: "productImage",
+            imageUrl: product.image,
             price: product.price,
             title: product.title,
-            sellerName: product.sellerId
+            sellerName: product.sellerName
         )
     }
     
     func selectProduct(at indexPath: IndexPath) {
+        productLocalDataSources.setSelectedProduct(product: products[indexPath.item])
         output?.goToProductModule()
     }
     

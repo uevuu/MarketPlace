@@ -7,7 +7,6 @@
 
 import Alamofire
 
-
 // MARK: - LogInService
 final class LogInService {
     private let signInUrl = "http://77.105.136.70:8082/signIn"
@@ -34,8 +33,7 @@ final class LogInService {
             switch response.result {
             case .success:
                 return completion(.success)
-            case .failure(let error):
-                print(error.errorDescription?.lowercased())
+            case .failure:
                 completion(.serviceError)
             }
         }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 // MARK: - ProductCell
 final class ProductCell: UICollectionViewCell {    
@@ -82,8 +83,9 @@ final class ProductCell: UICollectionViewCell {
         sellerName: String
     ) {
         productImageView.image = UIImage(named: imageUrl)
+        productImageView.kf.setImage(with: URL(string: imageUrl))
         priceLabel.text = "\(price) б."
         titleLabel.text = title
-        sellerNameLabel.text = "Seller #\(sellerName.prefix(4))"
+        sellerNameLabel.text = sellerName
     }
 }

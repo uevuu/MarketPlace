@@ -18,14 +18,22 @@ final class NetworkAssembly: Assembly {
         container.register(SignUpService.self) { _ in
             SignUpService()
         }
+        
         container.register(ProductsService.self) { _ in
-            ProductsService()
+            MockProductsService()
         }
         .inObjectScope(.container)
+        
+        container.register(CartService.self) { _ in
+            MockCartService()
+        }
+        .inObjectScope(.container)
+        
         container.register(CategoryService.self) { _ in
             CategoryService()
         }
         .inObjectScope(.container)
+        
         container.register(UserInfoService.self) { _ in
             UserInfoService()
         }
