@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
         searсhBar.searchTextField.font = R.font.robotoRegular(size: 14)
         searсhBar.searchTextField.clearButtonMode = .never
         searсhBar.searchTextField.attributedPlaceholder = NSAttributedString(
-            string: "Название товара",
+            string: R.string.localizable.productName(),
             attributes: [
                 .foregroundColor: R.color.secondary() ?? UIColor.gray,
                 .font: R.font.robotoRegular(size: 14) ?? UIFont.systemFont(ofSize: 14)

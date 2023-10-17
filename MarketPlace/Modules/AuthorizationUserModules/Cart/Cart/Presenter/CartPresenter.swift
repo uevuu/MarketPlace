@@ -56,26 +56,30 @@ extension CartPresenter: CartViewOutput {
         at indexPath: IndexPath
     ) {
         let product = productsInCart[indexPath.item].product
-        let count = productsInCart[indexPath.item].count
+        let productInfo = productsInCart[indexPath.item]
+        print(productInfo.addedToOrder)
+        cell.setSelected(productInfo.addedToOrder, animated: true)
         cell.configureCell(
             title: product.title,
             sellerName: product.sellerName,
-            count: "\(count) шт.",
+            count: "\(productInfo.count) шт.",
             price: "\(product.price) б.",
+            addedToOrder: productInfo.addedToOrder,
             imageUrlString: product.image
         )
     }
     
-    func deleteAll() {
-        print("delete all")
+    func deleteSelected() {
+        cartService.removeFromCar(products: productsInCart)
     }
     
     func selectAll() {
-        print("select all")
+        cartService.addAllToOrder()
     }
     
     func selectProduct(at index: Int) {
-        print("select at \(index)")
+        let product = productsInCart[index]
+        product.addedToOrder ? cartService.removeFromOrder(product: product) : cartService.addToOrder(product: product)
     }
     
     func deleteProduct(at index: Int) {

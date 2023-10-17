@@ -78,6 +78,7 @@ extension SelectProductCountPresenter: SelectProductCountViewOutput {
             count: intCount > remainCount ? remainCount : intCount,
             product: selectedProductInfo
         )
+        output?.goToCartModule()
     }
     
     func handleTextInput(_ text: String) {

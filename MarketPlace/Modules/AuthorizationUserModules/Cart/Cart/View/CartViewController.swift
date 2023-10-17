@@ -23,17 +23,8 @@ class CartViewController: UIViewController {
     
     private lazy var selectAllButton: UIButton = {
         let button = UIButton()
-        button.setTitleColor(R.color.mainFont(), for: .normal)
+        button.setTitleColor(R.color.blue(), for: .normal)
         button.setTitle(R.string.localizable.selectAll(), for: .normal)
-        button.setImage(
-            UIImage(systemName: R.string.systemImage.circle()),
-            for: .normal
-        )
-        button.setImage(
-            UIImage(systemName: R.string.systemImage.checkmarkCircleFill()),
-            for: .selected
-        )
-        button.tintColor = R.color.blue()
         button.titleLabel?.font = R.font.robotoRegular(size: 14)
         button.addTarget(self, for: #selector(selectAllButtonTapped))
         button.imageEdgeInsets.left = -8
@@ -129,7 +120,7 @@ class CartViewController: UIViewController {
     
     // MARK: - Private
     @objc private func deleteSelectedButtonTapped() {
-        output.deleteAll()
+        output.deleteSelected()
     }
     
     @objc private func selectAllButtonTapped() {

@@ -67,4 +67,8 @@ extension SelectProductCountCoordinator: SelectProductCountPresenterOutput {
     func moduleDidUnload() {
         finishHandlers.forEach { $0() }
     }
+    
+    func goToCartModule() {
+        navigationController?.topViewController?.dismiss(animated: true)
+    }
 }

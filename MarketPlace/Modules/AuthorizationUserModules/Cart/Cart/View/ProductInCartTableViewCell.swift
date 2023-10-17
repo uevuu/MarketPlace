@@ -71,10 +71,6 @@ final class ProductInCartTableViewCell: UITableViewCell {
             UIImage(systemName: R.string.systemImage.circle()),
             for: .normal
         )
-        button.setImage(
-            UIImage(systemName: R.string.systemImage.checkmarkCircleFill()),
-            for: .selected
-        )
         button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -167,6 +163,7 @@ final class ProductInCartTableViewCell: UITableViewCell {
         sellerName: String,
         count: String,
         price: String,
+        addedToOrder: Bool,
         imageUrlString: String
     ) {
         titleLabel.text = title
@@ -174,5 +171,9 @@ final class ProductInCartTableViewCell: UITableViewCell {
         countButton.setTitle(count)
         priceLabel.text = price
         productImageView.kf.setImage(with: URL(string: imageUrlString))
+        selectedButton.setImage(
+            UIImage(systemName: addedToOrder ? R.string.systemImage.circleInsetFilled() :R.string.systemImage.circle()),
+            for: .normal
+        )
     }
 }

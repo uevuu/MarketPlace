@@ -15,6 +15,6 @@
 "forward" = "chevron.forward";
 "plus" = "plus";
 "circle" = "circle";
-"circle.inset.filled" = "circleFilled";
+"circleInsetFilled" = "circle.inset.filled";
 
 "bear" = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2ODkyMTUyMTIsImlhdCI6MTY4OTEyODgxMiwKICAiaWQiIDogImUyMzMxY2I1LTM0ZTQtNGJhNy1hYTk1LWRiM2Q1YTNiNjc3YiIsCiAgInJvbGVzIiA6ICJDVVNUT01FUiIKfQ.K6Cj0F8JrfcGLvaLMeXFlzEA514htxf8h8vy8AdgYPk";

@@ -99,10 +99,11 @@ final class MockCartService: CartService {
         currentProductsPublisher.send(productsInCar)
     }
     
-    func removeFromCar(
-        products: [ProductInCartInfo],
-        completion: @escaping (Result<Any, Error>) -> Void
-    ) {
+    func removeFromCar(products: [ProductInCartInfo]) {
+        products.forEach { product in
+            productsInCar.removeAll { $0.product.id == product.product.id && $0.addedToOrder }
+        }
+        currentProductsPublisher.send(productsInCar)
     }
     
     func updateCount(
@@ -119,15 +120,30 @@ final class MockCartService: CartService {
         }
     }
     
-    func addToOrder(
-        product: ProductInCartInfo,
-        completion: @escaping (Result<Any, Error>) -> Void
-    ) {
+    func addToOrder(product: ProductInCartInfo) {
+        setAddedStatus(product: product, added: true)
+        currentProductsPublisher.send(productsInCar)
     }
     
-    func removeFromOrder(
-        product: ProductInCartInfo,
-        completion: @escaping (Result<Any, Error>) -> Void
-    ) {
+    func addAllToOrder() {
+        productsInCar.forEach { product in
+            setAddedStatus(product: product, added: true)
+        }
+        currentProductsPublisher.send(productsInCar)
+    }
+    
+    func removeFromOrder(product: ProductInCartInfo) {
+        setAddedStatus(product: product, added: false)
+        currentProductsPublisher.send(productsInCar)
+    }
+    
+    private func setAddedStatus(product: ProductInCartInfo, added: Bool) {
+        if let index = productsInCar.firstIndex(where: { $0.product.id == product.product.id }) {
+            productsInCar[index] = ProductInCartInfo(
+                product: product.product,
+                count: product.count,
+                addedToOrder: added
+            )
+        }
     }
 }

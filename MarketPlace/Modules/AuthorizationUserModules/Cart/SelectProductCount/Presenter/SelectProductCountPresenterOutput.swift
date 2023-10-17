@@ -8,4 +8,5 @@
 // MARK: - SelectProductCountPresenterOutput
 protocol SelectProductCountPresenterOutput: AnyObject {
     func moduleDidUnload()
+    func goToCartModule()
 }

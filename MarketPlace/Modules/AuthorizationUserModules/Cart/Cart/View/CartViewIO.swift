@@ -18,7 +18,7 @@ protocol CartViewOutput: AnyObject {
     func deinitEvent()
     func getItemsInCartCount() -> Int
     func configureCell(_ cell: ProductInCartTableViewCell, at indexPath: IndexPath)
-    func deleteAll()
+    func deleteSelected()
     func selectAll()
     func selectProduct(at index: Int)
     func deleteProduct(at index: Int)
