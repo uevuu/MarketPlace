@@ -11,14 +11,21 @@ import UIKit
 final class SelectProductCountPresenter {
     weak var view: SelectProductCountViewInput?
     private var output: SelectProductCountPresenterOutput?
+    private let cartService: CartService
     
-    private var selectedCount = 1
+    private var selectedProductInfo: ProductInCartInfo
+    private var selectedCount: Int
     private var previousIndexPath: IndexPath?
     
     init(
-        output: SelectProductCountPresenterOutput?
+        output: SelectProductCountPresenterOutput?,
+        cartService: CartService,
+        productLocalDataSources: ProductLocalDataSources
     ) {
         self.output = output
+        self.cartService = cartService
+        self.selectedCount = productLocalDataSources.getSelectedProductInCartInfo().count
+        self.selectedProductInfo = productLocalDataSources.getSelectedProductInCartInfo()
     }
     
     deinit {
@@ -28,8 +35,12 @@ final class SelectProductCountPresenter {
 
 // MARK: - SelectProductCountViewOutput
 extension SelectProductCountPresenter: SelectProductCountViewOutput {
-    func getCityCount() -> Int {
+    func getTableRowCount() -> Int {
         return 9
+    }
+    
+    func getRemainCount() -> Int {
+        return selectedProductInfo.product.quantity
     }
     
     func configureCell(
@@ -61,7 +72,12 @@ extension SelectProductCountPresenter: SelectProductCountViewOutput {
     }
     
     func readyTapped(with count: String) {
-        print(selectedCount)
+        let intCount = Int(count) ?? selectedCount
+        let remainCount = selectedProductInfo.product.quantity
+        cartService.updateCount(
+            count: intCount > remainCount ? remainCount : intCount,
+            product: selectedProductInfo
+        )
     }
     
     func handleTextInput(_ text: String) {

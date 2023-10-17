@@ -16,7 +16,6 @@ final class MockCartService: CartService {
     }
     
     var currentProductsPublisher: CurrentValueSubject<[ProductInCartInfo], Never>
-    var lastAddedProductPublisher = PassthroughSubject<Product, Never>()
     
     private var productsInCar = [
         ProductInCartInfo(
@@ -79,12 +78,10 @@ final class MockCartService: CartService {
     }
     
     func productInCar(productId: Int) -> Bool {
-        return productsInCar.contains(where: { $0.product.id == productId })
+        return productsInCar.contains { $0.product.id == productId }
     }
     
-    func addToCar(
-        product: Product
-    ) {
+    func addToCar(product: Product) {
         if !productsInCar.contains(where: { $0.product.id == product.id }) {
             productsInCar.append(
                 ProductInCartInfo(
@@ -97,21 +94,9 @@ final class MockCartService: CartService {
         }
     }
     
-    func removeFromCar(
-        product: Product
-    ) {
-        productsInCar.removeAll(where: { $0.product.id == product.id })
+    func removeFromCar(product: Product) {
+        productsInCar.removeAll { $0.product.id == product.id }
         currentProductsPublisher.send(productsInCar)
-//        if !productsInCar.contains(where: { $0.product.id == product.id }) {
-//            productsInCar.append(
-//                ProductInCartInfo(
-//                    product: product,
-//                    count: 1,
-//                    addedToOrder: false
-//                )
-//            )
-//            currentProductsPublisher.send(productsInCar)
-//        }
     }
     
     func removeFromCar(
@@ -122,23 +107,27 @@ final class MockCartService: CartService {
     
     func updateCount(
         count: Int,
-        product: ProductInCartInfo,
-        completion: @escaping (Result<Int, Error>) -> Void
+        product: ProductInCartInfo
     ) {
-        
+        if let index = productsInCar.firstIndex(where: { $0.product.id == product.product.id }) {
+            productsInCar[index] = ProductInCartInfo(
+                product: product.product,
+                count: count,
+                addedToOrder: product.addedToOrder
+            )
+            currentProductsPublisher.send(productsInCar)
+        }
     }
     
     func addToOrder(
         product: ProductInCartInfo,
         completion: @escaping (Result<Any, Error>) -> Void
     ) {
-        
     }
     
     func removeFromOrder(
         product: ProductInCartInfo,
         completion: @escaping (Result<Any, Error>) -> Void
     ) {
-        
     }
 }

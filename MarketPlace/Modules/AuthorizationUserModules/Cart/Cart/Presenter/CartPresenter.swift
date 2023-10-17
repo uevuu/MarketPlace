@@ -83,6 +83,7 @@ extension CartPresenter: CartViewOutput {
     }
     
     func selectCount(at index: Int) {
+        productLocalDataSources.setSelectedProductInCartInfo(productsInCart[index])
         output?.goToSelectProductCountModule()
     }
     
@@ -91,7 +92,7 @@ extension CartPresenter: CartViewOutput {
     }
     
     func selectProduct(at indexPath: IndexPath) {
-        productLocalDataSources.setSelectedProduct(product: productsInCart[indexPath.item].product)
+        productLocalDataSources.setSelectedProduct(productsInCart[indexPath.item].product)
         output?.goToProductModule()
     }
     

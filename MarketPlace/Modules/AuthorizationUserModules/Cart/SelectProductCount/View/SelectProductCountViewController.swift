@@ -11,7 +11,7 @@ import UIKit
 final class SelectProductCountViewController: UIViewController {
     private let output: SelectProductCountViewOutput
     
-    // MARK: - UI
+    // MARK: UI
     
     private lazy var selectCountLabel: UILabel = {
         let label = UILabel()
@@ -30,10 +30,10 @@ final class SelectProductCountViewController: UIViewController {
         return tableView
     }()
     
-    private lazy var productCountTextField = ProductCountView(count: "15")
+    private lazy var productCountTextField = ProductCountView()
     private lazy var readyButton = SimpleButton(title: R.string.localizable.ready())
     
-    // MARK: - Init
+    // MARK: Init
     
     init(output: SelectProductCountViewOutput) {
         self.output = output
@@ -49,15 +49,24 @@ final class SelectProductCountViewController: UIViewController {
         print("deinit Select Product Count view")
     }
     
-    // MARK: - Lifecycle
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupGestureRecognizer()
     }
     
-    // MARK: - Setup
+    // MARK: Setup
+    
+    func setupGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false 
+        view.addGestureRecognizer(tap)
+    }
     
     private func setup() {
+        let remainCount = output.getRemainCount()
+        productCountTextField.setCount(remainCount)
         productCountTextField.textField.delegate = self
         readyButton.addTarget(self, for: #selector(readyButtonTapped))
         productCountTextField.textField.addTarget(
@@ -89,7 +98,7 @@ final class SelectProductCountViewController: UIViewController {
         }
     }
     
-    // MARK: - Private
+    // MARK: Private
     @objc private func cashIndButtonTapped() {
         dismiss(animated: true)
     }
@@ -100,6 +109,11 @@ final class SelectProductCountViewController: UIViewController {
     
     @objc private func textFieldTextChanged() {
         output.handleTextInput(productCountTextField.getInputText())
+    }
+    
+    // MARK: Close keyboard when tap outside
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -130,7 +144,7 @@ extension SelectProductCountViewController: UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return output.getCityCount()
+        return output.getTableRowCount()
     }
     
     func tableView(

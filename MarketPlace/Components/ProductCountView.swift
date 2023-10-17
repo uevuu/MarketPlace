@@ -44,10 +44,9 @@ final class ProductCountView: UIView {
         return label
     }()
     
-    init(count: String) {
+    init() {
         super.init(frame: CGRect(x: 20, y: 0, width: 0, height: 60))
-        helpLabel.text = "\(R.string.localizable.remain()) \(count) шт."
-        setup()
+       setup()
     }
     
     required init?(coder: NSCoder) {
@@ -97,5 +96,9 @@ final class ProductCountView: UIView {
 
     func getInputText() -> String {
         return textField.text ?? ""
+    }
+    
+    func setCount(_ count: Int) {
+        helpLabel.text = "\(R.string.localizable.remain()) \(count) шт."
     }
 }

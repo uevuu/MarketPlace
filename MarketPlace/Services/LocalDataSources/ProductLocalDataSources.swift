@@ -7,6 +7,7 @@
 
 final class ProductLocalDataSources {
     private var selectedProduct: Product?
+    private var selectedProductInCartInfo: ProductInCartInfo?
     
     func getSelectedProduct() -> Product {
         guard let product = selectedProduct else {
@@ -15,7 +16,18 @@ final class ProductLocalDataSources {
         return product
     }
     
-    func setSelectedProduct(product: Product) {
+    func setSelectedProduct(_ product: Product) {
         selectedProduct = product
+    }
+    
+    func setSelectedProductInCartInfo(_ productInfo: ProductInCartInfo) {
+        selectedProductInCartInfo = productInfo
+    }
+    
+    func getSelectedProductInCartInfo() -> ProductInCartInfo {
+        guard let productInfo = selectedProductInCartInfo else {
+            fatalError("You forgot to specify the product in cart info")
+        }
+        return productInfo
     }
 }

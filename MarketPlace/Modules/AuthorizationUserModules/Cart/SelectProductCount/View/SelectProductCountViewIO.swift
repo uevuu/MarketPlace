@@ -17,7 +17,8 @@ protocol SelectProductCountViewInput: AnyObject {
 
 // MARK: - SelectProductCountViewOutput
 protocol SelectProductCountViewOutput: AnyObject {
-    func getCityCount() -> Int
+    func getTableRowCount() -> Int
+    func getRemainCount() -> Int
     func configureCell(
         _ cell: UITableViewCell,
         at indexPath: IndexPath

@@ -30,8 +30,7 @@ protocol CartService: AnyObject {
     
     func updateCount(
         count: Int,
-        product: ProductInCartInfo,
-        completion: @escaping (Result<Int, Error>) -> Void
+        product: ProductInCartInfo
     )
     
     func addToOrder(

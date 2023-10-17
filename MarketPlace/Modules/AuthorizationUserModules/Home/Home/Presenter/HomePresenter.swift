@@ -64,7 +64,7 @@ extension HomePresenter: HomeViewOutput {
     }
     
     func selectProduct(at indexPath: IndexPath) {
-        productLocalDataSources.setSelectedProduct(product: products[indexPath.item])
+        productLocalDataSources.setSelectedProduct(products[indexPath.item])
         output?.goToProductModule()
     }
     

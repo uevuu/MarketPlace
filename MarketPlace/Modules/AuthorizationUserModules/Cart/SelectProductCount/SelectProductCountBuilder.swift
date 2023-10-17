@@ -22,7 +22,11 @@ final class SelectProductCountBuilder {
     }
     
     func build() -> UIViewController {
-        let presenter = SelectProductCountPresenter(output: moduleOutput)
+        let presenter = SelectProductCountPresenter(
+            output: moduleOutput,
+            cartService: resolver.resolve(),
+            productLocalDataSources: resolver.resolve()
+        )
         let view = SelectProductCountViewController(output: presenter)
         presenter.view = view
         return view
