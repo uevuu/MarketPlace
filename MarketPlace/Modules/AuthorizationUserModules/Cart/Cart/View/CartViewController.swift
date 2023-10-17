@@ -84,6 +84,8 @@ class CartViewController: UIViewController {
        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        output.viewDidLoadEvent()
         configureNavigationBar()
         setup()
     }
@@ -165,6 +167,9 @@ class CartViewController: UIViewController {
 
 // MARK: - CartViewInput
 extension CartViewController: CartViewInput {
+    func reloadCart() {
+        productsTableView.reloadData()
+    }
 }
 
 // MARK: - UITableViewDataSource

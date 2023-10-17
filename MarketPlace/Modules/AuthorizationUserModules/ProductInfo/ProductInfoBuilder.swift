@@ -24,6 +24,7 @@ final class ProductInfoBuilder {
     func build() -> UIViewController {
         let presenter = ProductInfoPresenter(
             output: moduleOutput,
+            cartService: resolver.resolve(),
             productLocalDataSources: resolver.resolve()
         )
         

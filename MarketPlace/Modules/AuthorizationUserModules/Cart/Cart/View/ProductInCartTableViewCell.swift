@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 // MARK: - UITableViewDelegate
 final class ProductInCartTableViewCell: UITableViewCell {
@@ -172,6 +173,6 @@ final class ProductInCartTableViewCell: UITableViewCell {
         sellerNameLabel.text = sellerName
         countButton.setTitle(count)
         priceLabel.text = price
-        productImageView.image = UIImage(named: imageUrlString)
+        productImageView.kf.setImage(with: URL(string: imageUrlString))
     }
 }

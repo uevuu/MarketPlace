@@ -6,14 +6,25 @@
 //
 
 import Foundation
+import Combine
 
 // MARK: - CartPresenter
 final class CartPresenter {
     weak var view: CartViewInput?
     private weak var output: CartPresenterOutput?
+    private let cartService: CartService
+    private let productLocalDataSources: ProductLocalDataSources
+    private var productsInCart: [ProductInCartInfo] = []
+    private var cancellables: Set<AnyCancellable> = []
     
-    init(output: CartPresenterOutput?) {
+    init(
+        output: CartPresenterOutput?,
+        cartService: CartService,
+        productLocalDataSources: ProductLocalDataSources
+    ) {
         self.output = output
+        self.cartService = cartService
+        self.productLocalDataSources = productLocalDataSources
     }
     
     deinit {
@@ -23,19 +34,35 @@ final class CartPresenter {
 
 // MARK: - CartViewOutput
 extension CartPresenter: CartViewOutput {
-    func getItemsInCartCount() -> Int {
-        return 6
+    func viewDidLoadEvent() {
+        cartService.currentProductsPublisher
+            .receive(on: DispatchQueue.global(qos: .userInteractive))
+            .sink { [weak self] products in
+                guard let self else { return }
+                self.productsInCart = products
+                DispatchQueue.main.async {
+                    self.view?.reloadCart()
+                }
+            }
+            .store(in: &cancellables)
     }
+    
+    func getItemsInCartCount() -> Int {
+        return productsInCart.count
+    }
+    
     func configureCell(
         _ cell: ProductInCartTableViewCell,
         at indexPath: IndexPath
     ) {
+        let product = productsInCart[indexPath.item].product
+        let count = productsInCart[indexPath.item].count
         cell.configureCell(
-            title: "Кроссовки Nike",
-            sellerName: "Anna S",
-            count: "1 шт.",
-            price: "3 500 б.",
-            imageUrlString: "productImage"
+            title: product.title,
+            sellerName: product.sellerName,
+            count: "\(count) шт.",
+            price: "\(product.price) б.",
+            imageUrlString: product.image
         )
     }
     
@@ -52,7 +79,7 @@ extension CartPresenter: CartViewOutput {
     }
     
     func deleteProduct(at index: Int) {
-        print("delete at \(index)")
+        cartService.removeFromCar(product: productsInCart[index].product)
     }
     
     func selectCount(at index: Int) {
@@ -64,6 +91,7 @@ extension CartPresenter: CartViewOutput {
     }
     
     func selectProduct(at indexPath: IndexPath) {
+        productLocalDataSources.setSelectedProduct(product: productsInCart[indexPath.item].product)
         output?.goToProductModule()
     }
     

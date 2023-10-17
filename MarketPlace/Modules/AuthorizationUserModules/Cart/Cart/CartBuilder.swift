@@ -19,7 +19,11 @@ final class CartBuilder {
     }
     
     func build() -> UIViewController {
-        let presenter = CartPresenter(output: moduleOutput)
+        let presenter = CartPresenter(
+            output: moduleOutput,
+            cartService: resolver.resolve(),
+            productLocalDataSources: resolver.resolve()
+        )
         let view = CartViewController(output: presenter)
         presenter.view = view
         return view

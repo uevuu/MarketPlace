@@ -10,7 +10,7 @@ import SnapKit
 
 // MARK: - SimpleButton
 final class SimpleButton: UIButton {
-    private lazy var label: UILabel = {
+    lazy var label: UILabel = {
         let label = UILabel()
         label.font = R.font.robotoRegular(size: 14)
         label.textColor = .white

@@ -6,18 +6,24 @@
 //
 
 import Foundation
+import Combine
 
 // MARK: - ProductInfoPresenter
 final class ProductInfoPresenter {
     weak var view: ProductInfoViewInput?
     private weak var output: ProductInfoPresenterOutput?
+    private let cartService: CartService
     private let selectedProduct: Product
+    private var productInCar = false
+    private var cancellables: Set<AnyCancellable> = []
     
     init(
         output: ProductInfoPresenterOutput?,
+        cartService: CartService,
         productLocalDataSources: ProductLocalDataSources
     ) {
         self.output = output
+        self.cartService = cartService
         self.selectedProduct = productLocalDataSources.getSelectedProduct()
     }
     
@@ -27,7 +33,26 @@ final class ProductInfoPresenter {
 }
 
 // MARK: - ProductInfoViewOutput
-extension ProductInfoPresenter: ProductInfoViewOutput {
+extension ProductInfoPresenter: ProductInfoViewOutput {    
+    func viewDidLoadEvent() {
+        cartService.currentProductsPublisher
+            .receive(on: DispatchQueue.global(qos: .userInteractive))
+            .sink { [weak self] productsInCar in
+                guard let self else { return }
+                if productsInCar.contains(where: { $0.product.id == self.selectedProduct.id }) {
+                    DispatchQueue.main.async {
+                        self.view?.makeCartButtonPressed()
+                    }
+                    self.productInCar = true
+                } else {
+                    DispatchQueue.main.async {
+                        self.view?.makeCartButtonNotPressed()
+                    }
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
     func getImagesCount() -> Int {
         return selectedProduct.moreImages.count + 1
     }
@@ -56,7 +81,10 @@ extension ProductInfoPresenter: ProductInfoViewOutput {
     }
     
     func addToCartTapped() {
-        print("add to cart")
+        productInCar ? 
+        cartService.removeFromCar(product: selectedProduct) :
+        cartService.addToCar(product: selectedProduct)
+        productInCar.toggle()
     }
     
     func backTapped() {

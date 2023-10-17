@@ -5,27 +5,42 @@
 //  Created by Nikita Marin on 13.10.2023.
 //
 
+import Combine
+
 // MARK: - CartService
 protocol CartService: AnyObject {
-    func getProducts(completion: @escaping (Result<[Product], Error>) -> Void)
+    var currentProductsPublisher: CurrentValueSubject<[ProductInCartInfo], Never> { get }
+    func loadProducts(completion: @escaping (Result<[ProductInCartInfo], Error>) -> Void)
+    func getProducts() -> [ProductInCartInfo]?
     
-    func deleteFromCar(
-        products: [Product],
+    func productInCar(productId: Int) -> Bool
+    
+    func addToCar(
+        product: Product
+    )
+    
+    func removeFromCar(
+        product: Product
+    )
+    
+    func removeFromCar(
+        products: [ProductInCartInfo],
         completion: @escaping (Result<Any, Error>) -> Void
     )
+    
     func updateCount(
         count: Int,
-        product: Product,
+        product: ProductInCartInfo,
         completion: @escaping (Result<Int, Error>) -> Void
     )
     
     func addToOrder(
-        product: Product,
+        product: ProductInCartInfo,
         completion: @escaping (Result<Any, Error>) -> Void
     )
     
     func removeFromOrder(
-        product: Product,
+        product: ProductInCartInfo,
         completion: @escaping (Result<Any, Error>) -> Void
     )
 }

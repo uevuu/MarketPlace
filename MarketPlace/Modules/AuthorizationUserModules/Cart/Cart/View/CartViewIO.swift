@@ -9,10 +9,12 @@ import Foundation
 
 // MARK: - CartViewInput
 protocol CartViewInput: AnyObject {
+    func reloadCart()
 }
 
 // MARK: - CartViewOutput
 protocol CartViewOutput: AnyObject {
+    func viewDidLoadEvent()
     func deinitEvent()
     func getItemsInCartCount() -> Int
     func configureCell(_ cell: ProductInCartTableViewCell, at indexPath: IndexPath)

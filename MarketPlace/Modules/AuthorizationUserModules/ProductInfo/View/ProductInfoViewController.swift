@@ -10,6 +10,7 @@ import UIKit
 // MARK: - ProductInfoViewController
 class ProductInfoViewController: UIViewController {
     private let output: ProductInfoViewOutput
+    private weak var delegate: ProductInfoViewControllerDelegate?
     
     // MARK: - UI
     
@@ -49,6 +50,8 @@ class ProductInfoViewController: UIViewController {
        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        output.viewDidLoadEvent()
         configureNavigationBar()
         setup()
     }
@@ -98,6 +101,13 @@ class ProductInfoViewController: UIViewController {
 
 // MARK: - ProductInfoViewInput
 extension ProductInfoViewController: ProductInfoViewInput {
+    func makeCartButtonPressed() {
+        delegate?.makeButtonPressed()
+    }
+    
+    func makeCartButtonNotPressed() {
+        delegate?.makeButtonNotPressed()
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -117,6 +127,7 @@ extension ProductInfoViewController: UICollectionViewDataSource {
         at indexPath: IndexPath
     ) -> UICollectionReusableView {
         let footer = collectionView.dequeueReusableFooter(ProductInfoView.self, for: indexPath)
+        delegate = footer
         footer.addToCartButton.addTarget(self, for: #selector(addToCartButtonTapped))
         output.configureFooter(footer, at: indexPath)
         return footer

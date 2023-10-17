@@ -6,12 +6,16 @@
 //
 
 import UIKit
+protocol ProductInfoViewControllerDelegate: AnyObject {
+    func makeButtonPressed()
+    func makeButtonNotPressed()
+}
 
 // MARK: - ProductInfoView
 final class ProductInfoView: UICollectionReusableView {
     private lazy var titleView = TitleViewForProduct()
     private lazy var descriptionPriceView = DescriptionPriceViewForProduct()
-    lazy var addToCartButton: UIButton = SimpleButton(title: R.string.localizable.addToCart())
+    lazy var addToCartButton = SimpleButton(title: R.string.localizable.addToCart())
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
@@ -59,5 +63,20 @@ final class ProductInfoView: UICollectionReusableView {
         titleView.sellerNameLabel.text = sellerName
         descriptionPriceView.priceLabel.text = price
         descriptionPriceView.descriptionLabel.text = description
+    }
+}
+
+// MARK: - ProductInfoViewControllerDelegate
+extension ProductInfoView: ProductInfoViewControllerDelegate {
+    func makeButtonPressed() {
+        addToCartButton.label.text = R.string.localizable.removeFromCart()
+        addToCartButton.label.textColor = R.color.notReadyFont()
+        addToCartButton.backgroundColor = R.color.notReadyButton()
+    }
+    
+    func makeButtonNotPressed() {
+        addToCartButton.label.text = R.string.localizable.addToCart()
+        addToCartButton.label.textColor = .white
+        addToCartButton.backgroundColor = R.color.blue()
     }
 }
