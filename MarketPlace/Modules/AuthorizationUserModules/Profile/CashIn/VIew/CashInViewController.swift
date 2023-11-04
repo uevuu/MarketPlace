@@ -106,7 +106,7 @@ final class CashInViewController: UIViewController {
     // MARK: - Private
     @objc private func cashIndButtonTapped() {
         output.cashIn(points: textField.text ?? "")
-//        dismiss(animated: true)
+        dismiss(animated: true)
     }
 }
 

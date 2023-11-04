@@ -11,7 +11,8 @@ import UIKit
 protocol ProfileViewInput: AnyObject {
     func reloadInfo(
         name: String,
-        email: String
+        email: String,
+        points: Int
     )
     func reloadSetting(at indexPath: IndexPath)
 }

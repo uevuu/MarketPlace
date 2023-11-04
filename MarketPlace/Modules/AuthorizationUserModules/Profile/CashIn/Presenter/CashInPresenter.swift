@@ -27,14 +27,9 @@ final class CashInPresenter {
 // MARK: - CashInViewOutput
 extension CashInPresenter: CashInViewOutput {
     func cashIn(points: String) {
-        userInfoService.addPointCount(Int(points) ?? 0) { [weak self] result in
-            switch result {
-            case .success(let userInfo):
-                let newPoints = userInfo.points
-                print(newPoints)
-            case .failure(let error):
-                print(String(describing: error))
-            }
+        if let intPoints = Int(points) {
+            userInfoService.addPoints(intPoints)
+//            output.cash
         }
     }
     

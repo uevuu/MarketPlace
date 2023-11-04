@@ -126,10 +126,12 @@ extension ProfileViewController: ProfileViewInput {
     
     func reloadInfo(
         name: String,
-        email: String
+        email: String,
+        points: Int
     ) {
         userInfoButton.nameLabel.text = name
         userInfoButton.emailLabel.text = email
+        moneyStatus.bonusCountLabel.text = "\(points) \(R.string.localizable.points())"
     }
 }
 

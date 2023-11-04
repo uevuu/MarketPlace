@@ -6,17 +6,20 @@
 //
 
 import UIKit
+import Combine
 
 // MARK: - ProfilePresenter
 final class ProfilePresenter {
     weak var view: ProfileViewInput?
     private weak var output: ProfilePresenterOutput?
     private let userInfoService: UserInfoService
+    private var userData: UserInfo?
     private let settings: [SettingType] = [
         .myOrder,
         .city,
         .theme
     ]
+    private var cancellables: Set<AnyCancellable> = []
     
     init(
         output: ProfilePresenterOutput?,
@@ -34,14 +37,21 @@ final class ProfilePresenter {
 // MARK: - ProfileViewOutput
 extension ProfilePresenter: ProfileViewOutput {
     func viewDidLoadEvent() {
-        userInfoService.getInfo { [weak self] result in
-            switch result {
-            case .success(let info):
-                print(info.name)
-            case .failure(let error):
-                print(String(describing: error))
+        userInfoService.userInfoPublisher
+            .receive(on: DispatchQueue.global(qos: .userInteractive))
+            .sink { [weak self] data in
+                guard let self else { return }
+                self.userData = data
+                DispatchQueue.main.async {
+                    self.view?.reloadInfo(
+                        name: data.name,
+                        email: data.email,
+                        points: data.points
+                    )
+                }
             }
-        }
+            .store(in: &cancellables)
+        userInfoService.loadData()
     }
     
     func getSettingCount() -> Int {
@@ -56,7 +66,7 @@ extension ProfilePresenter: ProfileViewOutput {
         case .city:
             cell.configureCell(
                 title: R.string.localizable.city(),
-                helpData: "Казань"
+                helpData: userData?.city
             )
         case .myOrder:
             cell.configureCell(title: R.string.localizable.myOrder())

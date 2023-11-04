@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - MainAccountInfoViewButton
 final class MainAccountInfoViewButton: UIButton {
-    private lazy var avatarImageView: UIImageView = {
+    lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -21,14 +21,12 @@ final class MainAccountInfoViewButton: UIButton {
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Иванов Иван"
         label.font = R.font.robotoRegular(size: 16)
         return label
     }()
     
     lazy var emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "ivanov@mail.ru"
         label.font = R.font.robotoRegular(size: 14)
         label.textColor = R.color.textFieldFont()
         return label

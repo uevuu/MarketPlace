@@ -35,7 +35,7 @@ final class NetworkAssembly: Assembly {
         .inObjectScope(.container)
         
         container.register(UserInfoService.self) { _ in
-            UserInfoService()
+            MockUserInfoService()
         }
         .inObjectScope(.container)
     }

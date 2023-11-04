@@ -6,9 +6,17 @@
 //
 
 import Alamofire
+import Combine
 
 // MARK: - UserInfoService
-final class UserInfoService {
+protocol UserInfoService: AnyObject {
+    func loadData()
+    func addPoints(_ points: Int)
+    var userInfoPublisher: CurrentValueSubject<UserInfo, Never> { get }
+}
+
+// MARK: - UserInfoService
+final class UserInfoServiceImp {
     private let networkService = NetworkService()
     
     func addPointCount(

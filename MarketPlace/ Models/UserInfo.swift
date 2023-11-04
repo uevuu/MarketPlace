@@ -10,14 +10,14 @@ import Foundation
 struct UserInfo: Codable {
     let id: String
     let role: String
-    let email: String
-    let name: String
-    let surname: String
-    let patronymic: String?
-    let gender: String?
-    let birthDate: String?
-    let phone: String
-    let profilePicture: String?
-    let points: Int
-    let city: String?
+    var email: String
+    var name: String
+    var surname: String
+    var patronymic: String?
+    var gender: String?
+    var birthDate: String?
+    var phone: String
+    var profilePicture: String?
+    var points: Int
+    var city: String?
 }

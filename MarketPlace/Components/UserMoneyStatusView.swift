@@ -16,9 +16,8 @@ final class UserMoneyStatusView: UIView {
         return label
     }()
     
-    private lazy var bonusCountLabel: UILabel = {
+    lazy var bonusCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "30004 \(R.string.localizable.points())"
         label.font = R.font.robotoBold(size: 20)
         return label
     }()
