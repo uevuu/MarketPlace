@@ -57,7 +57,6 @@ extension CartPresenter: CartViewOutput {
     ) {
         let product = productsInCart[indexPath.item].product
         let productInfo = productsInCart[indexPath.item]
-        print(productInfo.addedToOrder)
         cell.setSelected(productInfo.addedToOrder, animated: true)
         cell.configureCell(
             title: product.title,

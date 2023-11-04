@@ -37,7 +37,6 @@ final class CartCoordinator: FlowCoordinatorProtocol {
         )
         let viewController = cartBuilder.build()
         let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.addBottomLine(with: R.color.placeholderBottomLine())
         self.navigationController = navigationController
         parentTabBar?.addViewController(
             viewController: navigationController,

@@ -11,8 +11,7 @@ import UIKit
 class ChooseCityViewController: UIViewController {
     private let output: ChooseCityViewOutput
     
-    // MARK: - UI
-    
+    // MARK: UI
     private lazy var searchBar: UISearchBar = {
         let searсhBar = UISearchBar()
         searсhBar.searchTextField.font = R.font.robotoRegular(size: 14)
@@ -34,12 +33,12 @@ class ChooseCityViewController: UIViewController {
         tableView.backgroundColor = R.color.background()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.keyboardDismissMode = .onDrag
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
 
-    // MARK: - Init
-    
+    // MARK: Init
     init(output: ChooseCityViewOutput) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
@@ -53,16 +52,14 @@ class ChooseCityViewController: UIViewController {
         print("deinit Choose City view")
     }
     
-    // MARK: - Lifecycle
-       
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
         setup()
     }
     
-    // MARK: - Setup
-    
+    // MARK: Setup
     private func setup() {
         view.addSubview(searchBar)
         view.addSubview(cityTableView)
@@ -93,11 +90,11 @@ class ChooseCityViewController: UIViewController {
         }
     }
     
-    // MARK: - Private
-    
+    // MARK: Private
     @objc private func backButtonTapped() {
+        searchBar.resignFirstResponder()
         output.backTapped()
-    }
+    } 
 }
 
 // MARK: - ChooseCityViewInput

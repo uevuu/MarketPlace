@@ -11,8 +11,7 @@ import UIKit
 class SelectAddressViewController: UIViewController {
     private let output: SelectAddressViewOutput
     
-    // MARK: - UI
-    
+    // MARK: UI
     private lazy var searchBar: UISearchBar = {
         let searсhBar = UISearchBar()
         searсhBar.searchTextField.font = R.font.robotoRegular(size: 14)
@@ -34,14 +33,14 @@ class SelectAddressViewController: UIViewController {
         tableView.backgroundColor = R.color.background()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.keyboardDismissMode = .onDrag
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
     private lazy var nextButton = SimpleButton(title: R.string.localizable.next())
 
-    // MARK: - Init
-    
+    // MARK: Init
     init(output: SelectAddressViewOutput) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
@@ -56,16 +55,14 @@ class SelectAddressViewController: UIViewController {
         print("deinit select address view")
     }
     
-    // MARK: - Lifecycle
-       
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
         setup()
     }
     
-    // MARK: - Setup
-    
+    // MARK: Setup
     private func setup() {
         nextButton.addTarget(self, for: #selector(nextButtonTapped))
         view.addSubview(searchBar)
@@ -103,9 +100,9 @@ class SelectAddressViewController: UIViewController {
         }
     }
     
-    // MARK: - Private
-    
+    // MARK: Private
     @objc private func backButtonTapped() {
+        searchBar.resignFirstResponder()
         output.backTapped()
     }
     

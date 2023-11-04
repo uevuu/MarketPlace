@@ -11,8 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     private let output: HomeViewOutput
     
-    // MARK: - UI
-    
+    // MARK: UI
     private lazy var collectionView = {
         let collectionView = UICollectionView(
             frame: .zero,
@@ -23,6 +22,7 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.keyboardDismissMode = .onDrag
         return collectionView
     }()
     
@@ -69,8 +69,7 @@ class HomeViewController: UIViewController {
         return button
     }()
     
-    // MARK: - Init
-    
+    // MARK: Init
     init(
         output: HomeViewOutput,
         isSeller: Bool = false
@@ -89,8 +88,7 @@ class HomeViewController: UIViewController {
         output.deinitEvent()
     }
     
-    // MARK: - Lifecycle
-       
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewDidLoadEvent()
@@ -98,8 +96,13 @@ class HomeViewController: UIViewController {
         setup()
     }
     
-    // MARK: - Setup
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        searchBar.resignFirstResponder()
+    }
     
+    // MARK: Setup
     private func setup() {
         view.backgroundColor = R.color.background()
         view.addSubview(collectionView)
@@ -133,8 +136,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    // MARK: - Private
-    
+    // MARK: Private
     @objc private func filterButtonTapped() {
         output.filterTapped()
     }
@@ -147,9 +149,7 @@ class HomeViewController: UIViewController {
 // MARK: - HomeViewInput
 extension HomeViewController: HomeViewInput {
     func reloadView() {
-        DispatchQueue.main.async { [weak collectionView] in
-            collectionView?.reloadData()
-        }
+        collectionView.reloadData()
     }
 }
 
