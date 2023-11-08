@@ -46,7 +46,7 @@ final class ProductCountView: UIView {
     
     init() {
         super.init(frame: CGRect(x: 20, y: 0, width: 0, height: 60))
-       setup()
+        setup()
     }
     
     required init?(coder: NSCoder) {

@@ -40,4 +40,23 @@ extension MockUserInfoService: UserInfoService {
         info.points += points
         userInfoPublisher.send(info)
     }
+    
+    func updateData(
+        email: String,
+        name: String,
+        surname: String,
+        patronymic: String?,
+        gender: String?,
+        birthDate: String?,
+        phone: String
+    ) {
+        info.email = email
+        info.name = name
+        info.surname = surname
+        info.patronymic = patronymic
+        info.gender = gender
+        info.birthDate = birthDate
+        info.phone = phone
+        userInfoPublisher.send(info)
+    }
 }

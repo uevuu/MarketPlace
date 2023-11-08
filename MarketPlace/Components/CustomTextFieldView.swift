@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - CustomTextFieldView:
 final class CustomTextFieldView: UIView {
-    private lazy var textField: UITextField = {
+    lazy var textField: UITextField = {
         let textField = UITextField()
         textField.font = R.font.robotoRegular(size: 14)
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -132,5 +132,12 @@ final class CustomTextFieldView: UIView {
             action: #selector(textFieldTextChanged),
             for: .editingChanged
         )
+    }
+    
+    func setTitle(_ title: String?) {
+        if let notEmptyTitle = title {
+            titleLabel.isHidden = false
+            textField.text = title
+        }
     }
 }

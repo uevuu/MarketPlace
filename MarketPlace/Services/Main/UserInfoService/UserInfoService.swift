@@ -12,6 +12,15 @@ import Combine
 protocol UserInfoService: AnyObject {
     func loadData()
     func addPoints(_ points: Int)
+    func updateData(
+        email: String,
+        name: String,
+        surname: String,
+        patronymic: String?,
+        gender: String?,
+        birthDate: String?,
+        phone: String
+    )
     var userInfoPublisher: CurrentValueSubject<UserInfo, Never> { get }
 }
 

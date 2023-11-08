@@ -11,8 +11,7 @@ import UIKit
 class UserInfoViewController: UIViewController {
     private let output: UserInfoViewOutput
     
-    // MARK: - UI
-    
+    // MARK: UI
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = R.color.background()
@@ -88,8 +87,7 @@ class UserInfoViewController: UIViewController {
         return stackView
     }()
 
-    // MARK: - Init
-    
+    // MARK: Init
     init(output: UserInfoViewOutput) {
         self.output = output
         super.init(nibName: nil, bundle: nil)
@@ -104,18 +102,23 @@ class UserInfoViewController: UIViewController {
         output.deinitEvent()
     }
     
-    // MARK: - Lifecycle
-       
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        output.viewDidLoadEvent()
         configureNavigationBar()
         setup()
+        setupGestureRecognizer()
     }
     
-    // MARK: - Setup
+    // MARK: Setup
+    private func setupGestureRecognizer() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
     
     private func setup() {
-        readyButton.isHidden = true
         view.backgroundColor = R.color.background()
         passwordButton.addTarget(self, for: #selector(passwordButtonTapped))
         logOutButton.addTarget(self, for: #selector(logOutButtonTapped))
@@ -166,8 +169,7 @@ class UserInfoViewController: UIViewController {
         }
     }
     
-    // MARK: - Private
-    
+    // MARK: Private
     @objc private func passwordButtonTapped() {
         print("change password")
     }
@@ -205,11 +207,25 @@ class UserInfoViewController: UIViewController {
     }
     
     @objc private func readyButtonTapped() {
-        output.readyTapped()
+        output.readyTapped(
+            email: emailView.getInputText(),
+            name: firstNameView.getInputText(),
+            surname: lastNameView.getInputText(),
+            patronymic: patronymicView.getInputText(),
+            gender: genderView.getInputText(),
+            birthDate: birthDateView.getInputText(),
+            phone: phoneNumberView.getInputText()
+        )
     }
     
     @objc private func backButtonTapped() {
+        textFieldStackView.endEditing(true)
         output.backTapped()
+    }
+    
+    // MARK: Close keyboard when tap outside
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
 
@@ -218,20 +234,14 @@ extension UserInfoViewController: UserInfoViewInput {
     func hideReadyButton() {
         readyButton.isHidden = true
     }
-}
-
-extension UIAlertController {
-    func addDestructive(title: String, confirmAction: @escaping (UIAlertAction) -> Void) {
-        let deleteAction = UIAlertAction(
-            title: title,
-            style: .destructive,
-            handler: confirmAction
-        )
-        let cancelAction = UIAlertAction(
-            title: "Отмена",
-            style: .cancel
-        )
-        addAction(deleteAction)
-        addAction(cancelAction)
+    
+    func setData(_ userInfo: UserInfo) {
+        firstNameView.setTitle(userInfo.name)
+        lastNameView.setTitle(userInfo.surname)
+        patronymicView.setTitle(userInfo.patronymic)
+        emailView.setTitle(userInfo.email)
+        phoneNumberView.setTitle(userInfo.phone)
+        genderView.setTitle(userInfo.gender)
+        birthDateView.setTitle(userInfo.birthDate)
     }
 }

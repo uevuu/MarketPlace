@@ -29,7 +29,6 @@ extension CashInPresenter: CashInViewOutput {
     func cashIn(points: String) {
         if let intPoints = Int(points) {
             userInfoService.addPoints(intPoints)
-//            output.cash
         }
     }
     

@@ -57,7 +57,7 @@ final class SelectProductCountViewController: UIViewController {
     }
     
     // MARK: Setup
-    func setupGestureRecognizer() {
+    private func setupGestureRecognizer() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false 
         view.addGestureRecognizer(tap)

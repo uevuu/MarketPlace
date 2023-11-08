@@ -22,7 +22,10 @@ final class UserInfoBuilder {
     }
     
     func build() -> UIViewController {
-        let presenter = UserInfoPresenter(output: moduleOutput)
+        let presenter = UserInfoPresenter(
+            output: moduleOutput,
+            userInfoService: resolver.resolve()
+        )
         let view = UserInfoViewController(output: presenter)
         presenter.view = view
         return view
